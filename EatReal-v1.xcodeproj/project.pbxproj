@@ -15,6 +15,9 @@
 		C4A2E7BF2919EBDE00D15DE1 /* PostScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */; };
 		C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7C02919EFF700D15DE1 /* PostView.swift */; };
 		CDE681BC291AC63700AF8BFD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681BB291AC63700AF8BFD /* ProfileView.swift */; };
+		CDE681BE291AD77600AF8BFD /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681BD291AD77600AF8BFD /* NotificationView.swift */; };
+		CDE681C0291AD7BD00AF8BFD /* NotificationScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681BF291AD7BD00AF8BFD /* NotificationScroll.swift */; };
+		CDE681C2291ADA8000AF8BFD /* SingleNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681C1291ADA8000AF8BFD /* SingleNotificationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScroll.swift; sourceTree = "<group>"; };
 		C4A2E7C02919EFF700D15DE1 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		CDE681BB291AC63700AF8BFD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/EatReal-app/EatReall-App/ProfileView.swift"; sourceTree = "<group>"; };
+		CDE681BD291AD77600AF8BFD /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		CDE681BF291AD7BD00AF8BFD /* NotificationScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScroll.swift; sourceTree = "<group>"; };
+		CDE681C1291ADA8000AF8BFD /* SingleNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
 				CDE681BB291AC63700AF8BFD /* ProfileView.swift */,
 				C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */,
+				CDE681C3291AE10B00AF8BFD /* Notification */,
 				C4A2E7BA2919E1CA00D15DE1 /* navBar.swift */,
 				C4A2E7B02919DD8B00D15DE1 /* Assets.xcassets */,
 				C4A2E7B22919DD8B00D15DE1 /* Preview Content */,
@@ -77,6 +84,16 @@
 				C4A2E7B32919DD8B00D15DE1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CDE681C3291AE10B00AF8BFD /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				CDE681BF291AD7BD00AF8BFD /* NotificationScroll.swift */,
+				CDE681BD291AD77600AF8BFD /* NotificationView.swift */,
+				CDE681C1291ADA8000AF8BFD /* SingleNotificationView.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE681C2291ADA8000AF8BFD /* SingleNotificationView.swift in Sources */,
 				C4A2E7BB2919E1CA00D15DE1 /* navBar.swift in Sources */,
+				CDE681C0291AD7BD00AF8BFD /* NotificationScroll.swift in Sources */,
 				C4A2E7BF2919EBDE00D15DE1 /* PostScroll.swift in Sources */,
+				CDE681BE291AD77600AF8BFD /* NotificationView.swift in Sources */,
 				C4A2E7AF2919DD8A00D15DE1 /* ContentView.swift in Sources */,
 				C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */,
 				CDE681BC291AC63700AF8BFD /* ProfileView.swift in Sources */,

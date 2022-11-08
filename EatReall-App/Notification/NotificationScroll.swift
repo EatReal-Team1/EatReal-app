@@ -1,18 +1,18 @@
 //
-//  ScrollView.swift
-//  EatReall-App
+//  NotificationScroll.swift
+//  EatReal-v1
 //
-//  Created by Emily Feng on 11/7/22.
+//  Created by Zeke Rong on 11/8/22.
 //
 
 import SwiftUI
 
-struct PostScroll: View {
+struct NotificationScroll: View {
     var body: some View {
       ScrollView() {
         VStack(spacing: 20) {
           ForEach(0..<10) {_ in
-            SingleNotificationView()
+            PostView()
           }
         }
       }
@@ -20,8 +20,8 @@ struct PostScroll: View {
     }
 }
 
-struct ScrollView_Previews: PreviewProvider {
+struct NotificationScroll_Previews: PreviewProvider {
     static var previews: some View {
-      PostScroll()
+        NotificationScroll()
     }
 }
