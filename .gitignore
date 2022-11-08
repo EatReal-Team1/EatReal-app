@@ -37,3 +37,6 @@ ehthumbs.db
 Thumbs.db
 .xcodeproj/project.pbxproj
 # EatReal-v1.xcodeproj/project.pbxproj
+
+# userstate
+EatReal-v1.xcodeproj/project.xcworkspace/xcuserdata/leannesun.xcuserdatad/UserInterfaceState.xcuserstate
