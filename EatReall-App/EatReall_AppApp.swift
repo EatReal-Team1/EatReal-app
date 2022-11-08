@@ -23,7 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 @main
-struct EatRealApp: App {
+struct EatReall_AppApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
