@@ -33,6 +33,7 @@
 		CDE681BD291AD77600AF8BFD /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		CDE681BF291AD7BD00AF8BFD /* NotificationScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScroll.swift; sourceTree = "<group>"; };
 		CDE681C1291ADA8000AF8BFD /* SingleNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNotificationView.swift; sourceTree = "<group>"; };
+		CDE681C7291AE34000AF8BFD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +68,11 @@
 			children = (
 				C4A2E7C02919EFF700D15DE1 /* PostView.swift */,
 				C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */,
-				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
 				CDE681BB291AC63700AF8BFD /* ProfileView.swift */,
-				C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */,
+				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
 				CDE681C3291AE10B00AF8BFD /* Notification */,
+				CDE681C8291AE40200AF8BFD /* Profile */,
+				C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */,
 				C4A2E7BA2919E1CA00D15DE1 /* navBar.swift */,
 				C4A2E7B02919DD8B00D15DE1 /* Assets.xcassets */,
 				C4A2E7B22919DD8B00D15DE1 /* Preview Content */,
@@ -94,6 +96,14 @@
 				CDE681C1291ADA8000AF8BFD /* SingleNotificationView.swift */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		CDE681C8291AE40200AF8BFD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CDE681C7291AE34000AF8BFD /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
