@@ -19,8 +19,8 @@ struct ProfileView: View {
          Image("Profile").resizable()
               .frame(width: 200, height: 200)
           Text(" ")
-          Text("Leanne Sun").font(.system(size: 40))
-          Text("Username: leannesxh14").font(.system(size: 20))
+          Text("Leanne Sun").font(Font.custom("Helvetica Neue", size: 40.0))
+          Text("Username: leannesxh14").font(Font.custom("Helvetica Neue", size: 20))
           Spacer()
          
         navBar()
