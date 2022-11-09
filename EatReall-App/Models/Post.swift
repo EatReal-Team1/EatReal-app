@@ -8,6 +8,7 @@
 import SwiftUI
 import Alamofire
 import Firebase
+import FirebaseStorage
 import Foundation
 
 // Observable?
@@ -69,11 +70,30 @@ class Post {
   }
   
   func addReview(selfie_photo: String, review_dish: String, review_comment: String, review_stars: Double) {
+    
     self.selfie_photo = selfie_photo
     self.review_dish = review_dish
     self.review_comment = review_comment
     self.review_stars = review_stars
     self.reviewed = true
+  }
+  
+  // placing it here for now. will be refactored later
+  func uploadImage(imageType: String, image: UIImage) {
+    let randomID = UUID.init().uuidString
+    let uploadRef = Storage.storage().reference(withPath: "\(imageType)/\(randomID).jpg")
+//    guard let imageData = imageView.image?.jpegData(compressionQuality: 0.75) else {return}
+    guard let imageData = image.jpegData(compressionQuality: 0.75) else {return}
+    let uploadMetadata = StorageMetadata.init()
+    uploadMetadata.contentType = "image/jpeg"
+    
+    uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
+      if let error = error {
+        print("Unable to upload image \(error.localizedDescription)")
+        return
+      }
+      print("Put is complete and got back: \(String(describing: downloadMetadata))")
+    }
   }
 }
 
