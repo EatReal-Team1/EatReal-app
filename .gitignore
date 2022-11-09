@@ -30,13 +30,14 @@
 ######################
 .DS_Store
 .DS_Store?
+EatReall-App/.DS_Store
 ._*
 .Spotlight-V100
 .Trashes
 ehthumbs.db
 Thumbs.db
 .xcodeproj/project.pbxproj
-# EatReal-v1.xcodeproj/project.pbxproj
+EatReal-v1.xcodeproj/project.pbxproj
 
 # Userstate
 EatReal-v1.xcodeproj/project.xcworkspace/xcuserdata/leannesun.xcuserdatad/UserInterfaceState.xcuserstate
