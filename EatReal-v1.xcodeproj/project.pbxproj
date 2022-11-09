@@ -15,6 +15,9 @@
 		C4A2E7BF2919EBDE00D15DE1 /* PostScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */; };
 		C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7C02919EFF700D15DE1 /* PostView.swift */; };
 		CDE65761291AF7E000EA3CE8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681C7291AE34000AF8BFD /* ProfileView.swift */; };
+		CDE65765291AF89E00EA3CE8 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE65764291AF89E00EA3CE8 /* FriendView.swift */; };
+		CDE65769291B422A00EA3CE8 /* SearchFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE65768291B422A00EA3CE8 /* SearchFriendView.swift */; };
+		CDE6576B291B451600EA3CE8 /* FriendModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE6576A291B451600EA3CE8 /* FriendModelView.swift */; };
 		CDE681BE291AD77600AF8BFD /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681BD291AD77600AF8BFD /* NotificationView.swift */; };
 		CDE681C0291AD7BD00AF8BFD /* NotificationScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681BF291AD7BD00AF8BFD /* NotificationScroll.swift */; };
 		CDE681C2291ADA8000AF8BFD /* SingleNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681C1291ADA8000AF8BFD /* SingleNotificationView.swift */; };
@@ -29,6 +32,9 @@
 		C4A2E7BA2919E1CA00D15DE1 /* navBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navBar.swift; sourceTree = "<group>"; };
 		C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScroll.swift; sourceTree = "<group>"; };
 		C4A2E7C02919EFF700D15DE1 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		CDE65764291AF89E00EA3CE8 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		CDE65768291B422A00EA3CE8 /* SearchFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFriendView.swift; sourceTree = "<group>"; };
+		CDE6576A291B451600EA3CE8 /* FriendModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModelView.swift; sourceTree = "<group>"; };
 		CDE681BD291AD77600AF8BFD /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		CDE681BF291AD7BD00AF8BFD /* NotificationScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScroll.swift; sourceTree = "<group>"; };
 		CDE681C1291ADA8000AF8BFD /* SingleNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNotificationView.swift; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 				C4A2E7C02919EFF700D15DE1 /* PostView.swift */,
 				C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */,
 				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
+				CDE65763291AF89200EA3CE8 /* Friend */,
 				CDE681C3291AE10B00AF8BFD /* Notification */,
 				CDE681C8291AE40200AF8BFD /* Profile */,
 				C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */,
@@ -84,6 +91,16 @@
 				C4A2E7B32919DD8B00D15DE1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CDE65763291AF89200EA3CE8 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				CDE65764291AF89E00EA3CE8 /* FriendView.swift */,
+				CDE65768291B422A00EA3CE8 /* SearchFriendView.swift */,
+				CDE6576A291B451600EA3CE8 /* FriendModelView.swift */,
+			);
+			path = Friend;
 			sourceTree = "<group>";
 		};
 		CDE681C3291AE10B00AF8BFD /* Notification */ = {
@@ -174,14 +191,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE6576B291B451600EA3CE8 /* FriendModelView.swift in Sources */,
 				CDE681C2291ADA8000AF8BFD /* SingleNotificationView.swift in Sources */,
 				CDE65761291AF7E000EA3CE8 /* ProfileView.swift in Sources */,
 				C4A2E7BB2919E1CA00D15DE1 /* navBar.swift in Sources */,
+				CDE65769291B422A00EA3CE8 /* SearchFriendView.swift in Sources */,
 				CDE681C0291AD7BD00AF8BFD /* NotificationScroll.swift in Sources */,
 				C4A2E7BF2919EBDE00D15DE1 /* PostScroll.swift in Sources */,
 				CDE681BE291AD77600AF8BFD /* NotificationView.swift in Sources */,
 				C4A2E7AF2919DD8A00D15DE1 /* ContentView.swift in Sources */,
 				C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */,
+				CDE65765291AF89E00EA3CE8 /* FriendView.swift in Sources */,
 				C4A2E7AD2919DD8A00D15DE1 /* EatReall_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

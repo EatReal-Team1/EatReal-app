@@ -12,7 +12,7 @@ struct PostScroll: View {
       ScrollView() {
         VStack(spacing: 20) {
           ForEach(0..<10) {_ in
-            SingleNotificationView()
+            PostView()
           }
         }
       }
