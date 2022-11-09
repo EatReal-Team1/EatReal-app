@@ -33,6 +33,7 @@
 		FCE4B8F1291B6BFA004ED90E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F0291B6BFA004ED90E /* User.swift */; };
 		FCE4B8F4291B6C23004ED90E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F3291B6C23004ED90E /* Post.swift */; };
 		FCE4B8F6291B6C3D004ED90E /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */; };
+		FCE4B8F9291B6E67004ED90E /* group_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE4B8F8291B6E67004ED90E /* group_pic.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		FCE4B8F0291B6BFA004ED90E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCE4B8F3291B6C23004ED90E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
+		FCE4B8F8291B6E67004ED90E /* group_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group_pic.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		C4A2E7AB2919DD8A00D15DE1 /* EatReall-App */ = {
 			isa = PBXGroup;
 			children = (
+				FCE4B8F7291B6DEB004ED90E /* Resources */,
 				FCE4B8EB291B69A3004ED90E /* Models */,
 				C4A2E7C02919EFF700D15DE1 /* PostView.swift */,
 				C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */,
@@ -155,6 +158,14 @@
 				FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FCE4B8F7291B6DEB004ED90E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FCE4B8F8291B6E67004ED90E /* group_pic.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE4B8F9291B6E67004ED90E /* group_pic.png in Resources */,
 				C4A2E7B42919DD8B00D15DE1 /* Preview Assets.xcassets in Resources */,
 				FCE4B8EF291B6BC1004ED90E /* GoogleService-Info.plist in Resources */,
 				C4A2E7B12919DD8B00D15DE1 /* Assets.xcassets in Resources */,
