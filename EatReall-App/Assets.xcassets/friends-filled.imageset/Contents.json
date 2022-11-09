@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "friends selected.png",
+      "filename" : "icons8-friends-48.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-friends-96.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
