@@ -14,6 +14,7 @@
 		C4A2E7BB2919E1CA00D15DE1 /* navBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7BA2919E1CA00D15DE1 /* navBar.swift */; };
 		C4A2E7BF2919EBDE00D15DE1 /* PostScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */; };
 		C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7C02919EFF700D15DE1 /* PostView.swift */; };
+		C4A2E7DE291B6FFF00D15DE1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C4A2E7DD291B6FFF00D15DE1 /* Alamofire */; };
 		CDE65761291AF7E000EA3CE8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681C7291AE34000AF8BFD /* ProfileView.swift */; };
 		CDE65765291AF89E00EA3CE8 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE65764291AF89E00EA3CE8 /* FriendView.swift */; };
 		CDE65769291B422A00EA3CE8 /* SearchFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE65768291B422A00EA3CE8 /* SearchFriendView.swift */; };
@@ -64,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A2E7DE291B6FFF00D15DE1 /* Alamofire in Frameworks */,
 				FCE4B8E2291B68EF004ED90E /* FirebaseDatabaseSwift in Frameworks */,
 				FCE4B8E0291B68EF004ED90E /* FirebaseDatabase in Frameworks */,
 				FCE4B8EA291B68EF004ED90E /* FirebaseStorageCombine-Community in Frameworks */,
@@ -193,6 +195,7 @@
 				FCE4B8E5291B68EF004ED90E /* FirebaseFirestoreSwift */,
 				FCE4B8E7291B68EF004ED90E /* FirebaseStorage */,
 				FCE4B8E9291B68EF004ED90E /* FirebaseStorageCombine-Community */,
+				C4A2E7DD291B6FFF00D15DE1 /* Alamofire */,
 			);
 			productName = "EatReall-App";
 			productReference = C4A2E7A92919DD8A00D15DE1 /* EatReal-v1.app */;
@@ -224,6 +227,7 @@
 			mainGroup = C4A2E7A02919DD8A00D15DE1;
 			packageReferences = (
 				FCE4B8DA291B68EF004ED90E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C4A2E7DC291B6FFE00D15DE1 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = C4A2E7AA2919DD8A00D15DE1 /* Products */;
 			projectDirPath = "";
@@ -470,6 +474,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C4A2E7DC291B6FFE00D15DE1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		FCE4B8DA291B68EF004ED90E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -481,6 +493,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C4A2E7DD291B6FFF00D15DE1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4A2E7DC291B6FFE00D15DE1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		FCE4B8DB291B68EF004ED90E /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FCE4B8DA291B68EF004ED90E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
