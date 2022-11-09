@@ -20,6 +20,9 @@
 		CDE681BE291AD77600AF8BFD /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681BD291AD77600AF8BFD /* NotificationView.swift */; };
 		CDE681C0291AD7BD00AF8BFD /* NotificationScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681BF291AD7BD00AF8BFD /* NotificationScroll.swift */; };
 		CDE681C2291ADA8000AF8BFD /* SingleNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681C1291ADA8000AF8BFD /* SingleNotificationView.swift */; };
+		C4A2E7C3291ADCE300D15DE1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7C2291ADCE300D15DE1 /* CameraView.swift */; };
+		C4A2E7D6291B48C800D15DE1 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7D5291B48C800D15DE1 /* ImagePickerView.swift */; };
+		C4A2E7D8291B56CE00D15DE1 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7D7291B56CE00D15DE1 /* LandingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		CDE681BF291AD7BD00AF8BFD /* NotificationScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScroll.swift; sourceTree = "<group>"; };
 		CDE681C1291ADA8000AF8BFD /* SingleNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNotificationView.swift; sourceTree = "<group>"; };
 		CDE681C7291AE34000AF8BFD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C4A2E7C2291ADCE300D15DE1 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		C4A2E7C4291AE47700D15DE1 /* EatReal-v1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "EatReal-v1-Info.plist"; sourceTree = "<group>"; };
+		C4A2E7D5291B48C800D15DE1 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		C4A2E7D7291B56CE00D15DE1 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +60,7 @@
 		C4A2E7A02919DD8A00D15DE1 = {
 			isa = PBXGroup;
 			children = (
+				C4A2E7C4291AE47700D15DE1 /* EatReal-v1-Info.plist */,
 				C4A2E7AB2919DD8A00D15DE1 /* EatReall-App */,
 				C4A2E7AA2919DD8A00D15DE1 /* Products */,
 			);
@@ -75,6 +83,9 @@
 				CDE65763291AF89200EA3CE8 /* Friend */,
 				CDE681C3291AE10B00AF8BFD /* Notification */,
 				CDE681C8291AE40200AF8BFD /* Profile */,
+				C4A2E7C2291ADCE300D15DE1 /* CameraView.swift */,
+				C4A2E7D7291B56CE00D15DE1 /* LandingView.swift */,
+				C4A2E7D5291B48C800D15DE1 /* ImagePickerView.swift */,
 				C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */,
 				C4A2E7BA2919E1CA00D15DE1 /* navBar.swift */,
 				C4A2E7B02919DD8B00D15DE1 /* Assets.xcassets */,
@@ -196,6 +207,9 @@
 				C4A2E7BF2919EBDE00D15DE1 /* PostScroll.swift in Sources */,
 				CDE681BE291AD77600AF8BFD /* NotificationView.swift in Sources */,
 				C4A2E7AF2919DD8A00D15DE1 /* ContentView.swift in Sources */,
+				C4A2E7D6291B48C800D15DE1 /* ImagePickerView.swift in Sources */,
+				C4A2E7D8291B56CE00D15DE1 /* LandingView.swift in Sources */,
+				C4A2E7C3291ADCE300D15DE1 /* CameraView.swift in Sources */,
 				C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */,
 				CDE65765291AF89E00EA3CE8 /* FriendView.swift in Sources */,
 				C4A2E7AD2919DD8A00D15DE1 /* EatReall_AppApp.swift in Sources */,
@@ -330,6 +344,8 @@
 				DEVELOPMENT_TEAM = WJ53H49GSL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EatReal-v1-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "we need camera permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -359,6 +375,8 @@
 				DEVELOPMENT_TEAM = WJ53H49GSL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EatReal-v1-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "we need camera permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
