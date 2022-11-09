@@ -11,6 +11,7 @@ struct navBar: View {
   @State var buttonClicked : String = "home"
     var body: some View {
       HStack(alignment: .bottom) {
+        //home
         Button(action: {
           self.buttonClicked = "home"
         }) {
@@ -20,6 +21,7 @@ struct navBar: View {
         
         Spacer().frame(width: 35)
         
+        //notification
         Button(action: {
           self.buttonClicked = "bell"
         }) {
@@ -29,6 +31,7 @@ struct navBar: View {
         
         Spacer().frame(width: 35)
         
+        //post
         Button(action: {
           self.buttonClicked = "add"
         }) {
@@ -38,6 +41,7 @@ struct navBar: View {
         
         Spacer().frame(width: 35)
         
+        //friend
         Button(action: {
           self.buttonClicked = "friends"
         }) {
@@ -47,6 +51,7 @@ struct navBar: View {
         
         Spacer().frame(width: 35)
         
+        //profile
         Button(action: {
           self.buttonClicked = "profile"
         }) {
