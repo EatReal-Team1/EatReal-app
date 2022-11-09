@@ -12,22 +12,32 @@ struct navBar: View {
     var body: some View {
       HStack(alignment: .bottom) {
         //home
-        Button(action: {
-          self.buttonClicked = "home"
-        }) {
-          Image(self.buttonClicked == "home" ? "home-filled" : "home-outline").resizable()
-            .frame(width: 40.0, height: 40.0)
-        }
+          NavigationView{
+              Button(action: {
+                  self.buttonClicked = "home"
+                  NavigationLink(destination: ContentView()) {
+                                    
+              }) {
+                  Image(self.buttonClicked == "home" ? "home-filled" : "home-outline").resizable()
+                      .frame(width: 40.0, height: 40.0)
+              }
+              
+          }
         
         Spacer().frame(width: 35)
         
         //notification
-        Button(action: {
-          self.buttonClicked = "bell"
-        }) {
-          Image(self.buttonClicked == "bell" ? "bell-filled" : "bell-outline").resizable()
-            .frame(width: 40.0, height: 40.0)
-        }
+         // NavigationLink(destination: NotificationView()) {
+              Button(action: {
+                  self.buttonClicked = "bell"
+                  NotificationView()
+                  
+              }) {
+                  Image(self.buttonClicked == "bell" ? "bell-filled" : "bell-outline").resizable()
+                      .frame(width: 40.0, height: 40.0)
+              }
+          //   }
+        
         
         Spacer().frame(width: 35)
         
