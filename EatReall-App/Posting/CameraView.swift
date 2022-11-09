@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CameraView: View {
-  @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+  @State private var sourceType: UIImagePickerController.SourceType = .camera
   @State private var selectedImage: UIImage?
   @State private var isImagePickerDisplay = false
   var body: some View {
@@ -71,7 +71,6 @@ struct CameraView: View {
               
               Spacer()
               
-              
               NavigationLink(destination: LandingView()) {
                 Text("Post")
                   .padding(.horizontal, 30)
@@ -87,21 +86,6 @@ struct CameraView: View {
           } else {
             
             HStack(alignment: .bottom){
-              
-                //            Button(action: {
-                //              self.sourceType = .camera
-                //              selectedImage = nil
-                //            }) {
-                //              Text("X")
-                //                .padding(.horizontal, 30)
-                //                .font(.system(
-                //                  size: 35,
-                //                  weight: .bold,
-                //                  design: .default))
-                //                .foregroundColor(.white)
-                //            }
-                //
-                //            Spacer()
               
               Button(action: {
                 self.sourceType = .camera
