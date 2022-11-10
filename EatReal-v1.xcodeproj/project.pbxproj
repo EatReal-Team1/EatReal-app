@@ -14,6 +14,10 @@
 		C4A2E7BB2919E1CA00D15DE1 /* navBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7BA2919E1CA00D15DE1 /* navBar.swift */; };
 		C4A2E7BF2919EBDE00D15DE1 /* PostScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */; };
 		C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7C02919EFF700D15DE1 /* PostView.swift */; };
+		C4A2E7DE291B6FFF00D15DE1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C4A2E7DD291B6FFF00D15DE1 /* Alamofire */; };
+		C4A2E7E1291B712F00D15DE1 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7E0291B712F00D15DE1 /* LandingView.swift */; };
+		C4A2E7E4291B724200D15DE1 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7E3291B724200D15DE1 /* ImagePickerView.swift */; };
+		C4A2E7E6291B72D700D15DE1 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7E5291B72D700D15DE1 /* CameraView.swift */; };
 		CDE65761291AF7E000EA3CE8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681C7291AE34000AF8BFD /* ProfileView.swift */; };
 		CDE65765291AF89E00EA3CE8 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE65764291AF89E00EA3CE8 /* FriendView.swift */; };
 		CDE65769291B422A00EA3CE8 /* SearchFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE65768291B422A00EA3CE8 /* SearchFriendView.swift */; };
@@ -33,6 +37,9 @@
 		FCE4B8F1291B6BFA004ED90E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F0291B6BFA004ED90E /* User.swift */; };
 		FCE4B8F4291B6C23004ED90E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F3291B6C23004ED90E /* Post.swift */; };
 		FCE4B8F6291B6C3D004ED90E /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */; };
+		FCE4B8F9291B6E67004ED90E /* group_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE4B8F8291B6E67004ED90E /* group_pic.png */; };
+		FCE4B8FB291C542E004ED90E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8FA291C542E004ED90E /* Image.swift */; };
+		FCE4B8FD291C7EDA004ED90E /* image-placeholder.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FCE4B8FC291C7EDA004ED90E /* image-placeholder.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +51,9 @@
 		C4A2E7BA2919E1CA00D15DE1 /* navBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navBar.swift; sourceTree = "<group>"; };
 		C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScroll.swift; sourceTree = "<group>"; };
 		C4A2E7C02919EFF700D15DE1 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		C4A2E7E0291B712F00D15DE1 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		C4A2E7E3291B724200D15DE1 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		C4A2E7E5291B72D700D15DE1 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		CDE65764291AF89E00EA3CE8 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 		CDE65768291B422A00EA3CE8 /* SearchFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFriendView.swift; sourceTree = "<group>"; };
 		CDE681BD291AD77600AF8BFD /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -55,6 +65,9 @@
 		FCE4B8F0291B6BFA004ED90E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCE4B8F3291B6C23004ED90E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
+		FCE4B8F8291B6E67004ED90E /* group_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group_pic.png; sourceTree = "<group>"; };
+		FCE4B8FA291C542E004ED90E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		FCE4B8FC291C7EDA004ED90E /* image-placeholder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "image-placeholder.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A2E7DE291B6FFF00D15DE1 /* Alamofire in Frameworks */,
 				FCE4B8E2291B68EF004ED90E /* FirebaseDatabaseSwift in Frameworks */,
 				FCE4B8E0291B68EF004ED90E /* FirebaseDatabase in Frameworks */,
 				FCE4B8EA291B68EF004ED90E /* FirebaseStorageCombine-Community in Frameworks */,
@@ -95,8 +109,10 @@
 		C4A2E7AB2919DD8A00D15DE1 /* EatReall-App */ = {
 			isa = PBXGroup;
 			children = (
+				C4A2E7E2291B722F00D15DE1 /* Posting */,
+				C4A2E7DF291B711300D15DE1 /* Landing */,
+				FCE4B8F7291B6DEB004ED90E /* Resources */,
 				FCE4B8EB291B69A3004ED90E /* Models */,
-				C4A2E7C02919EFF700D15DE1 /* PostView.swift */,
 				C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */,
 				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
 				CDE65763291AF89200EA3CE8 /* Friend */,
@@ -117,6 +133,24 @@
 				C4A2E7B32919DD8B00D15DE1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C4A2E7DF291B711300D15DE1 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				C4A2E7C02919EFF700D15DE1 /* PostView.swift */,
+				C4A2E7E0291B712F00D15DE1 /* LandingView.swift */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		C4A2E7E2291B722F00D15DE1 /* Posting */ = {
+			isa = PBXGroup;
+			children = (
+				C4A2E7E3291B724200D15DE1 /* ImagePickerView.swift */,
+				C4A2E7E5291B72D700D15DE1 /* CameraView.swift */,
+			);
+			path = Posting;
 			sourceTree = "<group>";
 		};
 		CDE65763291AF89200EA3CE8 /* Friend */ = {
@@ -153,8 +187,18 @@
 				FCE4B8F0291B6BFA004ED90E /* User.swift */,
 				FCE4B8F3291B6C23004ED90E /* Post.swift */,
 				FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */,
+				FCE4B8FA291C542E004ED90E /* Image.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FCE4B8F7291B6DEB004ED90E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FCE4B8F8291B6E67004ED90E /* group_pic.png */,
+				FCE4B8FC291C7EDA004ED90E /* image-placeholder.jpeg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +226,7 @@
 				FCE4B8E5291B68EF004ED90E /* FirebaseFirestoreSwift */,
 				FCE4B8E7291B68EF004ED90E /* FirebaseStorage */,
 				FCE4B8E9291B68EF004ED90E /* FirebaseStorageCombine-Community */,
+				C4A2E7DD291B6FFF00D15DE1 /* Alamofire */,
 			);
 			productName = "EatReall-App";
 			productReference = C4A2E7A92919DD8A00D15DE1 /* EatReal-v1.app */;
@@ -213,6 +258,7 @@
 			mainGroup = C4A2E7A02919DD8A00D15DE1;
 			packageReferences = (
 				FCE4B8DA291B68EF004ED90E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C4A2E7DC291B6FFE00D15DE1 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = C4A2E7AA2919DD8A00D15DE1 /* Products */;
 			projectDirPath = "";
@@ -228,6 +274,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE4B8FD291C7EDA004ED90E /* image-placeholder.jpeg in Resources */,
+				FCE4B8F9291B6E67004ED90E /* group_pic.png in Resources */,
 				C4A2E7B42919DD8B00D15DE1 /* Preview Assets.xcassets in Resources */,
 				FCE4B8EF291B6BC1004ED90E /* GoogleService-Info.plist in Resources */,
 				C4A2E7B12919DD8B00D15DE1 /* Assets.xcassets in Resources */,
@@ -244,7 +292,9 @@
 				FCE4B8F1291B6BFA004ED90E /* User.swift in Sources */,
 				CDE681C2291ADA8000AF8BFD /* SingleNotificationView.swift in Sources */,
 				CDE65761291AF7E000EA3CE8 /* ProfileView.swift in Sources */,
+				C4A2E7E6291B72D700D15DE1 /* CameraView.swift in Sources */,
 				C4A2E7BB2919E1CA00D15DE1 /* navBar.swift in Sources */,
+				C4A2E7E1291B712F00D15DE1 /* LandingView.swift in Sources */,
 				CDE65769291B422A00EA3CE8 /* SearchFriendView.swift in Sources */,
 				FCE4B8F4291B6C23004ED90E /* Post.swift in Sources */,
 				CDE681C0291AD7BD00AF8BFD /* NotificationScroll.swift in Sources */,
@@ -252,10 +302,12 @@
 				FCE4B8ED291B69B3004ED90E /* Firebase.swift in Sources */,
 				CDE681BE291AD77600AF8BFD /* NotificationView.swift in Sources */,
 				C4A2E7AF2919DD8A00D15DE1 /* ContentView.swift in Sources */,
+				FCE4B8FB291C542E004ED90E /* Image.swift in Sources */,
 				FCE4B8F6291B6C3D004ED90E /* FriendRequest.swift in Sources */,
 				C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */,
 				CDE65765291AF89E00EA3CE8 /* FriendView.swift in Sources */,
 				C4A2E7AD2919DD8A00D15DE1 /* EatReall_AppApp.swift in Sources */,
+				C4A2E7E4291B724200D15DE1 /* ImagePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +510,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C4A2E7DC291B6FFE00D15DE1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		FCE4B8DA291B68EF004ED90E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -469,6 +529,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C4A2E7DD291B6FFF00D15DE1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4A2E7DC291B6FFE00D15DE1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		FCE4B8DB291B68EF004ED90E /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FCE4B8DA291B68EF004ED90E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
