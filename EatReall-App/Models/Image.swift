@@ -33,11 +33,11 @@ class StoredImage {
     
     let uploadRef = Storage.storage().reference(withPath: "\(path).jpg")
     guard let imageData = image.jpegData(compressionQuality: 0.75) else {
-      self.image = UIImage(named: "example/image-placeholder.jpeg")
+      self.image = UIImage(named: "image-placeholder.jpeg")
       return
     }
     let uploadMetadata = StorageMetadata.init()
-    uploadMetadata.contentType = "image/jpeg"
+    uploadMetadata.contentType = "image/heic"
 
     uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
       if let error = error {
