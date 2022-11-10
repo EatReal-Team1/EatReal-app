@@ -30,7 +30,7 @@ func firebaseDemo() {
         users.append(user)
       }
     }
-    print("Users")
+    print("Users: \(users.count)")
     for user in users {
       print("display_name: \(user.display_name)")
       print("username: \(user.username)")

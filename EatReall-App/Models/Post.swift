@@ -49,8 +49,6 @@ class Post {
       let author = value["author"] as? NSDictionary,
       let food_photo_path = value["food_photo"] as? String,
       let selfie_photo_path = value["selfie_photo"] as? String,
-//      let food_photo = self.fetchImage(path: food_photo_path, category: .post) as? UIImage,
-//      let selfie_photo = self.fetchImage(path: selfie_photo_path, category: .reaction) as? UIImage,
       let review_restaurant = value["review_restaurant"] as? String,
       let review_dish = value["review_dish"] as? String,
       let review_comment = value["review_comment"] as? String,
