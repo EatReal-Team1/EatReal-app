@@ -25,6 +25,7 @@ struct FormView: View {
   @State private var rating:Int = 4
   
   @State private var submitted = false
+  @State private var exit = false
   var body: some View {
     ZStack {
       Color.black
@@ -33,7 +34,6 @@ struct FormView: View {
       
       VStack {
         HStack{
-          NavigationLink(destination: AddReview()) {
             Text("Add Review")
               .padding(.horizontal, 50)
               .font(.system(
@@ -41,17 +41,23 @@ struct FormView: View {
                 weight: .semibold,
                 design: .default))
               .foregroundColor(.white)
-          }.frame(height: 100.0)
           
           Spacer()
           
-          Text("X")
-            .padding(.horizontal, 30)
-            .font(.system(
-              size: 35,
-              weight: .bold,
-              design: .default))
-            .foregroundColor(.white)
+          Button(action: {
+            exit = true
+          }){
+            Text("X")
+              .padding(.horizontal, 30)
+              .font(.system(
+                size: 35,
+                weight: .bold,
+                design: .default))
+              .foregroundColor(.white)
+          }
+          NavigationLink("", destination:  LandingView(), isActive: $submitted).navigationBarBackButtonHidden(true)
+          
+          NavigationLink("", destination:  AddReview(), isActive: $exit).navigationBarBackButtonHidden(true)
         }
         
         VStack {
@@ -91,7 +97,7 @@ struct FormView: View {
         
       }
     }
-    NavigationLink("", destination:  LandingView(), isActive: $submitted).navigationBarBackButtonHidden(true)
+    
   }
 }
 
