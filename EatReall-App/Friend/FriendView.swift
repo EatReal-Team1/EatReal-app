@@ -11,7 +11,6 @@ struct FriendView: View {
     var body: some View {
       VStack{
         Logo()
-        
         SearchFriendView()
         Spacer()
         navBar()
