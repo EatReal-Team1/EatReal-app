@@ -18,7 +18,7 @@ struct postButton: View {
             Image(self.buttonClicked == "add" ? "add-new-filled" : "add-new-outline").resizable()
                 .frame(width: 40.0, height: 40.0)
         }
-        NavigationLink("", destination:  PostView(), isActive: $showPostView).navigationBarBackButtonHidden(true)
+        NavigationLink("", destination:  CameraView(), isActive: $showPostView).navigationBarBackButtonHidden(true)
     }
 }
 
