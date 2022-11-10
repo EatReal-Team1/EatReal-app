@@ -9,22 +9,19 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-      VStack{
-          HStack{
-              Image("logo").resizable()
-                  .frame(width: 115.0, height: 70.0)
-              Spacer()
-          }
-          Spacer()
-         Image("Profile").resizable()
-              .frame(width: 200, height: 200)
-          Text(" ")
-          Text("Leanne Sun").font(Font.custom("Helvetica Neue", size: 40.0))
-          Text("Username: leannesxh14").font(Font.custom("Helvetica Neue", size: 20))
-          Spacer()
-         
-        navBar()
-      }
+
+            VStack{
+                Logo()
+                Spacer()
+                Image("Profile").resizable()
+                    .frame(width: 200, height: 200)
+                Text(" ")
+                Text("Leanne Sun").font(Font.custom("Helvetica Neue", size: 40.0))
+                Text("Username: leannesxh14").font(Font.custom("Helvetica Neue", size: 20))
+                Spacer()
+                navBar()
+            }
+
     }
 }
 
