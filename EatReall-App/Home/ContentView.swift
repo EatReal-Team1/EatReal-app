@@ -9,15 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-      VStack{
-        HStack{
-          Image("logo").resizable()
-            .frame(width: 115.0, height: 70.0)
-          Spacer()
+        NavigationView {
+            VStack{
+                Logo()
+                PostScroll()
+        
+                navBar()
+            }
         }
-        PostScroll()
-        navBar()
-      }
     }
 }
 
