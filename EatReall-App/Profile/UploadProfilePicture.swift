@@ -18,32 +18,37 @@ struct UploadProfilePicture: View {
     //        return nil
     //      }
     //    }
-    
+    @State private var isShowPhotoLibrary = false
+    @State private var image = UIImage()
     
     var body: some View {
-        VStack{
-            Text("Upload Profile Picture").font(Font.custom("Helvetica Neue", size: 30.0))
-            //Button to upload picture
-            // displayImage?.resizable().scaledToFit().padding()
-            Button(action: {
-                // self.showImagePicker = true
-            }) {
-                Text("Upload Picture")
-            }.padding()
-            Spacer()
-            //        }
-            //      .sheet(isPresented: $showImagePicker) {
-            //        PhotoCaptureView(showImagePicker: self.$showImagePicker, image: self.$image)
-            //      }
-            //      .navigationBarTitle("New Contact")
-            //      .navigationBarItems(trailing:
-            //        Button(action: {
-            //          self.viewModel.saveContact(name: self.name, phone: self.phone, email: self.email, picture: self.image)
-            //        }) {
-            //          Text("Done")
-            //        }
-            //      )
-        }
+        VStack {
+            Text("Profile Picture").font(Font.custom("Helvetica Neue", size: 30.0))
+         
+                    Image(uiImage: self.image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .edgesIgnoringSafeArea(.all)
+         
+                    Button(action: {
+                        self.isShowPhotoLibrary = true
+                    }) {
+                        HStack {
+                            Image(systemName: "photo")
+                                .font(.system(size: 20))
+         
+                            Text("Photo library")
+                                .font(.headline)
+                        }
+                        .bold()
+                        .font(Font.custom("Helvetica Neue", size: 25.0))
+                        .padding(15)
+                        .foregroundColor(Color.white)
+                        .background(Color.black)
+                        .cornerRadius(5)
+                    }
+                }
         
         //    func buttonText() -> String {
         //        return image == nil ? "Add Picture" : "Change Picture"

@@ -21,6 +21,8 @@ struct ProfileView: View {
                 Text("Leanne Sun").font(Font.custom("Helvetica Neue", size: 40.0))
                 Text("Username: leannesxh14").font(Font.custom("Helvetica Neue", size: 20))
                 Spacer()
+                
+                
                 navBar()
             }
 
