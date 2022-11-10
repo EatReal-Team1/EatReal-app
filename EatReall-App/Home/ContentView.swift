@@ -13,7 +13,6 @@ struct ContentView: View {
             VStack{
                 Logo()
                 PostScroll()
-        
                 navBar()
             }
         }

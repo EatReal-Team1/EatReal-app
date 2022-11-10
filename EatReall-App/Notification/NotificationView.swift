@@ -10,11 +10,7 @@ import SwiftUI
 struct NotificationView: View {
     var body: some View {
       VStack{
-        HStack{
-          Image("logo").resizable()
-            .frame(width: 115.0, height: 70.0)
-          Spacer()
-        }
+        Logo()
         NotificationScroll()
         navBar()
       }
