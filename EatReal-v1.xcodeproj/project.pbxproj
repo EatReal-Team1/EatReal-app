@@ -38,6 +38,8 @@
 		FCE4B8F4291B6C23004ED90E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F3291B6C23004ED90E /* Post.swift */; };
 		FCE4B8F6291B6C3D004ED90E /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */; };
 		FCE4B8F9291B6E67004ED90E /* group_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE4B8F8291B6E67004ED90E /* group_pic.png */; };
+		FCE4B8FB291C542E004ED90E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8FA291C542E004ED90E /* Image.swift */; };
+		FCE4B8FD291C7EDA004ED90E /* image-placeholder.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FCE4B8FC291C7EDA004ED90E /* image-placeholder.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		FCE4B8F3291B6C23004ED90E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
 		FCE4B8F8291B6E67004ED90E /* group_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group_pic.png; sourceTree = "<group>"; };
+		FCE4B8FA291C542E004ED90E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		FCE4B8FC291C7EDA004ED90E /* image-placeholder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "image-placeholder.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,7 @@
 				FCE4B8F0291B6BFA004ED90E /* User.swift */,
 				FCE4B8F3291B6C23004ED90E /* Post.swift */,
 				FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */,
+				FCE4B8FA291C542E004ED90E /* Image.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE4B8F8291B6E67004ED90E /* group_pic.png */,
+				FCE4B8FC291C7EDA004ED90E /* image-placeholder.jpeg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE4B8FD291C7EDA004ED90E /* image-placeholder.jpeg in Resources */,
 				FCE4B8F9291B6E67004ED90E /* group_pic.png in Resources */,
 				C4A2E7B42919DD8B00D15DE1 /* Preview Assets.xcassets in Resources */,
 				FCE4B8EF291B6BC1004ED90E /* GoogleService-Info.plist in Resources */,
@@ -295,6 +302,7 @@
 				FCE4B8ED291B69B3004ED90E /* Firebase.swift in Sources */,
 				CDE681BE291AD77600AF8BFD /* NotificationView.swift in Sources */,
 				C4A2E7AF2919DD8A00D15DE1 /* ContentView.swift in Sources */,
+				FCE4B8FB291C542E004ED90E /* Image.swift in Sources */,
 				FCE4B8F6291B6C3D004ED90E /* FriendRequest.swift in Sources */,
 				C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */,
 				CDE65765291AF89E00EA3CE8 /* FriendView.swift in Sources */,
