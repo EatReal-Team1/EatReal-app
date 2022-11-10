@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SingleNotificationView: View {
+  @State private var showReviewPage = false
+  
     var body: some View {
 
 
@@ -25,7 +27,9 @@ struct SingleNotificationView: View {
                 // need to add an action
 
                     
-                    Button(action: {})
+                    Button(action: {
+                      showReviewPage = true
+                    })
                     {
                         Text("Add a Review")
                             .bold()
@@ -43,6 +47,7 @@ struct SingleNotificationView: View {
 
                 
             }
+      NavigationLink("", destination:  AddReview(), isActive: $showReviewPage).navigationBarBackButtonHidden(true)
     }
 }
 
