@@ -35,7 +35,7 @@ struct RatingReview: View {
               rating = number
             }
         }
-      }.frame(height: 100.0)
+      }.frame(height: 40.0)
     }
     
   
