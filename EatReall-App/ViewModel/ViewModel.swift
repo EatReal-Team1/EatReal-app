@@ -16,6 +16,9 @@ class ViewModel: ObservableObject {
   
   @Published var postList: [Post]
   @Published var numPosts: Int
+  @Published var userList: [User]
+  @Published var numUsers: Int
+  @Published var currentUser: PreviewUser
   
 //  var rootRef: DatabaseReference! = Database.database().reference()
   
@@ -23,19 +26,22 @@ class ViewModel: ObservableObject {
     self.rootRef = FirebaseDatabase.Database.database().reference()
     self.postList = []
     self.numPosts = 0
+    self.userList = []
+    self.numUsers = 0
+    self.currentUser = PreviewUser(display_name: "fake user", profile_picture: "placeholder-profile-img")
     
-    loadAllPosts()
+    self.loadAllPosts()
   }
 
 
   func savePost(){
     if let post = self.selectedPost {
-      rootRef.child("posts").updateChildValues(
+      rootRef.child("Posts").child(String(self.numPosts)).setValue(
         [
           "address": post.address,
-          "author_id": post.author,
-          "food_photo": post.food_photo,
-          "selfie_photo": post.selfie_photo,
+          "author_id": "0",
+          "food_photo": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
+          "selfie_photo": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
           "review_restaurant": post.review_restaurant,
           "review_dish": post.review_dish,
           "review_comment": post.review_comment,
@@ -54,6 +60,17 @@ class ViewModel: ObservableObject {
            let post = Post(snapshot: snapshot) {
           self.postList.append(post)
           self.numPosts += 1
+        }
+      }
+    })
+  }
+  
+  func loadUser() {
+    rootRef.child("Users").observe(.value, with: { snapshot in
+      for child in snapshot.children {
+        if let snapshot = child as? DataSnapshot,
+           let user = User(snapshot: snapshot) {
+          self.userList.append(user)
         }
       }
     })

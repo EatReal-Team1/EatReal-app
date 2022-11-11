@@ -12,6 +12,7 @@ struct PostScroll: View {
     @ObservedObject var viewModel: ViewModel = ViewModel()
   
     var body: some View {
+      
       ScrollView() {
         VStack(spacing: 20) {
           ForEach (viewModel.postList) { post in

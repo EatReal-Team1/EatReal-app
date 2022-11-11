@@ -10,6 +10,7 @@ import SwiftUI
 struct EmbeddedCameraView: UIViewControllerRepresentable {
   typealias UIViewControllerType = UIImagePickerController
   @Binding var selectedImage: UIImage?
+  @ObservedObject var viewModel: ViewModel = ViewModel()
   
   func makeUIViewController(context: Context) -> UIViewControllerType {
     let viewController = UIViewControllerType()
@@ -43,6 +44,9 @@ extension EmbeddedCameraView {
       if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         self.parent.selectedImage = image
+        self.parent.viewModel.selectedPost = Post(address: " ", author: self.parent.viewModel.currentUser, food_photo: image, review_restaurant: " ")
+        self.parent.viewModel.numPosts += 1
+        self.parent.viewModel.savePost()
       }
     }
   }
