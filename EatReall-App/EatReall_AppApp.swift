@@ -33,6 +33,7 @@ struct EatReall_AppApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
+        .environmentObject(ViewModel())
     }
   }
 }
