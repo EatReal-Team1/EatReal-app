@@ -71,14 +71,23 @@ extension User: Equatable {
   }
 }
 
-struct PreviewUser: Codable {
+class PreviewUser: Codable {
 //  let id: UUID
   let display_name: String
   let profile_picture: String
+  var followers: [String]
+  var following: [String]
 
   init(display_name: String, profile_picture: String){
     self.display_name = display_name
     self.profile_picture = profile_picture
+    self.followers = []
+    self.following = []
+  }
+  
+  func sendFriendRequest(to_user: String) {
+      // V1 doesn't need approval
+    self.following.append(to_user)
   }
 }
 
