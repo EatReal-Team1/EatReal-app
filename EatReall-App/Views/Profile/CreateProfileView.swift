@@ -8,16 +8,24 @@
 import SwiftUI
 
 struct CreateProfileView: View {
+    @State private var showProfile = false
     var body: some View {
+        NavigationView{
+        
             VStack(){
-               
-                    Logo()
-                    
                 
-                    Spacer().frame(height: 20)
-                    Text("Create Profile").font(Font.custom("Helvetica Neue", size: 40.0))
+                
+                Logo()
+                
+                
+                Spacer().frame(height: 20)
+                Text("Create Profile").font(Font.custom("Helvetica Neue", size: 40.0)).bold()
+                
+                Divider().frame(width: 300).background(Color.black).frame(height: 5)
+                Spacer().frame(height: 20)
+                
+                
                 ScrollView(){
-                    Spacer().frame(height: 100)
                     
                     UploadProfilePicture()
                     
@@ -35,22 +43,26 @@ struct CreateProfileView: View {
                         Spacer()
                         Button(action: {
                             //save
+                            showProfile = true
                         }) {
-                            Text("Save")
+                            Text("Save").bold()
+                                .font(Font.custom("Helvetica Neue", size: 25.0))
+                                .padding(15)
+                                .foregroundColor(Color.white)
+                                .background(Color.black)
+                                .cornerRadius(5)
                         }
-                        .bold()
-                        .font(Font.custom("Helvetica Neue", size: 25.0))
-                        .padding(15)
-                        .foregroundColor(Color.white)
-                        .background(Color.black)
-                        .cornerRadius(5)
+                        NavigationLink("", destination:  ProfileView(), isActive: $showProfile).navigationBarBackButtonHidden(true)
                         Spacer().frame(width: 10)
+                        
                     }
                 }
+                
                 navBar()
             }
         }
     }
+}
 
 struct CreateProfileView_Previews: PreviewProvider {
     static var previews: some View {
