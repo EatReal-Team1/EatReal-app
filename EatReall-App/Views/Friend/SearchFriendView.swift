@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchFriendView: View {
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     @State private var username: String = ""
     
         var body: some View {
@@ -22,7 +23,9 @@ struct SearchFriendView: View {
                 
                 Spacer()
                 Button(action: {
-                    //send request
+                  viewModel.currentUser.sendFriendRequest(to_user: username)
+                  username = ""
+                  viewModel.updateUser()
                 }){
                     Text("Follow")
                         .bold()

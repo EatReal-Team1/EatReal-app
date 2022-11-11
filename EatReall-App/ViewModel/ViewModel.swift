@@ -27,7 +27,7 @@ class ViewModel: ObservableObject {
     self.postList = []
     self.numPosts = 0
     self.userList = []
-    self.numUsers = 0
+    self.numUsers = 1
     self.currentUser = PreviewUser(display_name: "fake user", profile_picture: "placeholder-profile-img")
     
     self.loadAllPosts()
@@ -53,6 +53,22 @@ class ViewModel: ObservableObject {
     }
   }
   
+  func updateUser() {
+    let user = self.currentUser
+    rootRef.child("Users").child(String(self.numUsers)).setValue(
+      [
+        "display_name": user.display_name,
+        "username": user.display_name,
+        "profile_picture": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
+        "followers": user.followers,
+        "following": user.following,
+        "saved_posts":[],
+        "search_history": [],
+        "recent_posts":[]
+      ]
+    )
+  }
+  
   func loadAllPosts() {
     rootRef.child("Posts").observe(.value, with: { snapshot in
       for child in snapshot.children {
@@ -71,6 +87,7 @@ class ViewModel: ObservableObject {
         if let snapshot = child as? DataSnapshot,
            let user = User(snapshot: snapshot) {
           self.userList.append(user)
+          self.numUsers += 1
         }
       }
     })
