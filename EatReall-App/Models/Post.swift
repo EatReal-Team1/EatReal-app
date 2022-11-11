@@ -71,9 +71,10 @@ class Post: Identifiable {
     self.likes = likes
   }
 
-  func addReview(selfie_photo: UIImage, review_dish: String, review_comment: String, review_stars: Double) {
+  func addReview(selfie_photo: UIImage, review_restaurant: String, review_dish: String, review_comment: String, review_stars: Double) {
     let stored_selfie_photo = StoredImage(image: selfie_photo, contentType: "reaction")
     self.selfie_photo = stored_selfie_photo
+    self.review_restaurant = review_restaurant
     self.review_dish = review_dish
     self.review_comment = review_comment
     self.review_stars = review_stars

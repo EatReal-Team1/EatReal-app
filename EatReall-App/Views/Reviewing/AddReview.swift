@@ -11,6 +11,7 @@ struct AddReview: View {
   @State private var selectedImage: UIImage?
   @State private var isImagePickerDisplay = false
   @State private var showReviewForm = false
+  @State private var selfie: UIImage = UIImage()
   
     var body: some View {
       NavigationView{
@@ -67,6 +68,9 @@ struct AddReview: View {
               
               Button(action: {
                 showReviewForm = true
+                if let img = selectedImage {
+                  selfie = img
+                }
               })  {
                 Text("Camera")
                   .padding(.horizontal, 30)
@@ -77,7 +81,7 @@ struct AddReview: View {
                   .foregroundColor(.white)
               }
               
-              NavigationLink("", destination:  FormView(), isActive: $showReviewForm).navigationBarBackButtonHidden(true)
+              NavigationLink("", destination:  FormView(selfie_photo: $selfie), isActive: $showReviewForm).navigationBarBackButtonHidden(true)
               
               Spacer()
             }

@@ -26,6 +26,9 @@ struct FormView: View {
   
   @State private var submitted = false
   @State private var exit = false
+  @Binding var selfie_photo: UIImage
+  @ObservedObject var viewModel: ViewModel = ViewModel()
+
   var body: some View {
     ZStack {
       Color.black
@@ -100,12 +103,14 @@ struct FormView: View {
         
         Spacer().frame(height:10)
         
-        TextReview()
+        TextReview(restaurant: $restaurant, dishes: $dishes, review: $review)
         
         RatingReview(rating: $rating)
         
         Button(action: {
           self.submitted = true
+          viewModel.selectedPost?.addReview(selfie_photo: selfie_photo, review_restaurant: restaurant, review_dish: dishes, review_comment: review, review_stars: Double(rating))
+          
         })  {
           Text("Share")
             .padding(.horizontal, 30)
@@ -121,9 +126,9 @@ struct FormView: View {
     
   }
 }
-
-struct FormView_Previews: PreviewProvider {
-    static var previews: some View {
-        FormView()
-    }
-}
+//
+//struct FormView_Previews: PreviewProvider {
+//    static var previews: some View {
+//      FormView(selfie_photo: $selfie_photo)
+//    }
+//}

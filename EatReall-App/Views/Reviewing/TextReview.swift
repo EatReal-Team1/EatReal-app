@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct TextReview: View {
-  @State private var restaurant = ""
-  @State private var dishes = ""
-  @State private var review = ""
+  @Binding var restaurant: String
+  @Binding var dishes: String
+  @Binding var review: String
   @State private var displayed = false
     var body: some View {
       
@@ -51,8 +51,8 @@ struct TextReview: View {
     }
 }
 
-struct TextReview_Previews: PreviewProvider {
-    static var previews: some View {
-        TextReview()
-    }
-}
+//struct TextReview_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TextReview()
+//    }
+//}
