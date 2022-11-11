@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct PostScroll: View {
+  
+    @ObservedObject var viewModel: ViewModel = ViewModel()
+  
     var body: some View {
       ScrollView() {
         VStack(spacing: 20) {
-          ForEach(0..<10) {_ in
-            PostView()
+          ForEach (viewModel.postList) { post in
+            PostView(post: .constant(post))
           }
         }
       }
