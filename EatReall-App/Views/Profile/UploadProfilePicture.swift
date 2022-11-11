@@ -18,7 +18,7 @@ struct UploadProfilePicture: View {
     //        return nil
     //      }
     //    }
-    @State private var sourceType: UIImagePickerController.SourceType = .camera
+    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
     
@@ -45,21 +45,21 @@ struct UploadProfilePicture: View {
             
             HStack{
                 Spacer()
-                Button(action: {
-                  self.sourceType = .camera
-                  self.isImagePickerDisplay.toggle()
-                }) {
-                    Image(systemName: "camera")
-                        .font(.system(size: 20))
-
-                  Text("Camera").font(.headline)
-                }
-                .bold()
-                .font(Font.custom("Helvetica Neue", size: 25.0))
-                .padding(15)
-                .foregroundColor(Color.white)
-                .background(Color.black)
-                .cornerRadius(5)
+//                Button(action: {
+//                  self.sourceType = .camera
+//                  self.isImagePickerDisplay.toggle()
+//                }) {
+//                    Image(systemName: "camera")
+//                        .font(.system(size: 20))
+//
+//                  Text("Camera").font(.headline)
+//                }
+//                .bold()
+//                .font(Font.custom("Helvetica Neue", size: 25.0))
+//                .padding(15)
+//                .foregroundColor(Color.white)
+//                .background(Color.black)
+//                .cornerRadius(5)
                 Spacer()
                 Button(action: {
                     self.sourceType = .photoLibrary
