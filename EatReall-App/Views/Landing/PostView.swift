@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PostView: View {
+  @Binding var post: Post
   let radius: CGFloat = 100
   var offset: CGFloat {
     sqrt(radius * radius / 2)
@@ -42,18 +43,18 @@ struct PostView: View {
         Spacer().frame(height: 30)
         
         HStack{
-          Image("placeholder-profile-img").resizable()
+          Image(post.author.profile_picture).resizable()
             .frame(width: 30.0, height: 30.0)
-          Text("Leanne Sun")
+          Text(post.author.display_name)
           Spacer()
         }
         .padding(.horizontal, 12)
         
-        Text("Dha Rae Oak - Downtown LA")
+        Text(post.address)
           .frame(width: .infinity)
           .padding(.horizontal, 12)
         
-        Text("The duck was juicy and tender. 100% recommend!")
+        Text(post.review_comment)
           .font(.footnote)
           .frame(width: .infinity)
           .padding(.horizontal, 12)
@@ -63,8 +64,8 @@ struct PostView: View {
     }
 }
 
-struct PostView_Previews: PreviewProvider {
-    static var previews: some View {
-        PostView()
-    }
-}
+//struct PostView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PostView()
+//    }
+//}

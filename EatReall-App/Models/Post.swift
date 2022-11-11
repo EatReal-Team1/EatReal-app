@@ -14,7 +14,7 @@ import Foundation
 let placeholder = UIImage(named: "image-placeholder.jpeg")!
 let stored_placeholder = StoredImage(path: "example/image-placeholder.jpeg")
 // Observable?
-class Post {
+class Post: Identifiable {
   var address: String
   var author: PreviewUser
   var food_photo: StoredImage
@@ -80,4 +80,12 @@ class Post {
     self.reviewed = true
   }
   
+}
+
+class PostList {
+  @Published var items: [Post]
+  
+  init(items: [Post]) {
+    self.items = items
+  }
 }
