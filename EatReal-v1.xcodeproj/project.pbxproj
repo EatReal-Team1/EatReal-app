@@ -211,9 +211,9 @@
 				CDE681C3291AE10B00AF8BFD /* Notification */,
 				CDE681C8291AE40200AF8BFD /* Profile */,
 				CDF4D138291CA48B0071F603 /* Navigation */,
+				C4A2E7DF291B711300D15DE1 /* Landing */,
 				C4A2E801291D84DF00D15DE1 /* Reviewing */,
 				C4A2E7E2291B722F00D15DE1 /* Posting */,
-				C4A2E7DF291B711300D15DE1 /* Landing */,
 			);
 			path = Views;
 			sourceTree = "<group>";

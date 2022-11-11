@@ -11,7 +11,7 @@ struct ProfileView: View {
     
     var body: some View {
         
-
+            
             VStack{
                 Logo()
                 Spacer()
@@ -25,7 +25,8 @@ struct ProfileView: View {
                 
                 navBar()
             }
-
+            
+        
     }
 }
 
