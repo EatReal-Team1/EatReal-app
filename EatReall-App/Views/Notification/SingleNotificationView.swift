@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SingleNotificationView: View {
+  @ObservedObject var viewModel: ViewModel = ViewModel()
   @State private var showReviewPage = false
   
     var body: some View {
@@ -53,8 +54,8 @@ struct SingleNotificationView: View {
 
 
 
-struct SingleNotificationView_Previews: PreviewProvider {
-    static var previews: some View {
-        SingleNotificationView()
-    }
-}
+//struct SingleNotificationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SingleNotificationView()
+//    }
+//}

@@ -26,7 +26,7 @@ struct FormView: View {
   
   @State private var submitted = false
   @State private var exit = false
-  @Binding var selfie_photo: UIImage
+  var selfie_photo: UIImage
   @ObservedObject var viewModel: ViewModel = ViewModel()
 
   var body: some View {
