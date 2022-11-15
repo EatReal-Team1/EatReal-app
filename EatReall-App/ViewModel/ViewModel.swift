@@ -13,6 +13,7 @@ class ViewModel: ObservableObject {
   @Published var image: UIImage?
   @Published var showPicker = false
   @Published var selectedPost: Post?
+  @Published var reviewingPost: Post?
   
   @Published var postList: [Post]
   @Published var numPosts: Int
@@ -91,6 +92,21 @@ class ViewModel: ObservableObject {
         }
       }
     })
+  }
+  
+  func postsNeedReview() -> [Post] {
+    var res: [Post] = []
+    rootRef.child("Posts").observe(.value, with: { snapshot in
+      for child in snapshot.children {
+        if let snapshot = child as? DataSnapshot,
+           let post = Post(snapshot: snapshot) {
+          if post.reviewed == false {
+            res.append(post)
+          }
+        }
+      }
+    })
+    return res
   }
   
   
