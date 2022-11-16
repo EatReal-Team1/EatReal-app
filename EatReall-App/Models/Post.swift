@@ -15,6 +15,7 @@ let placeholder = UIImage(named: "image-placeholder.jpeg")!
 let stored_placeholder = StoredImage(path: "example/image-placeholder.jpeg")
 // Observable?
 class Post: Identifiable {
+//  var id: UUID
   var address: String
   var author: PreviewUser
   var food_photo: StoredImage
@@ -25,8 +26,10 @@ class Post: Identifiable {
   var review_stars: Double
   var reviewed: Bool
   var likes: Int
+//  let rootRef = Database.database().reference()
 
-  init(address: String, author: PreviewUser, food_photo: UIImage, review_restaurant: String, selfie_photo: UIImage = placeholder, review_dish: String = "", review_comment: String = "", review_stars: Double = 0.0, reviewed: Bool = false) {
+  init(address: String, author: PreviewUser, food_photo: UIImage, review_restaurant: String, selfie_photo: UIImage = placeholder, review_dish: String = "", review_comment: String = "Your friend has not left any comments yet.", review_stars: Double = 0.0, reviewed: Bool = false) {
+//    self.id = UUID()
     self.address = address
     self.author = author
     let stored_food_photo = StoredImage(image: food_photo, contentType: "post")
@@ -40,11 +43,31 @@ class Post: Identifiable {
     self.review_stars = review_stars
     self.reviewed = reviewed
     self.likes = 0
+//
+//    guard let key = rootRef.child("Posts").childByAutoId().key else { return }
+//    let post = [
+//                "id": id,
+//                "address": address,
+//                "author": author,
+//                "food_photo": stored_food_photo.path,
+//                "review_restaurant": review_restaurant,
+//                "selfie_photo": selfie_photo,
+//                "review_dish": review_dish,
+//                "review_comment": review_comment,
+//                "review_stars": review_stars,
+//                "reviewed": reviewed
+//               ] as [String : Any]
+//    let childUpdates = ["/posts/\(key)": post]
+//// For updating other fieds
+////                        "/user-posts/\(userID)/\(key)/": post
+//    rootRef.updateChildValues(childUpdates)
+    
   }
 
   init?(snapshot: DataSnapshot) {
     guard
       let value = snapshot.value as? NSDictionary,
+//      let id = value["id"] as? UUID,
       let address = value["address"] as? String,
       let author = value["author"] as? NSDictionary,
       let food_photo_path = value["food_photo"] as? String,
@@ -58,6 +81,7 @@ class Post: Identifiable {
     else {
       return nil
     }
+//    self.id = id
     self.address = address
     self.author = PreviewUser(display_name: author["display_name"] as! String,
                               profile_picture: author["profile_picture"] as! String)
@@ -79,6 +103,7 @@ class Post: Identifiable {
     self.review_comment = review_comment
     self.review_stars = review_stars
     self.reviewed = true
+//    self.rootRef.child("Posts").child(self.id).setValue(["selfie_photo": stored_selfie_photo.path])
   }
   
 }

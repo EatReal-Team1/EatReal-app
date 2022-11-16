@@ -17,21 +17,23 @@ class StoredImage {
   
   init(path: String) {
     self.path = path
-    fetchImage(path: path)
+    fetchImage(path: path) { (result) in
+      self.image = result
+    }
   }
   
   init(image: UIImage, contentType: String){
     self.image = image
     let randomID = UUID.init().uuidString
-    self.path = "\(contentType)/\(randomID).jpg"
-    uploadImage(path: path, image: image)
+//    self.path = "\(contentType)/\(randomID).jpg"
+    self.path = "\(contentType)/\(randomID)"
+    uploadImage(path: self.path, image: image)
     
   }
-  
-  // placing it here for now. will be refactored later
+
   func uploadImage(path: String, image: UIImage) {
-    
-    let uploadRef = Storage.storage().reference(withPath: "\(path).jpg")
+    print("path: \(path)")
+    let uploadRef = Storage.storage().reference(withPath: "\(path)")
     guard let imageData = image.jpegData(compressionQuality: 0.75) else {
       self.image = UIImage(named: "image-placeholder.jpeg")
       return
@@ -49,15 +51,31 @@ class StoredImage {
     }
   }
   
-  func fetchImage(path: String){
-    let storageRef = Storage.storage().reference(withPath: path)
-    storageRef.getData(maxSize: 4*1024*1024) { (data, error) in
+//  func fetchImage(path: String){
+//    let storageRef = Storage.storage().reference(withPath: self.path)
+////    let storageRef = Storage.storage().child(path)
+//    storageRef.getData(maxSize: 4*1024*1024) { (data, error) in
+//      if let error = error {
+//        print("Got and error fetching data: \(error.localizedDescription)")
+//        return
+//      }
+//      if let data = data {
+//        print("fetching image: \(self.path)")
+//        self.image = UIImage(data: data)
+//      }
+//    }
+//  }
+  func fetchImage(path: String, completionHandler: @escaping (UIImage) -> Void){
+    let storageRef = Storage.storage().reference(withPath: self.path)
+    storageRef.getData(maxSize: 1*1024*1024) { (data, error) in
       if let error = error {
         print("Got and error fetching data: \(error.localizedDescription)")
         return
       }
       if let data = data {
-        self.image = UIImage(data: data)
+        print("fetching image: \(self.path)")
+//        self.image = UIImage(data: data)
+        completionHandler(UIImage(data: data)!)
       }
     }
   }

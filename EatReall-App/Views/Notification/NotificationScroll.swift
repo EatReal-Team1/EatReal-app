@@ -11,9 +11,10 @@ struct NotificationScroll: View {
     var body: some View {
       ScrollView() {
         VStack(spacing: 20) {
-          ForEach(0..<10) {_ in
-            SingleNotificationView()
-          }
+//          ForEach(0..<10) {_ in
+//            SingleNotificationView()
+//          }
+          SingleNotificationView()
         }
       }
       .frame(height: 600)

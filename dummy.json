@@ -4,45 +4,64 @@
       "address": "",
       "author": {
         "display_name": "Leanne Sun",
-        "profile_picture": "profile/leanne.heic"
+        "profile_picture": "profile/leanne.HEIC"
       },
-      "food_photo": "post/food1.heic",
+      "food_photo": "post/food1.HEIC",
+      "id": 0,
       "likes": 0,
       "review_comment": "good matcha!",
       "review_dish": "strawberry match latte",
       "review_restaurant": "Ceremony",
       "review_stars": 3,
       "reviewed": true,
-      "selfie_photo": "reaction/leanne_thumbsup.heic"
+      "selfie_photo": "reaction/leanne_thumbsup.HEIC"
     },
     {
       "address": "",
       "author": {
         "display_name": "Zeke Rong",
-        "profile_picture": "profile/zeke.jpg"
+        "profile_picture": "profile/zeke.JPG"
       },
-      "food_photo": "post/food2.heic",
+      "food_photo": "post/food2.HEIC",
+      "id": 1,
       "likes": 0,
       "review_comment": "Will come back many times",
       "review_dish": "Galbi Jjim",
       "review_restaurant": "Sun nong dan",
       "review_stars": 5,
       "reviewed": true,
-      "selfie_photo": "reaction/leanne_thumbsup.heic"
+      "selfie_photo": "reaction/leanne_thumbsup.HEIC"
     },
     {
-      "address": "",
+      "address": " ",
+      "author": {
+        "display_name": "Zeke Rong",
+        "profile_picture": "profile/zeke.JPG"
+      },
+      "food_photo": "post/food3.HEIC",
+      "id": 2,
+      "likes": 0,
+      "review_comment": "",
+      "review_dish": "",
+      "review_restaurant": " ",
+      "review_stars": 0,
+      "reviewed": false,
+      "selfie_photo": ""
+    },
+    {
+      "address": " ",
       "author": {
         "display_name": "Emily Feng",
-        "profile_picture": "profile/emily.jpg"
+        "profile_picture": "profile/emily.JPG"
       },
-      "food_photo": "post/food3.heic",
+      "food_photo": "post/food4.HEIC",
       "likes": 0,
-      "review_comment": "I love meat",
-      "review_dish": "duck",
-      "review_restaurant": "Dha Rae Oak",
-      "review_stars": 4,
-      "reviewed": true
+      "review_comment": "",
+      "review_dish": "",
+      "review_restaurant": " ",
+      "review_stars": 0,
+      "reviewed": false,
+      "selfie_photo": ""
     }
   ],
   "Users": [
@@ -51,25 +70,26 @@
       "following": [
         {
           "display_name": "Zeke Rong",
-          "profile_picture": "profile/zeke.jpg"
+          "profile_picture": "profile/zeke.JPG"
         }
       ],
-      "profile_picture": "profile/leanne.heic",
+      "profile_picture": "profile/leanne.HEIC",
       "username": "leannesxh14"
     },
     {
       "display_name": "Zeke Rong",
+      "following": [],
       "followers": [
         {
-          "display_name": "Emily Feng",
-          "profile_picture": "profile/emily.jpg"
+          "display_name": "Leanne Sun",
+          "profile_picture": "profile/leanne.HEIC"
         },
         {
-          "display_name": "Leanne Sun",
-          "profile_picture": "profile/leanne.heic"
+          "display_name": "Emily Feng",
+          "profile_picture": "profile/emily.JPG"
         }
       ],
-      "profile_picture": "profile/zeke.jpg",
+      "profile_picture": "profile/zeke.JPG",
       "username": "zer"
     },
     {
@@ -77,10 +97,10 @@
       "following": [
         {
           "display_name": "Zeke Rong",
-          "profile_picture": "profile/zeke.jpg"
+          "profile_picture": "profile/zeke.JPG"
         }
       ],
-      "profile_picture": "profile/emily.jpg",
+      "profile_picture": "profile/emily.JPG",
       "username": "efeng"
     }
   ]

@@ -89,5 +89,12 @@ class PreviewUser: Codable {
       // V1 doesn't need approval
     self.following.append(to_user)
   }
+  
+  func toAnyObject() -> Any {
+         return [
+             "display_name": display_name,
+             "profile_picture": profile_picture
+         ]
+   }
 }
 
