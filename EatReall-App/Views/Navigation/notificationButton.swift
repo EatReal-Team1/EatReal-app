@@ -21,9 +21,9 @@ struct notificationButton: View {
         NavigationLink("", destination:  NotificationView(), isActive: $showNoficationView) .navigationBarBackButtonHidden(true)
     }
 }
-
-struct notificationButton_Previews: PreviewProvider {
-    static var previews: some View {
-        notificationButton()
-    }
-}
+//
+//struct notificationButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        notificationButton()
+//    }
+//}

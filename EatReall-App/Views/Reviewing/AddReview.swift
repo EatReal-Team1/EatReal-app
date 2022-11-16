@@ -11,10 +11,11 @@ struct AddReview: View {
   @State private var selectedImage: UIImage?
   @State private var isImagePickerDisplay = false
   @State private var showReviewForm = false
-  @State private var selfie: UIImage = UIImage()
   
     var body: some View {
-      NavigationView{
+      if let selfie = selectedImage {
+        FormView(selfie_photo: selfie)
+      } else {
         VStack{
             //header
           ZStack {
@@ -32,67 +33,19 @@ struct AddReview: View {
           
           
             //content view
-          VStack {
-            if let img = selectedImage {
-              Image(uiImage: img)
-                .resizable()
-                .frame(width: 300, height: 300)
-            }
-          }
-          .frame(height: 550.0)
-          .sheet(isPresented: self.$isImagePickerDisplay) {
-            ImagePickerView(selectedImage: self.$selectedImage, sourceType: .camera)
-          }
+          SelfieCameraView(selectedImage: $selectedImage, showReviewForm: $showReviewForm).ignoresSafeArea()
+
           
           Spacer()
           
-          //footer navigation
-          ZStack {
-            Color.black
-              .ignoresSafeArea()
-            HStack(alignment: .bottom){
-              
-              Button(action: {
-                self.isImagePickerDisplay = false
-              }) {
-                Text("X")
-                  .padding(.horizontal, 30)
-                  .font(.system(
-                    size: 35,
-                    weight: .bold,
-                    design: .default))
-                  .foregroundColor(.white)
-              }
-              
-              Spacer()
-              
-              Button(action: {
-                showReviewForm = true
-                if let img = selectedImage {
-                  selfie = img
-                }
-              })  {
-                Text("Camera")
-                  .padding(.horizontal, 30)
-                  .font(.system(
-                    size: 35,
-                    weight: .bold,
-                    design: .default))
-                  .foregroundColor(.white)
-              }
-              
-              NavigationLink("", destination:  FormView(selfie_photo: $selfie), isActive: $showReviewForm).navigationBarBackButtonHidden(true)
-              
-              Spacer()
-            }
-          }
         }
+
       }
     }
 }
 
-struct AddReview_Previews: PreviewProvider {
-    static var previews: some View {
-        AddReview()
-    }
-}
+//struct AddReview_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddReview()
+//    }
+//}

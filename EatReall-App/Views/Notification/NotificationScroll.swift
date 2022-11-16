@@ -11,18 +11,17 @@ struct NotificationScroll: View {
     var body: some View {
       ScrollView() {
         VStack(spacing: 20) {
-//          ForEach(0..<10) {_ in
-//            SingleNotificationView()
-//          }
-          SingleNotificationView()
+        
+            SingleNotificationView()
+
         }
       }
       .frame(height: 600)
     }
 }
 
-struct NotificationScroll_Previews: PreviewProvider {
-    static var previews: some View {
-        NotificationScroll()
-    }
-}
+//struct NotificationScroll_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NotificationScroll()
+//    }
+//}

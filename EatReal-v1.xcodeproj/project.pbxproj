@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C461BE4229241D2800E5E70A /* SelfieCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461BE4129241D2800E5E70A /* SelfieCameraView.swift */; };
 		C4A2E7AD2919DD8A00D15DE1 /* EatReall_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */; };
 		C4A2E7AF2919DD8A00D15DE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */; };
 		C4A2E7B12919DD8B00D15DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A2E7B02919DD8B00D15DE1 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C461BE4129241D2800E5E70A /* SelfieCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieCameraView.swift; sourceTree = "<group>"; };
 		C4A2E7A92919DD8A00D15DE1 /* EatReal-v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EatReal-v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatReall_AppApp.swift; sourceTree = "<group>"; };
 		C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A2E802291D84EE00D15DE1 /* AddReview.swift */,
+				C461BE4129241D2800E5E70A /* SelfieCameraView.swift */,
 				C4A2E807291D884900D15DE1 /* FormView.swift */,
 				C4A2E80B291D9CD100D15DE1 /* TextReview.swift */,
 				C4A2E809291D920300D15DE1 /* RatingReview.swift */,
@@ -386,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCE4B8F1291B6BFA004ED90E /* User.swift in Sources */,
+				C461BE4229241D2800E5E70A /* SelfieCameraView.swift in Sources */,
 				CDE681C2291ADA8000AF8BFD /* SingleNotificationView.swift in Sources */,
 				CD47BC24291D8EBE0083E983 /* InputName.swift in Sources */,
 				CDE65761291AF7E000EA3CE8 /* ProfileView.swift in Sources */,

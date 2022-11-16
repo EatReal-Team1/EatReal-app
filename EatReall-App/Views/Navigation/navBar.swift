@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct navBar: View {
-
     var body: some View {
         
         HStack(alignment: .bottom) {
@@ -29,9 +28,9 @@ struct navBar: View {
 
 
 
-struct navBar_Previews: PreviewProvider {
-    static var previews: some View {
-        navBar()
-    }
-}
-
+//struct navBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        navBar()
+//    }
+//}
+//
