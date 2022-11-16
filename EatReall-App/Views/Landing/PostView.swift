@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+let placeholder_img = UIImage(named: "image-placeholder")! //placeholder-food"
+let placeholder_reaction_img = UIImage(named: "placeholder-reaction")!
+
 struct PostView: View {
   @Binding var post: Post
   let radius: CGFloat = 100
@@ -16,7 +19,9 @@ struct PostView: View {
     var body: some View {
       VStack(alignment: .leading, spacing: 0.0){
         ZStack{
-          Image("placeholder-food")
+//          Image("placeholder-food")
+//          Image(post.food_photo.path)
+          Image(uiImage: post.food_photo.image ?? placeholder_img)
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(
@@ -24,7 +29,7 @@ struct PostView: View {
               height: 450)
             .overlay(
               Section {
-                Image("placeholder-reaction")
+                Image(uiImage: post.selfie_photo.image ?? placeholder_reaction_img)
                   .resizable()
                   .frame(width: 101,
                          height: 101)

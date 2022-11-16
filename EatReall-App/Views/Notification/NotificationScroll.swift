@@ -11,7 +11,9 @@ struct NotificationScroll: View {
     var body: some View {
       ScrollView() {
         VStack(spacing: 20) {
+        
             SingleNotificationView()
+
         }
       }
       .frame(height: 600)

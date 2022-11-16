@@ -154,6 +154,7 @@
 				FCE4B8F7291B6DEB004ED90E /* Resources */,
 				FCE4B8EB291B69A3004ED90E /* Models */,
 				C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */,
+				FCE4B8FC291C7EDA004ED90E /* image-placeholder.jpeg */,
 				C4A2E7B02919DD8B00D15DE1 /* Assets.xcassets */,
 				FCE4B8EE291B6BC1004ED90E /* GoogleService-Info.plist */,
 				C4A2E7B22919DD8B00D15DE1 /* Preview Content */,
@@ -295,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				FCE4B8F8291B6E67004ED90E /* group_pic.png */,
-				FCE4B8FC291C7EDA004ED90E /* image-placeholder.jpeg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

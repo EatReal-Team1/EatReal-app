@@ -24,7 +24,8 @@ class ViewModel: ObservableObject {
 //  var rootRef: DatabaseReference! = Database.database().reference()
   
   init() {
-    self.rootRef = FirebaseDatabase.Database.database().reference()
+    self.rootRef = Database.database().reference()
+//    self.rootRef = FirebaseDatabase.Database.database().reference()
     self.postList = []
     self.numPosts = 0
     self.userList = []
@@ -40,9 +41,9 @@ class ViewModel: ObservableObject {
       rootRef.child("Posts").child(String(self.numPosts)).setValue(
         [
           "address": post.address,
-          "author_id": "0",
-          "food_photo": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
-          "selfie_photo": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
+          "author": post.author.toAnyObject(),
+          "food_photo": post.food_photo.path,
+          "selfie_photo": post.selfie_photo.path,
           "review_restaurant": post.review_restaurant,
           "review_dish": post.review_dish,
           "review_comment": post.review_comment,
@@ -60,7 +61,8 @@ class ViewModel: ObservableObject {
       [
         "display_name": user.display_name,
         "username": user.display_name,
-        "profile_picture": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
+//        "profile_picture": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
+        "profile_picture": user.profile_picture,
         "followers": user.followers,
         "following": user.following,
         "saved_posts":[],

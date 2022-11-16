@@ -35,20 +35,22 @@ func firebaseDemo() {
       print("display_name: \(user.display_name)")
       print("username: \(user.username)")
       print("profile_picture: \(user.profile_picture)")
-      print("followers: \(user.followers)")
-      print("following: \(user.following)")
+//      print("followers: \(user.followers)")
+//      print("following: \(user.following)")
     }
   })
+  print("\n")
 
   rootRef.child("Posts").observe(.value, with: { snapshot in
     var posts: [Post] = []
     for child in snapshot.children {
+      print("loading post")
       if let snapshot = child as? DataSnapshot,
         let post = Post(snapshot: snapshot) {
         posts.append(post)
       }
     }
-    print("Posts")
+    print("Posts: \(posts.count)")
     for post in posts {
       print("address: \(post.address)")
       print("author: \(post.author)")
