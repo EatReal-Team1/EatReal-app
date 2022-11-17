@@ -11,9 +11,9 @@ import Firebase
 import FirebaseStorage
 import Foundation
 
-class StoredImage {
+class StoredImage: ObservableObject {
   var path: String
-  var image: UIImage?
+  @Published var image = UIImage()
   var url: String
   
   init(url: String) {
@@ -41,7 +41,7 @@ class StoredImage {
     print("path: \(path)")
     let uploadRef = Storage.storage().reference(withPath: "\(path)")
     guard let imageData = image.jpegData(compressionQuality: 0.75) else {
-      self.image = UIImage(named: "image-placeholder.jpeg")
+      self.image = UIImage(named: "image-placeholder.jpeg")!
       return
     }
 //    let uploadMetadata = StorageMetadata.init()
@@ -88,7 +88,7 @@ class StoredImage {
         return
       }
       DispatchQueue.main.async {
-        self.image = UIImage(data: data)
+        self.image = UIImage(data: data)!
 //        self.image = UIImage(named: "placeholder-post")
         
       }
