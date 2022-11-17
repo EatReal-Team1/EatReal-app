@@ -52,7 +52,7 @@ func firebaseDemo() {
     for post in posts {
       print("address: \(post.address)")
       print("author: \(post.author.display_name)")
-      print("author_profile_url: \(post.author.profile_picture.url)")
+      print("author_profile_url: \(post.author.profile_picture)")
       print("food_photo: \(post.food_photo)")
       print("selfie_photo: \(post.selfie_photo)")
       print("review_restaurant: \(post.review_restaurant)")

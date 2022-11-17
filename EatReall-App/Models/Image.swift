@@ -14,7 +14,7 @@ import Foundation
 class StoredImage: ObservableObject {
   var path: String
   @Published var image = UIImage()
-  var url: String
+  @Published var url: String
   
   init(url: String) {
     self.path = ""

@@ -74,13 +74,13 @@ extension User: Equatable {
 class PreviewUser{
 //  let id: UUID
   let display_name: String
-  let profile_picture: StoredImage
+  let profile_picture: String
   var followers: [String]
   var following: [String]
 
   init(display_name: String, profile_picture: String){
     self.display_name = display_name
-    self.profile_picture = StoredImage(url: profile_picture)
+    self.profile_picture = profile_picture
     self.followers = []
     self.following = []
   }

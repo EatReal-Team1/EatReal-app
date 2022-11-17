@@ -18,8 +18,8 @@ class Post: Identifiable {
 //  var id: UUID
   var address: String
   var author: PreviewUser
-  var food_photo: StoredImage
-  var selfie_photo: StoredImage
+  var food_photo: String
+  var selfie_photo: String
   var review_restaurant: String
   var review_dish: String
   var review_comment: String
@@ -33,11 +33,11 @@ class Post: Identifiable {
     self.address = address
     self.author = author
     let stored_food_photo = StoredImage(image: food_photo, contentType: "post")
-    self.food_photo = stored_food_photo
+    self.food_photo = stored_food_photo.url
     self.review_restaurant = review_restaurant
     // Optional
     let stored_selfire_photo = StoredImage(image: selfie_photo, contentType: "reaction")
-    self.selfie_photo = stored_selfire_photo
+    self.selfie_photo = stored_selfire_photo.url
     self.review_dish = review_dish
     self.review_comment = review_comment
     self.review_stars = review_stars
@@ -86,8 +86,8 @@ class Post: Identifiable {
     self.address = address
     self.author = PreviewUser(display_name: author["display_name"] as! String,
                               profile_picture: author["profile_picture"] as! String)
-    self.food_photo = StoredImage(url: food_photo_url)
-    self.selfie_photo = StoredImage(url: selfie_photo_url)
+    self.food_photo = food_photo_url
+    self.selfie_photo = selfie_photo_url
     self.review_restaurant = review_restaurant
     self.review_dish = review_dish
     self.review_comment = review_comment
@@ -98,7 +98,7 @@ class Post: Identifiable {
 
   func addReview(selfie_photo: UIImage, review_restaurant: String, review_dish: String, review_comment: String, review_stars: Double) {
     let stored_selfie_photo = StoredImage(image: selfie_photo, contentType: "reaction")
-    self.selfie_photo = stored_selfie_photo
+    self.selfie_photo = stored_selfie_photo.url
     self.review_restaurant = review_restaurant
     self.review_dish = review_dish
     self.review_comment = review_comment
