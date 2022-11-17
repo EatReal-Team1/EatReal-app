@@ -9,21 +9,14 @@ import SwiftUI
 
 struct notificationButton: View {
     @State var buttonClicked : String = "home"
-    @State private var showNoficationView = false
+    @StateObject var viewRouter: ViewRouter
     var body: some View {
         Button(action: {
             self.buttonClicked = "bell"
-            showNoficationView = true
+          viewRouter.currentPage = .notification
         }) {
             Image(self.buttonClicked == "bell" ? "bell-filled" : "bell-outline").resizable()
                 .frame(width: 40.0, height: 40.0)
         }
-        NavigationLink("", destination:  NotificationView(), isActive: $showNoficationView) .navigationBarBackButtonHidden(true)
     }
 }
-//
-//struct notificationButton_Previews: PreviewProvider {
-//    static var previews: some View {
-//        notificationButton()
-//    }
-//}

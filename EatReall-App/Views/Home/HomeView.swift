@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
+  @StateObject var viewRouter: ViewRouter
     var body: some View {
         VStack{
             Logo()
             PostScroll()
-            navBar()
+            navBar(viewRouter: viewRouter)
         }
         
     }
@@ -20,6 +21,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewRouter: ViewRouter())
     }
 }

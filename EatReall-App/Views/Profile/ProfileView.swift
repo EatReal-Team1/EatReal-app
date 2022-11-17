@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+  @StateObject var viewRouter: ViewRouter
     
     var body: some View {
         
@@ -23,15 +24,9 @@ struct ProfileView: View {
                 Spacer()
                 
                 
-                navBar()
+                navBar(viewRouter: viewRouter)
             }
             
         
-    }
-}
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
     }
 }

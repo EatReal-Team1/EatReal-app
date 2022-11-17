@@ -9,21 +9,14 @@ import SwiftUI
 
 struct postButton: View {
     @State var buttonClicked : String = "home"
-    @State private var showPostView = false
+    @StateObject var viewRouter: ViewRouter
     var body: some View {
         Button(action: {
             self.buttonClicked = "add";
-            showPostView = true
+          viewRouter.currentPage = .create
         }) {
             Image(self.buttonClicked == "add" ? "add-new-filled" : "add-new-outline").resizable()
                 .frame(width: 40.0, height: 40.0)
         }
-        NavigationLink("", destination:  FoodCameraView(), isActive: $showPostView).navigationBarBackButtonHidden(true)
-    }
-}
-
-struct postButton_Previews: PreviewProvider {
-    static var previews: some View {
-        postButton()
     }
 }
