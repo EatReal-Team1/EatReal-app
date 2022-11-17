@@ -12,7 +12,7 @@ import FirebaseStorage
 import Foundation
 
 let placeholder = UIImage(named: "image-placeholder.jpeg")!
-let stored_placeholder = StoredImage(path: "example/image-placeholder.jpeg")
+let stored_placeholder = StoredImage(url: "example/image-placeholder.jpeg")
 // Observable?
 class Post: Identifiable {
 //  var id: UUID
@@ -70,8 +70,9 @@ class Post: Identifiable {
 //      let id = value["id"] as? UUID,
       let address = value["address"] as? String,
       let author = value["author"] as? NSDictionary,
-      let food_photo_path = value["food_photo"] as? String,
-      let selfie_photo_path = value["selfie_photo"] as? String,
+      let food_photo_url = value["food_photo_url"] as? String,
+//      let food_foto_path = value["food_photo"] as? String,
+      let selfie_photo_url = value["selfie_photo"] as? String,
       let review_restaurant = value["review_restaurant"] as? String,
       let review_dish = value["review_dish"] as? String,
       let review_comment = value["review_comment"] as? String,
@@ -85,8 +86,8 @@ class Post: Identifiable {
     self.address = address
     self.author = PreviewUser(display_name: author["display_name"] as! String,
                               profile_picture: author["profile_picture"] as! String)
-    self.food_photo = StoredImage(path: food_photo_path)
-    self.selfie_photo = StoredImage(path: selfie_photo_path)
+    self.food_photo = StoredImage(url: food_photo_url)
+    self.selfie_photo = StoredImage(url: selfie_photo_url)
     self.review_restaurant = review_restaurant
     self.review_dish = review_dish
     self.review_comment = review_comment

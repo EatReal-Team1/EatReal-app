@@ -30,7 +30,7 @@ class ViewModel: ObservableObject {
     self.numPosts = 0
     self.userList = []
     self.numUsers = 1
-    self.currentUser = PreviewUser(display_name: "fake user", profile_picture: "placeholder-profile-img")
+    self.currentUser = PreviewUser(display_name: "fake user", profile_picture: "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/reaction%2Femily_and_chicken.jpeg?alt=media&token=cff5f474-e745-4992-b987-fecff299760b")
     
     self.loadAllPosts()
   }

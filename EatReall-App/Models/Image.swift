@@ -14,21 +14,27 @@ import Foundation
 class StoredImage {
   var path: String
   var image: UIImage?
+  var url: String
   
-  init(path: String) {
-    self.path = path
-    fetchImage(path: path) { (result) in
-      self.image = result
-    }
+  init(url: String) {
+    self.path = ""
+    self.url = url
+    fetchImage()
   }
   
   init(image: UIImage, contentType: String){
-    self.image = image
-    let randomID = UUID.init().uuidString
-//    self.path = "\(contentType)/\(randomID).jpg"
-    self.path = "\(contentType)/\(randomID)"
-    uploadImage(path: self.path, image: image)
-    
+    if contentType == "placeholder" {
+      self.image = image
+      self.path = ""
+      self.url = ""
+    }
+    else {
+      self.image = image
+      let randomID = UUID.init().uuidString
+      self.path = "\(contentType)/\(randomID)"
+      self.url = ""
+      uploadImage(path: self.path, image: image)
+    }
   }
 
   func uploadImage(path: String, image: UIImage) {
@@ -38,17 +44,21 @@ class StoredImage {
       self.image = UIImage(named: "image-placeholder.jpeg")
       return
     }
-    let uploadMetadata = StorageMetadata.init()
-    uploadMetadata.contentType = "image/heic"
+//    let uploadMetadata = StorageMetadata.init()
+//    uploadMetadata.contentType = "image/heic"
 
-    uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
-      if let error = error {
-        print("Unable to upload image \(error.localizedDescription)")
-        self.image = UIImage(named: "example/image-placeholder.jpeg")
+    uploadRef.putData(imageData, metadata: nil, completion: { _, error in
+      guard error == nil else {
+        print("Failed to upload")
         return
       }
-      print("Put is complete and got back: \(String(describing: downloadMetadata))")
-    }
+      uploadRef.downloadURL { url, error in
+        guard let url = url, error == nil else {
+          return
+        }
+        self.url = url.absoluteString
+      }
+    })
   }
   
 //  func fetchImage(path: String){
@@ -65,18 +75,38 @@ class StoredImage {
 //      }
 //    }
 //  }
-  func fetchImage(path: String, completionHandler: @escaping (UIImage) -> Void){
-    let storageRef = Storage.storage().reference(withPath: self.path)
-    storageRef.getData(maxSize: 1*1024*1024) { (data, error) in
-      if let error = error {
-        print("Got and error fetching data: \(error.localizedDescription)")
+  func fetchImage(){
+    guard let url = URL(string: self.url) else {
+      print("failed to convert url: \(self.url)")
+      return
+    }
+
+    print("url: \(self.url)")
+    let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+      guard let data = data, error == nil else {
+        print("Failed to access image url: \(String(describing: error))")
         return
       }
-      if let data = data {
-        print("fetching image: \(self.path)")
-//        self.image = UIImage(data: data)
-        completionHandler(UIImage(data: data)!)
+      DispatchQueue.main.async {
+        self.image = UIImage(data: data)
+//        self.image = UIImage(named: "placeholder-post")
+        
       }
-    }
+    })
+
+    task.resume()
+    
+    //    let storageRef = Storage.storage().reference(withPath: self.path)
+    //    storageRef.getData(maxSize: 4*1024*1024) { (data, error) in
+    //      if let error = error {
+    //        print("Got and error fetching data: \(error.localizedDescription)")
+    //        return
+    //      }
+    //      if let data = data {
+    //        print("fetching image: \(self.path)")
+    ////        self.image = UIImage(data: data)
+    //        completionHandler(UIImage(data: data)!)
+    //      }
+    //    }
   }
 }

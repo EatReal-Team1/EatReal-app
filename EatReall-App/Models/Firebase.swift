@@ -22,23 +22,21 @@ func firebaseDemo() {
 //    let userName = snapshot?.value as? String ?? "Unknown"
 //  })
   
-  rootRef.child("Users").observe(.value, with: { snapshot in
-    var users: [User] = []
-    for child in snapshot.children {
-      if let snapshot = child as? DataSnapshot,
-        let user = User(snapshot: snapshot) {
-        users.append(user)
-      }
-    }
-    print("Users: \(users.count)")
-    for user in users {
-      print("display_name: \(user.display_name)")
-      print("username: \(user.username)")
-      print("profile_picture: \(user.profile_picture)")
-//      print("followers: \(user.followers)")
-//      print("following: \(user.following)")
-    }
-  })
+//  rootRef.child("Users").observe(.value, with: { snapshot in
+//    var users: [User] = []
+//    for child in snapshot.children {
+//      if let snapshot = child as? DataSnapshot,
+//        let user = User(snapshot: snapshot) {
+//        users.append(user)
+//      }
+//    }
+//    print("Users: \(users.count)")
+//    for user in users {
+//      print("display_name: \(user.display_name)")
+//      print("username: \(user.username)")
+//      print("profile_picture: \(user.profile_picture)")
+//    }
+//  })
   print("\n")
 
   rootRef.child("Posts").observe(.value, with: { snapshot in
@@ -53,7 +51,8 @@ func firebaseDemo() {
     print("Posts: \(posts.count)")
     for post in posts {
       print("address: \(post.address)")
-      print("author: \(post.author)")
+      print("author: \(post.author.display_name)")
+      print("author_profile_url: \(post.author.profile_picture.url)")
       print("food_photo: \(post.food_photo)")
       print("selfie_photo: \(post.selfie_photo)")
       print("review_restaurant: \(post.review_restaurant)")

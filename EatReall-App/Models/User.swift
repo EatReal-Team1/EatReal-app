@@ -35,7 +35,7 @@ class User {
       let value = snapshot.value as? NSDictionary,
       let display_name = value["display_name"] as? String,
       let username = value["username"] as? String,
-      let profile_picture_path = value["profile_picture"] as? String
+      let profile_picture_url = value["profile_picture_url"] as? String
     else {
       return nil
     }
@@ -51,7 +51,7 @@ class User {
     }
     self.display_name = display_name
     self.username = username
-    self.profile_picture = StoredImage(path: profile_picture_path)
+    self.profile_picture = StoredImage(url: profile_picture_url)
   }
 
   func sendFriendRequest(to_user: User) -> FriendRequest {
@@ -71,16 +71,16 @@ extension User: Equatable {
   }
 }
 
-class PreviewUser: Codable {
+class PreviewUser{
 //  let id: UUID
   let display_name: String
-  let profile_picture: String
+  let profile_picture: StoredImage
   var followers: [String]
   var following: [String]
 
   init(display_name: String, profile_picture: String){
     self.display_name = display_name
-    self.profile_picture = profile_picture
+    self.profile_picture = StoredImage(url: profile_picture)
     self.followers = []
     self.following = []
   }
