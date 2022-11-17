@@ -20,7 +20,7 @@ struct PostView: View {
     var body: some View {
       VStack(alignment: .leading, spacing: 0.0){
         ZStack{
-          AsyncImage(url: post.food_photo.url)
+          AsyncImage(url: post.food_photo)
 //            .resizable()
 //            .aspectRatio(contentMode: .fill)
 //            .frame(
@@ -47,8 +47,7 @@ struct PostView: View {
         Spacer().frame(height: 30)
         
         HStack{
-          Image(uiImage: post.author.profile_picture.image ?? placeholder_profile_img).resizable()
-            .frame(width: 30.0, height: 30.0)
+          AsyncImage(url: post.author.profile_picture, type: "profile")
           Text(post.author.display_name)
           Spacer()
         }

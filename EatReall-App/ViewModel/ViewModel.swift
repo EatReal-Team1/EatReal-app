@@ -42,8 +42,8 @@ class ViewModel: ObservableObject {
         [
           "address": post.address,
           "author": post.author.toAnyObject(),
-          "food_photo": post.food_photo.path,
-          "selfie_photo": post.selfie_photo.path,
+          "food_photo": post.food_photo,
+          "selfie_photo": post.selfie_photo,
           "review_restaurant": post.review_restaurant,
           "review_dish": post.review_dish,
           "review_comment": post.review_comment,
