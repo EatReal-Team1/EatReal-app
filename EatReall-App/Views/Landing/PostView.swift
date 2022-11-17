@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-let placeholder_img = UIImage(named: "image-placeholder")! //placeholder-food"
+let placeholder_img = UIImage(named: "image-placeholder")! //"placeholder-food"
 let placeholder_reaction_img = UIImage(named: "placeholder-reaction")!
+let placeholder_profile_img = UIImage(named: "placeholder-profile-img")!
 
 struct PostView: View {
   @Binding var post: Post
@@ -48,7 +49,7 @@ struct PostView: View {
         Spacer().frame(height: 30)
         
         HStack{
-          Image(post.author.profile_picture).resizable()
+          Image(uiImage: post.author.profile_picture.image ?? placeholder_profile_img).resizable()
             .frame(width: 30.0, height: 30.0)
           Text(post.author.display_name)
           Spacer()
