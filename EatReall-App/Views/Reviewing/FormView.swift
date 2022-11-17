@@ -58,7 +58,6 @@ struct FormView: View {
                 design: .default))
               .foregroundColor(.white)
           }
-          NavigationLink("", destination:  LandingView(), isActive: $submitted).navigationBarBackButtonHidden(true)
           
           NavigationLink("", destination:  AddReview(), isActive: $exit).navigationBarBackButtonHidden(true)
         }

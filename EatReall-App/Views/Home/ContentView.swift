@@ -7,48 +7,45 @@
 
 import SwiftUI
 
+enum Page {
+  case createProfile
+  case home
+  case notification
+  case create
+  case friend
+  case profile
+}
+
 struct ContentView: View {
-    @State private var showCreateProfile = false
+  
+  @StateObject var viewRouter: ViewRouter
     
     var body: some View {
-        NavigationView {
-          //  NavigationView {
-                
-                
-                
-                
-                VStack{
-                    Logo()
-                    //NavigationView {
-                    
-                    Button(action: {
-                        showCreateProfile = true
-                    }) {
-                        Text("Create Profile").bold()
-                            .font(Font.custom("Helvetica Neue", size: 25.0))
-                            .padding(15)
-                            .foregroundColor(Color.white)
-                            .background(Color.black)
-                            .cornerRadius(5)
-                    }
-                    NavigationLink("", destination:  CreateProfileView(), isActive: $showCreateProfile).navigationBarBackButtonHidden(true)
-                        .navigationBarHidden(true)
-                        .navigationBarTitle("")
-                    // .navigationBarItems(leading: backButton, trailing: closeButton)
-                    //   .background(Color.white)
-                    //.edgesIgnoringSafeArea(.all)
-                    
-                    
-                    PostScroll()
-                    navBar()
-            //    }
-            }
-        }
+      switch viewRouter.currentPage {
+        case .createProfile:
+          CreateProfileView(viewRouter: viewRouter)
+          
+        case .home:
+          HomeView(viewRouter: viewRouter)
+          
+        case .notification:
+          NotificationView(viewRouter: viewRouter)
+          
+        case .create:
+          FoodCameraView(viewRouter: viewRouter)
+          
+        case .friend:
+          FriendView(viewRouter: viewRouter)
+          
+        case .profile:
+          ProfileView(viewRouter: viewRouter)
+          
+      }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewRouter: ViewRouter())
     }
 }

@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct FriendView: View {
+  @StateObject var viewRouter: ViewRouter
     var body: some View {
       VStack{
         Logo()
         SearchFriendView()
         Spacer()
-        navBar()
+        navBar(viewRouter: viewRouter)
       }
-    }
-}
-
-struct FriendView_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendView()
     }
 }

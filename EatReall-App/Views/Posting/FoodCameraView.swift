@@ -9,9 +9,10 @@ import SwiftUI
 
 struct FoodCameraView: View {
   @State private var selectedImage: UIImage?
+  @StateObject var viewRouter: ViewRouter
   var body: some View {
     if (selectedImage != nil) {
-      LandingView()
+      LandingView(viewRouter: viewRouter)
     } else {
       VStack{
           //header
@@ -32,11 +33,5 @@ struct FoodCameraView: View {
         EmbeddedCameraView(selectedImage: $selectedImage).ignoresSafeArea()
       }
     }
-  }
-}
-
-struct FoodCameraView_Previews: PreviewProvider {
-  static var previews: some View {
-    FoodCameraView()
   }
 }

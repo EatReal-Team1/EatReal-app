@@ -8,29 +8,20 @@
 import SwiftUI
 
 struct navBar: View {
+    @StateObject var viewRouter: ViewRouter
     var body: some View {
         
         HStack(alignment: .bottom) {
             
-                homeButton()
+                homeButton(viewRouter: viewRouter)
                 Spacer().frame(width: 35)
-                notificationButton()
+                notificationButton(viewRouter: viewRouter)
                 Spacer().frame(width: 35)
-                postButton()
+                postButton(viewRouter: viewRouter)
                 Spacer().frame(width: 35)
-                friendButton()
+                friendButton(viewRouter: viewRouter)
                 Spacer().frame(width: 35)
-                profileButton()                
+                profileButton(viewRouter: viewRouter)
             }
         }
     }
-
-
-
-
-//struct navBar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        navBar()
-//    }
-//}
-//

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CreateProfileView: View {
-    @State private var showProfile = false
+  @StateObject var viewRouter: ViewRouter
+  
     var body: some View {
         NavigationView{
         
@@ -42,8 +43,7 @@ struct CreateProfileView: View {
                     HStack{
                         Spacer()
                         Button(action: {
-                            //save
-                            showProfile = true
+                          viewRouter.currentPage = .profile
                         }) {
                             Text("Save").bold()
                                 .font(Font.custom("Helvetica Neue", size: 25.0))
@@ -52,20 +52,13 @@ struct CreateProfileView: View {
                                 .background(Color.black)
                                 .cornerRadius(5)
                         }
-                        NavigationLink("", destination:  ProfileView(), isActive: $showProfile).navigationBarBackButtonHidden(true)
                         Spacer().frame(width: 10)
                         
                     }
                 }
                 
-                navBar()
+                navBar(viewRouter: viewRouter)
             }
         }
-    }
-}
-
-struct CreateProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateProfileView()
     }
 }

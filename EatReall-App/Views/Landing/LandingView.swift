@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LandingView: View {
+  @StateObject var viewRouter: ViewRouter
   var body: some View {
     VStack{
       HStack{
@@ -16,13 +17,7 @@ struct LandingView: View {
         Spacer()
       }
       PostScroll()
-      navBar()
+      navBar(viewRouter: viewRouter)
     }
-  }
-}
-
-struct LandingView_Previews: PreviewProvider {
-  static var previews: some View {
-    LandingView()
   }
 }

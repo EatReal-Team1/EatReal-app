@@ -39,9 +39,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct EatReall_AppApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  @StateObject var viewRouter = ViewRouter()
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      ContentView(viewRouter: ViewRouter())
         .environmentObject(ViewModel())
     }
   }
