@@ -20,7 +20,6 @@ struct PostScroll: View {
           }
         }
       }
-      .frame(height: 600)
     }
 }
 
