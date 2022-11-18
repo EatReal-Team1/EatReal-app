@@ -21,9 +21,10 @@
       "address": "",
       "author": {
         "display_name": "Zeke Rong",
-        "profile_picture": "profile/zeke.JPG"
+        "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fzeke.JPG?alt=media&token=496335a3-af2e-4c55-b2de-a2a50e3484b3"
       },
       "food_photo": "post/food2.JPG",
+      "food_photo_url": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/post%2Ffood2.jpg?alt=media&token=fc0b3ee4-521f-47a9-ab65-ce025e3cddf1",
       "id": 1,
       "likes": 0,
       "review_comment": "Will come back many times",
@@ -31,15 +32,16 @@
       "review_restaurant": "Sun nong dan",
       "review_stars": 5,
       "reviewed": true,
-      "selfie_photo": "reaction/leanne_thumbsup.JPG"
+      "selfie_photo": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/reaction%2Fleanne_thumbsup.jpg?alt=media&token=637b101a-b760-4297-962c-e5af25ae2b9d"
     },
     {
       "address": " ",
       "author": {
         "display_name": "Zeke Rong",
-        "profile_picture": "profile/zeke.JPG"
+        "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fzeke.JPG?alt=media&token=496335a3-af2e-4c55-b2de-a2a50e3484b3"
       },
       "food_photo": "post/food3.JPG",
+      "food_photo_url": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/post%2Ffood3.jpg?alt=media&token=8c5a344f-f2d3-4d4f-970c-43ef426ca036",
       "id": 2,
       "likes": 0,
       "review_comment": "",
@@ -56,6 +58,7 @@
         "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Femily.JPG?alt=media&token=c2a7afd1-35eb-4584-b21f-187c4d6e8f95"
       },
       "food_photo": "post/food4.JPG",
+      "food_photo_url": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/post%2Ffood4.jpg?alt=media&token=bff739bf-c240-4bfe-b8fc-191961f1b6eb",
       "likes": 0,
       "review_comment": "",
       "review_dish": "",

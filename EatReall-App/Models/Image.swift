@@ -61,27 +61,12 @@ class StoredImage: ObservableObject {
     })
   }
   
-//  func fetchImage(path: String){
-//    let storageRef = Storage.storage().reference(withPath: self.path)
-////    let storageRef = Storage.storage().child(path)
-//    storageRef.getData(maxSize: 4*1024*1024) { (data, error) in
-//      if let error = error {
-//        print("Got and error fetching data: \(error.localizedDescription)")
-//        return
-//      }
-//      if let data = data {
-//        print("fetching image: \(self.path)")
-//        self.image = UIImage(data: data)
-//      }
-//    }
-//  }
   func fetchImage(){
     guard let url = URL(string: self.url) else {
       print("failed to convert url: \(self.url)")
       return
     }
 
-    print("url: \(self.url)")
     let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
       guard let data = data, error == nil else {
         print("Failed to access image url: \(String(describing: error))")
@@ -89,24 +74,10 @@ class StoredImage: ObservableObject {
       }
       DispatchQueue.main.async {
         self.image = UIImage(data: data)!
-//        self.image = UIImage(named: "placeholder-post")
         
       }
     })
 
     task.resume()
-    
-    //    let storageRef = Storage.storage().reference(withPath: self.path)
-    //    storageRef.getData(maxSize: 4*1024*1024) { (data, error) in
-    //      if let error = error {
-    //        print("Got and error fetching data: \(error.localizedDescription)")
-    //        return
-    //      }
-    //      if let data = data {
-    //        print("fetching image: \(self.path)")
-    ////        self.image = UIImage(data: data)
-    //        completionHandler(UIImage(data: data)!)
-    //      }
-    //    }
   }
 }
