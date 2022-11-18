@@ -17,29 +17,10 @@ struct AsyncImage: View {
     @State var image: UIImage = UIImage()
     @State var url: URL = URL(fileURLWithPath: "image-placeholder")
 
-//    init(
-//        url: String,
-//        @ViewBuilder placeholder: @escaping () -> Placeholder,
-//        @ViewBuilder image: @escaping (Image) -> ConfiguredImage
-//    ) {
-//        self.url = URL(string: url)!
-//        self.placeholder = placeholder
-//        self.image = image
-//        self.imageLoader = StoredImage(url: url)
-//    }
-//
-//    @ViewBuilder private var imageContent: some View {
-//        if let data = imageData {
-//            image(Image(uiImage: data))
-//        } else {
-//            placeholder()
-//        }
-//    }
-  
   init(url: String, type: String = "post") {
-    self.imageLoader = StoredImage(url: url)
-    self.url = URL(string: url)!
-    self.imageType = type
+      self.imageLoader = StoredImage(url: url)
+      self.url = URL(string: url) ?? URL(fileURLWithPath: "image-placeholder")
+      self.imageType = type
   }
 
     var body: some View {
@@ -57,7 +38,27 @@ struct AsyncImage: View {
         .onAppear {
           imageLoader.fetchImage()
         }
-      } else
+      }
+      else if (self.imageType == "reaction"){
+        Image(uiImage: image)
+              .resizable()
+              .frame(width: 101,
+                     height: 101)
+              .foregroundColor(.primary)
+              .padding(8)
+              .background(Color.gray)
+              .clipShape(Circle())
+              .background(
+                Circle()
+                  .stroke(Color.black, lineWidth: 2))
+              .onReceive(imageLoader.$image) { image in
+                  self.image = image
+              }
+              .onAppear {
+                  imageLoader.fetchImage()
+              }
+      }
+        else
       {
         Image(uiImage: image)
         .resizable()
