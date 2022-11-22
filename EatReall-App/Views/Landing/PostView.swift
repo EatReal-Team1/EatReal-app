@@ -20,35 +20,36 @@ struct PostView: View {
     var body: some View {
       VStack(alignment: .leading, spacing: 0.0){
         ZStack{
-          AsyncImage(url: post.food_photo)
-//            .resizable()
-//            .aspectRatio(contentMode: .fill)
-//            .frame(
-//              width: 370,
-//              height: 450)
-            .overlay(
-              Section {
-                AsyncImage(url: post.selfie_photo, type: "reaction")
-//                Image(uiImage: post.selfie_photo ?? placeholder_reaction_img)
-//                  .resizable()
-//                  .frame(width: 101,
-//                         height: 101)
-//                  .foregroundColor(.primary)
-//                  .padding(8)
-//                  .background(Color.gray)
-//                  .clipShape(Circle())
-//                  .background(
-//                    Circle()
-//                      .stroke(Color.black, lineWidth: 2)
-//                  )
-              }.offset(x: -120, y: -180)
-            )
+//          AsyncImage(url: post.food_photo)
+          Image(uiImage: post.foodImageLoader.image)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(
+              width: 370,
+              height: 450)
+//            .overlay(
+//              Section {
+////                AsyncImage(url: post.selfie_photo, type: "reaction")
+////                Image(uiImage: post.selfieImageLoader.image)
+////                  .resizable()
+////                  .frame(width: 101,
+////                         height: 101)
+////                  .foregroundColor(.primary)
+////                  .padding(8)
+////                  .background(Color.gray)
+////                  .clipShape(Circle())
+////                  .background(
+////                    Circle()
+////                      .stroke(Color.black, lineWidth: 2)
+////                  )
+//              }.offset(x: -120, y: -180)
+//            )
         }
         
         Spacer().frame(height: 30)
         
         HStack{
-          AsyncImage(url: post.author.profile_picture, type: "profile")
+//          AsyncImage(url: post.author.profile_picture, type: "profile")
           Text(post.author.display_name)
           Spacer()
         }
@@ -66,6 +67,8 @@ struct PostView: View {
         Spacer().frame(height: 40)
       }
     }
+  
+  
 }
 
 //struct PostView_Previews: PreviewProvider {

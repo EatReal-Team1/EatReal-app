@@ -40,12 +40,12 @@ extension EmbeddedCameraView {
       
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) async {
       if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         self.parent.selectedImage = image
         
-        self.parent.viewModel.selectedPost = Post(address: " ", author: self.parent.viewModel.currentUser, food_photo: image, review_restaurant: " ")
+        await self.parent.viewModel.selectedPost = Post(address: " ", author: self.parent.viewModel.currentUser, food_photo: image, review_restaurant: " ")
         self.parent.viewModel.numPosts += 1
         self.parent.viewModel.savePost()
       }

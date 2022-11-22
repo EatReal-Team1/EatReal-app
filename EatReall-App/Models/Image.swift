@@ -16,13 +16,15 @@ class StoredImage: ObservableObject {
   @Published var image = UIImage()
   @Published var url: String
   
-  init(url: String) {
+  init(url: String) async{
     self.path = ""
     self.url = url
-    fetchImage()
+    if url != "" {
+      await fetchImage()
+    }
   }
   
-  init(image: UIImage, contentType: String){
+  init(image: UIImage, contentType: String) async {
     if contentType == "placeholder" {
       self.image = image
       self.path = ""
@@ -33,11 +35,11 @@ class StoredImage: ObservableObject {
       let randomID = UUID.init().uuidString
       self.path = "\(contentType)/\(randomID)"
       self.url = ""
-      uploadImage(path: self.path, image: image)
+      await uploadImage(path: self.path, image: image)
     }
   }
 
-  func uploadImage(path: String, image: UIImage) {
+  func uploadImage(path: String, image: UIImage) async{
     print("path: \(path)")
     let uploadRef = Storage.storage().reference(withPath: "\(path)")
     guard let imageData = image.jpegData(compressionQuality: 0.75) else {
@@ -47,7 +49,7 @@ class StoredImage: ObservableObject {
 //    let uploadMetadata = StorageMetadata.init()
 //    uploadMetadata.contentType = "image/heic"
 
-    uploadRef.putData(imageData, metadata: nil, completion: { _, error in
+    let task = uploadRef.putData(imageData, metadata: nil, completion: { _, error in
       guard error == nil else {
         print("Failed to upload")
         return
@@ -59,25 +61,37 @@ class StoredImage: ObservableObject {
         self.url = url.absoluteString
       }
     })
+    task.resume()
   }
   
-  func fetchImage(){
+  func fetchImage() async{
     guard let url = URL(string: self.url) else {
+      if (url == "") {return}
       print("failed to convert url: \(self.url)")
       return
     }
 
-    let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
-      guard let data = data, error == nil else {
-        print("Failed to access image url: \(String(describing: error))")
-        return
-      }
+//    let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+//      guard let data = data, error == nil else {
+//        print("Failed to access image url: \(String(describing: error))")
+//        return
+//      }
+//      DispatchQueue.main.async {
+//
+//        self.image = UIImage(data: data) ?? UIImage(named: "image-placeholder")!
+//
+//      }
+//    })
+//    task.resume()
+    URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+    guard let data = data, error == nil else {
+      print("Failed to access image url: \(String(describing: error))")
+      return
+    }
       DispatchQueue.main.async {
+        print("hi")
         self.image = UIImage(data: data)!
-        
       }
     })
-
-    task.resume()
   }
 }
