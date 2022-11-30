@@ -15,25 +15,22 @@ class User {
   var display_name: String
   var username: String
   var profile_picture: StoredImage
-  var profile_picture_url: String
   var followers: [PreviewUser]
   var following: [PreviewUser]
   //  let saved_posts: [Int] // simplified as int for now
   //  let search_history:
   //  let recent_posts: [Int]
   
-  init(display_name: String, username: String, profile_picture: UIImage) async {
+  init(display_name: String, username: String, profile_picture: UIImage) {
     self.display_name = display_name
     self.username = username
+    let stored_profile_picture = StoredImage(image: profile_picture, contentType: "profile")
+    self.profile_picture = stored_profile_picture
     self.followers = []
     self.following = []
-    self.profile_picture = await StoredImage(image: profile_picture, contentType: "profile")
-    self.profile_picture_url = ""
-    await self.profile_picture.fetchImage()
-    self.profile_picture_url = self.profile_picture.url
   }
 
-  init?(snapshot: DataSnapshot) async {
+  init?(snapshot: DataSnapshot) {
     guard
       let value = snapshot.value as? NSDictionary,
       let display_name = value["display_name"] as? String,
@@ -54,9 +51,7 @@ class User {
     }
     self.display_name = display_name
     self.username = username
-    self.profile_picture_url = profile_picture_url
-    self.profile_picture = await StoredImage(url: profile_picture_url)
-    
+    self.profile_picture = StoredImage(url: profile_picture_url)
   }
 
   func sendFriendRequest(to_user: User) -> FriendRequest {

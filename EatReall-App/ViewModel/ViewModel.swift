@@ -32,9 +32,7 @@ class ViewModel: ObservableObject {
     self.numUsers = 1
     self.currentUser = PreviewUser(display_name: "fake user", profile_picture: "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/reaction%2Femily_and_chicken.jpeg?alt=media&token=cff5f474-e745-4992-b987-fecff299760b")
     
-    Task{
-      await self.loadAllPosts()
-    }
+    self.loadAllPosts()
   }
 
 
@@ -64,7 +62,7 @@ class ViewModel: ObservableObject {
         "display_name": user.display_name,
         "username": user.display_name,
 //        "profile_picture": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
-        "profile_picture_url": user.profile_picture,
+        "profile_picture": user.profile_picture,
         "followers": user.followers,
         "following": user.following,
         "saved_posts":[],
@@ -74,57 +72,42 @@ class ViewModel: ObservableObject {
     )
   }
   
-  func loadAllPosts() async {
-    var snapshots: [DataSnapshot] = []
+  func loadAllPosts() {
     rootRef.child("Posts").observe(.value, with: { snapshot in
       for child in snapshot.children {
-        if let snapshot = child as? DataSnapshot{
-          snapshots.append(snapshot)
+        if let snapshot = child as? DataSnapshot,
+           let post = Post(snapshot: snapshot) {
+          self.postList.append(post)
+          self.numPosts += 1
         }
       }
     })
-    for snapshot in snapshots {
-      if let post = await Post(snapshot: snapshot) {
-        self.postList.append(post)
-        self.numPosts += 1
-      }
-    }
   }
   
-  func loadUser() async {
-    var snapshots: [DataSnapshot] = []
+  func loadUser() {
     rootRef.child("Users").observe(.value, with: { snapshot in
       for child in snapshot.children {
-        if let snapshot = child as? DataSnapshot {
-          snapshots.append(snapshot)
+        if let snapshot = child as? DataSnapshot,
+           let user = User(snapshot: snapshot) {
+          self.userList.append(user)
+          self.numUsers += 1
         }
       }
     })
-    for snapshot in snapshots {
-      if let user = await User(snapshot: snapshot) {
-        self.userList.append(user)
-        self.numUsers += 1
-      }
-    }
   }
   
-  func postsNeedReview() async -> [Post] {
+  func postsNeedReview() -> [Post] {
     var res: [Post] = []
-    var snapshots: [DataSnapshot] = []
     rootRef.child("Posts").observe(.value, with: { snapshot in
       for child in snapshot.children {
-        if let snapshot = child as? DataSnapshot {
-          snapshots.append(snapshot)
+        if let snapshot = child as? DataSnapshot,
+           let post = Post(snapshot: snapshot) {
+          if post.reviewed == false {
+            res.append(post)
           }
         }
-      })
-    for snapshot in snapshots {
-      if let post = await Post(snapshot: snapshot) {
-        if await post.reviewed == false {
-          res.append(post)
-        }
       }
-    }
+    })
     return res
   }
   

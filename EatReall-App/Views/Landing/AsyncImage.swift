@@ -13,52 +13,32 @@ import Combine
 struct AsyncImage: View {
     
     var imageType = "post"
-//    @ObservedObject var imageLoader: StoredImage
+    @ObservedObject var imageLoader: StoredImage
     @State var image: UIImage = UIImage()
     @State var url: URL = URL(fileURLWithPath: "image-placeholder")
 
-  init(url: String, type: String = "post") async {
-//    self.imageLoader = await StoredImage(url: url)
-    self.url = URL(string: url) ?? URL(fileURLWithPath: "image-placeholder")
+  init(url: String, type: String = "post") {
+    self.imageLoader = StoredImage(url: url)
+    self.url = URL(string: url)!
     self.imageType = type
   }
 
     var body: some View {
+//        imageContent
+//            .onReceive(imageLoader.$image) { imageData in
+//                self.imageData = imageData
+//            }
       if (self.imageType == "profile"){
         Image(uiImage: image)
         .resizable()
         .frame(width: 30.0, height: 30.0)
-//        .onReceive(imageLoader.$image) { image in
-//            self.image = image
-//        }
-//        .onAppear {
-//          Task{
-//            await imageLoader.fetchImage()
-//          }
-//        }
-      }
-      else if (self.imageType == "reaction"){
-        Image(uiImage: image)
-              .resizable()
-              .frame(width: 101,
-                     height: 101)
-              .foregroundColor(.primary)
-              .padding(8)
-              .background(Color.gray)
-              .clipShape(Circle())
-              .background(
-                Circle()
-                  .stroke(Color.black, lineWidth: 2))
-//              .onReceive(imageLoader.$image) { image in
-//                  self.image = image
-//              }
-//              .onAppear {
-//                Task{
-//                  await imageLoader.fetchImage()
-//                }
-//              }
-      }
-        else
+        .onReceive(imageLoader.$image) { image in
+            self.image = image
+        }
+        .onAppear {
+          imageLoader.fetchImage()
+        }
+      } else
       {
         Image(uiImage: image)
         .resizable()
@@ -66,14 +46,12 @@ struct AsyncImage: View {
         .frame(
           width: 370,
           height: 450)
-//        .onReceive(imageLoader.$image) { image in
-//            self.image = image
-//        }
-//        .onAppear {
-//          Task{
-//            await imageLoader.fetchImage()
-//          }
-//        }
+        .onReceive(imageLoader.$image) { image in
+            self.image = image
+        }
+        .onAppear {
+            imageLoader.fetchImage()
+        }
       }
     }
 }
