@@ -46,6 +46,7 @@
 		CDF4D149291CAA520071F603 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4D148291CAA520071F603 /* HomeView.swift */; };
 		FC62FC1B2926AD2900C8D218 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC62FC1A2926AD2900C8D218 /* AsyncImage.swift */; };
 		FC62FC1F2936A15E00C8D218 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC62FC1E2936A15E00C8D218 /* Parser.swift */; };
+		FC62FC2129380B7000C8D218 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC62FC2029380B7000C8D218 /* GoogleService-Info.plist */; };
 		FCE4B8DC291B68EF004ED90E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FCE4B8DB291B68EF004ED90E /* FirebaseAnalytics */; };
 		FCE4B8DE291B68EF004ED90E /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCE4B8DD291B68EF004ED90E /* FirebaseAnalyticsSwift */; };
 		FCE4B8E0291B68EF004ED90E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FCE4B8DF291B68EF004ED90E /* FirebaseDatabase */; };
@@ -55,7 +56,6 @@
 		FCE4B8E8291B68EF004ED90E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FCE4B8E7291B68EF004ED90E /* FirebaseStorage */; };
 		FCE4B8EA291B68EF004ED90E /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FCE4B8E9291B68EF004ED90E /* FirebaseStorageCombine-Community */; };
 		FCE4B8ED291B69B3004ED90E /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8EC291B69B3004ED90E /* Firebase.swift */; };
-		FCE4B8EF291B6BC1004ED90E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCE4B8EE291B6BC1004ED90E /* GoogleService-Info.plist */; };
 		FCE4B8F1291B6BFA004ED90E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F0291B6BFA004ED90E /* User.swift */; };
 		FCE4B8F4291B6C23004ED90E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F3291B6C23004ED90E /* Post.swift */; };
 		FCE4B8F6291B6C3D004ED90E /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */; };
@@ -105,8 +105,8 @@
 		CDF4D148291CAA520071F603 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FC62FC1A2926AD2900C8D218 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		FC62FC1E2936A15E00C8D218 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		FC62FC2029380B7000C8D218 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCE4B8EC291B69B3004ED90E /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
-		FCE4B8EE291B6BC1004ED90E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCE4B8F0291B6BFA004ED90E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCE4B8F3291B6C23004ED90E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FCE4B8F5291B6C3D004ED90E /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */,
 				FCE4B8FC291C7EDA004ED90E /* image-placeholder.jpeg */,
 				C4A2E7B02919DD8B00D15DE1 /* Assets.xcassets */,
-				FCE4B8EE291B6BC1004ED90E /* GoogleService-Info.plist */,
+				FC62FC2029380B7000C8D218 /* GoogleService-Info.plist */,
 				C4A2E7B22919DD8B00D15DE1 /* Preview Content */,
 			);
 			path = "EatReall-App";
@@ -383,9 +383,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCE4B8FD291C7EDA004ED90E /* image-placeholder.jpeg in Resources */,
+				FC62FC2129380B7000C8D218 /* GoogleService-Info.plist in Resources */,
 				FCE4B8F9291B6E67004ED90E /* group_pic.png in Resources */,
 				C4A2E7B42919DD8B00D15DE1 /* Preview Assets.xcassets in Resources */,
-				FCE4B8EF291B6BC1004ED90E /* GoogleService-Info.plist in Resources */,
 				C4A2E7B12919DD8B00D15DE1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,7 +582,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CMU443F22.EatReall-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "CMU443F22.EatReall-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -614,7 +614,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CMU443F22.EatReall-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "CMU443F22.EatReall-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

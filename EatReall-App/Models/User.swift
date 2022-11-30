@@ -14,7 +14,7 @@ class User {
 //  let id: UUID
   var display_name: String
   var username: String
-  var profile_picture: StoredImage
+  var profile_picture: StoredImage = StoredImage()
   var followers: [PreviewUser]
   var following: [PreviewUser]
   //  let saved_posts: [Int] // simplified as int for now
@@ -24,10 +24,12 @@ class User {
   init(display_name: String, username: String, profile_picture: UIImage) {
     self.display_name = display_name
     self.username = username
-    let stored_profile_picture = StoredImage(image: profile_picture, contentType: "profile")
-    self.profile_picture = stored_profile_picture
     self.followers = []
     self.following = []
+    Task {
+      let stored_profile_picture = await StoredImage(image: profile_picture, contentType: "profile")
+      self.profile_picture = stored_profile_picture
+    }
   }
 
   init?(snapshot: DataSnapshot) {

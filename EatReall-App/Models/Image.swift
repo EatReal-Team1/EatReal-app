@@ -12,9 +12,12 @@ import FirebaseStorage
 import Foundation
 
 class StoredImage: ObservableObject {
-  var path: String
+  var path: String = ""
   @Published var image = UIImage()
-  @Published var url: String
+  @Published var url: String = ""
+  
+  init(){
+  }
   
   init(url: String) {
     self.path = ""
@@ -22,7 +25,7 @@ class StoredImage: ObservableObject {
     fetchImage()
   }
   
-  init(image: UIImage, contentType: String){
+  init(image: UIImage, contentType: String) async{
     if contentType == "placeholder" {
       self.image = image
       self.path = ""
@@ -33,12 +36,11 @@ class StoredImage: ObservableObject {
       let randomID = UUID.init().uuidString
       self.path = "\(contentType)/\(randomID)"
       self.url = ""
-      uploadImage(path: self.path, image: image)
+      await uploadImage(path: self.path, image: image)
     }
   }
 
-  func uploadImage(path: String, image: UIImage) {
-    print("path: \(path)")
+  func uploadImage(path: String, image: UIImage) async {
     let uploadRef = Storage.storage().reference(withPath: "\(path)")
     guard let imageData = image.jpegData(compressionQuality: 0.75) else {
       self.image = UIImage(named: "image-placeholder.jpeg")!
@@ -46,24 +48,16 @@ class StoredImage: ObservableObject {
     }
     let uploadMetadata = StorageMetadata.init()
     uploadMetadata.contentType = "image/heic"
-
-    let task = uploadRef.putData(imageData, metadata: uploadMetadata, completion: { _, error in
-      guard error == nil else {
-        print("Failed to upload")
-        return
-      }
-      uploadRef.downloadURL { url, error in
-        guard let url = url, error == nil else {
-          return
-        }
-        DispatchQueue.main.async {
-          self.url = url.absoluteString
-          print("Got url: ", self.url)
-        }
-      }
-    })
-    task.resume()
-    
+    do {
+      let _ = try await uploadRef.putDataAsync(imageData, metadata: uploadMetadata)
+    } catch{
+      print("Unable to upload image to storage.")
+    }
+    do {
+      self.url = try await uploadRef.downloadURL().absoluteString
+    } catch {
+      print("Unable to save url.")
+    }
   }
   
   func fetchImage(){
