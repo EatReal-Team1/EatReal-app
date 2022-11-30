@@ -108,8 +108,9 @@ struct FormView: View {
         
         Button(action: {
           self.submitted = true
-          viewModel.selectedPost?.addReview(selfie_photo: selfie_photo, review_restaurant: restaurant, review_dish: dishes, review_comment: review, review_stars: Double(rating))
-          
+          Task {
+            await viewModel.selectedPost?.addReview(selfie_photo: selfie_photo, review_restaurant: restaurant, review_dish: dishes, review_comment: review, review_stars: Double(rating))
+          }
         })  {
           Text("Share")
             .padding(.horizontal, 30)

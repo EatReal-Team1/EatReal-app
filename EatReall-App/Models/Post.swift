@@ -13,7 +13,7 @@ import Foundation
 
 let placeholder = UIImage(named: "image-placeholder.jpeg")!
 let stored_placeholder = StoredImage(url: "example/image-placeholder.jpeg")
-// Observable?
+
 class Post: Identifiable {
 //  var id: UUID
   var address: String
@@ -33,6 +33,7 @@ class Post: Identifiable {
     self.address = address
     self.author = author
     let stored_food_photo = StoredImage(image: food_photo, contentType: "post")
+    print("cur url is: ", stored_food_photo.url)
     self.food_photo = stored_food_photo.url
     self.review_restaurant = review_restaurant
     // Optional
@@ -106,7 +107,7 @@ class Post: Identifiable {
     self.reviewed = true
 //    self.rootRef.child("Posts").child(self.id).setValue(["selfie_photo": stored_selfie_photo.path])
   }
-  
+
 }
 
 class PostList {

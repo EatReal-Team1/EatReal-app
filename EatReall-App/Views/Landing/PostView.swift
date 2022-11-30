@@ -26,10 +26,9 @@ struct PostView: View {
 //            .frame(
 //              width: 370,
 //              height: 450)
-            .overlay(
-              Section {
-                AsyncImage(url: post.selfie_photo, type: "reaction")
-//                Image(uiImage: post.selfie_photo ?? placeholder_reaction_img)
+//            .overlay(
+//              Section {
+//                Image(uiImage: post.selfie_photo.image ?? placeholder_reaction_img)
 //                  .resizable()
 //                  .frame(width: 101,
 //                         height: 101)
@@ -41,8 +40,8 @@ struct PostView: View {
 //                    Circle()
 //                      .stroke(Color.black, lineWidth: 2)
 //                  )
-              }.offset(x: -120, y: -180)
-            )
+//              }.offset(x: -120, y: -180)
+//            )
         }
         
         Spacer().frame(height: 30)

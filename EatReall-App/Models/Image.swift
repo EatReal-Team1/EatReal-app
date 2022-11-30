@@ -44,10 +44,10 @@ class StoredImage: ObservableObject {
       self.image = UIImage(named: "image-placeholder.jpeg")!
       return
     }
-//    let uploadMetadata = StorageMetadata.init()
-//    uploadMetadata.contentType = "image/heic"
+    let uploadMetadata = StorageMetadata.init()
+    uploadMetadata.contentType = "image/heic"
 
-    uploadRef.putData(imageData, metadata: nil, completion: { _, error in
+    let task = uploadRef.putData(imageData, metadata: uploadMetadata, completion: { _, error in
       guard error == nil else {
         print("Failed to upload")
         return
@@ -56,9 +56,14 @@ class StoredImage: ObservableObject {
         guard let url = url, error == nil else {
           return
         }
-        self.url = url.absoluteString
+        DispatchQueue.main.async {
+          self.url = url.absoluteString
+          print("Got url: ", self.url)
+        }
       }
     })
+    task.resume()
+    
   }
   
   func fetchImage(){

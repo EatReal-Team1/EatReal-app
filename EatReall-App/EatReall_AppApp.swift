@@ -22,6 +22,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     let exImage = UIImage(named: "placeholder-post")!
     let examplePreviewUser = PreviewUser(display_name: "Emily Feng", profile_picture: "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Femily.JPG?alt=media&token=c2a7afd1-35eb-4584-b21f-187c4d6e8f95")
     let examplePost = Post(address: "", author: examplePreviewUser, food_photo: exImage, review_restaurant: "hunan")
+    
+    print("created post")
     let rootRef = Database.database().reference()
     rootRef.child("Posts").child("4").setValue(
       [

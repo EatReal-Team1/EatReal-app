@@ -18,9 +18,9 @@ struct AsyncImage: View {
     @State var url: URL = URL(fileURLWithPath: "image-placeholder")
 
   init(url: String, type: String = "post") {
-      self.imageLoader = StoredImage(url: url)
-      self.url = URL(string: url) ?? URL(fileURLWithPath: "image-placeholder")
-      self.imageType = type
+    self.imageLoader = StoredImage(url: url)
+    self.url = URL(string: url)!
+    self.imageType = type
   }
 
     var body: some View {
@@ -38,27 +38,7 @@ struct AsyncImage: View {
         .onAppear {
           imageLoader.fetchImage()
         }
-      }
-      else if (self.imageType == "reaction"){
-        Image(uiImage: image)
-              .resizable()
-              .frame(width: 101,
-                     height: 101)
-              .foregroundColor(.primary)
-              .padding(8)
-              .background(Color.gray)
-              .clipShape(Circle())
-              .background(
-                Circle()
-                  .stroke(Color.black, lineWidth: 2))
-              .onReceive(imageLoader.$image) { image in
-                  self.image = image
-              }
-              .onAppear {
-                  imageLoader.fetchImage()
-              }
-      }
-        else
+      } else
       {
         Image(uiImage: image)
         .resizable()
