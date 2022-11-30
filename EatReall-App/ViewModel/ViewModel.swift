@@ -16,6 +16,7 @@ class ViewModel: ObservableObject {
   @Published var reviewingPost: Post?
   
   @Published var postList: [Post]
+  @Published var filteredPostList: [Post]
   @Published var numPosts: Int
   @Published var userList: [User]
   @Published var numUsers: Int
@@ -27,6 +28,7 @@ class ViewModel: ObservableObject {
     self.rootRef = Database.database().reference()
 //    self.rootRef = FirebaseDatabase.Database.database().reference()
     self.postList = []
+    self.filteredPostList = []
     self.numPosts = 0
     self.userList = []
     self.numUsers = 1
@@ -111,7 +113,11 @@ class ViewModel: ObservableObject {
     return res
   }
   
-  
+  func search(searchText: String) {
+    self.filteredPostList = postList.filter { post in
+      return post.review_restaurant.lowercased().contains(searchText.lowercased())
+    }
+  }
   
 }
 

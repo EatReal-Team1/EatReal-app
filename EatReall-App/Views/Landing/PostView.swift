@@ -20,28 +20,17 @@ struct PostView: View {
     var body: some View {
       VStack(alignment: .leading, spacing: 0.0){
         ZStack{
-          AsyncImage(url: post.food_photo)
-//            .resizable()
-//            .aspectRatio(contentMode: .fill)
-//            .frame(
-//              width: 370,
-//              height: 450)
-//            .overlay(
-//              Section {
-//                Image(uiImage: post.selfie_photo.image ?? placeholder_reaction_img)
-//                  .resizable()
-//                  .frame(width: 101,
-//                         height: 101)
-//                  .foregroundColor(.primary)
-//                  .padding(8)
-//                  .background(Color.gray)
-//                  .clipShape(Circle())
-//                  .background(
-//                    Circle()
-//                      .stroke(Color.black, lineWidth: 2)
-//                  )
-//              }.offset(x: -120, y: -180)
-//            )
+          if (post.selfie_photo == "") {
+            AsyncImage(url: post.food_photo)
+          } else
+          {
+            AsyncImage(url: post.food_photo)
+              .overlay(
+                Section {
+                  AsyncImage(url: post.selfie_photo, type: "reaction")
+                }.offset(x: -140, y: -200)
+              )
+          }
         }
         
         Spacer().frame(height: 30)
