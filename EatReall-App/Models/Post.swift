@@ -13,7 +13,7 @@ import Foundation
 
 let placeholder = UIImage(named: "image-placeholder.jpeg")!
 let stored_placeholder = StoredImage(url: "example/image-placeholder.jpeg")
-// Observable?
+
 class Post: Identifiable {
 //  var id: UUID
   var address: String
