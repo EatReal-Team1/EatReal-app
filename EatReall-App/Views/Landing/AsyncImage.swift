@@ -24,10 +24,6 @@ struct AsyncImage: View {
   }
 
     var body: some View {
-//        imageContent
-//            .onReceive(imageLoader.$image) { imageData in
-//                self.imageData = imageData
-//            }
       if (self.imageType == "profile"){
         Image(uiImage: image)
         .resizable()
@@ -38,7 +34,26 @@ struct AsyncImage: View {
         .onAppear {
           imageLoader.fetchImage()
         }
-      } else
+      } else if (self.imageType == "reaction"){
+        Image(uiImage: image)
+          .resizable()
+          .aspectRatio(contentMode: .fill)
+          .frame(width: 80,
+                 height: 80)
+          .foregroundColor(.primary)
+          .background(Color.gray)
+          .clipShape(Circle())
+          .background(
+            Circle()
+              .stroke(Color.black, lineWidth: 2)
+          ).onReceive(imageLoader.$image) { image in
+            self.image = image
+          }
+          .onAppear {
+            imageLoader.fetchImage()
+          }
+      }
+        else
       {
         Image(uiImage: image)
         .resizable()
