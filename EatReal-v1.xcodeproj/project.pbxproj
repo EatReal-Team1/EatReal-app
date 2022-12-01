@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C461BE4229241D2800E5E70A /* SelfieCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461BE4129241D2800E5E70A /* SelfieCameraView.swift */; };
-		C4A2E7AD2919DD8A00D15DE1 /* EatReall_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */; };
+		C4A2E7AD2919DD8A00D15DE1 /* EatReal_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7AC2919DD8A00D15DE1 /* EatReal_App.swift */; };
 		C4A2E7AF2919DD8A00D15DE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */; };
 		C4A2E7B12919DD8B00D15DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A2E7B02919DD8B00D15DE1 /* Assets.xcassets */; };
 		C4A2E7B42919DD8B00D15DE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A2E7B32919DD8B00D15DE1 /* Preview Assets.xcassets */; };
@@ -66,7 +66,7 @@
 /* Begin PBXFileReference section */
 		C461BE4129241D2800E5E70A /* SelfieCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieCameraView.swift; sourceTree = "<group>"; };
 		C4A2E7A92919DD8A00D15DE1 /* EatReal-v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EatReal-v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatReall_AppApp.swift; sourceTree = "<group>"; };
+		C4A2E7AC2919DD8A00D15DE1 /* EatReal_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatReal_App.swift; sourceTree = "<group>"; };
 		C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C4A2E7B02919DD8B00D15DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4A2E7B32919DD8B00D15DE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A2E835291DE45000D15DE1 /* EatReal-v1-Info.plist */,
-				C4A2E7AB2919DD8A00D15DE1 /* EatReall-App */,
+				C4A2E7AB2919DD8A00D15DE1 /* EatReal-App */,
 				C4A2E7AA2919DD8A00D15DE1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,20 +150,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C4A2E7AB2919DD8A00D15DE1 /* EatReall-App */ = {
+		C4A2E7AB2919DD8A00D15DE1 /* EatReal-App */ = {
 			isa = PBXGroup;
 			children = (
+				FC2EE4E02938497900EA9DA6 /* Tests */,
 				C4A2E80E291DD59800D15DE1 /* Views */,
 				C4A2E80D291DD57B00D15DE1 /* ViewModel */,
 				FCE4B8F7291B6DEB004ED90E /* Resources */,
 				FCE4B8EB291B69A3004ED90E /* Models */,
-				C4A2E7AC2919DD8A00D15DE1 /* EatReall_AppApp.swift */,
+				C4A2E7AC2919DD8A00D15DE1 /* EatReal_App.swift */,
 				FCE4B8FC291C7EDA004ED90E /* image-placeholder.jpeg */,
 				C4A2E7B02919DD8B00D15DE1 /* Assets.xcassets */,
 				FC62FC2029380B7000C8D218 /* GoogleService-Info.plist */,
 				C4A2E7B22919DD8B00D15DE1 /* Preview Content */,
 			);
-			path = "EatReall-App";
+			path = "EatReal-App";
 			sourceTree = "<group>";
 		};
 		C4A2E7B22919DD8B00D15DE1 /* Preview Content */ = {
@@ -284,6 +285,13 @@
 				CDF4D144291CA9870071F603 /* Logo.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FC2EE4E02938497900EA9DA6 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		FCE4B8EB291B69A3004ED90E /* Models */ = {
@@ -429,7 +437,7 @@
 				CD47BC20291D8B730083E983 /* CreateProfileView.swift in Sources */,
 				CDF4D142291CA5B30071F603 /* profileButton.swift in Sources */,
 				CDE65765291AF89E00EA3CE8 /* FriendView.swift in Sources */,
-				C4A2E7AD2919DD8A00D15DE1 /* EatReall_AppApp.swift in Sources */,
+				C4A2E7AD2919DD8A00D15DE1 /* EatReal_App.swift in Sources */,
 				C4A2E7E4291B724200D15DE1 /* ImagePickerView.swift in Sources */,
 				C4A2E80C291D9CD100D15DE1 /* TextReview.swift in Sources */,
 				FC62FC1B2926AD2900C8D218 /* AsyncImage.swift in Sources */,
@@ -561,7 +569,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"EatReall-App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EatReal-App/Preview Content\"";
 				DEVELOPMENT_TEAM = WJ53H49GSL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -593,7 +601,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"EatReall-App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EatReal-App/Preview Content\"";
 				DEVELOPMENT_TEAM = WJ53H49GSL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
