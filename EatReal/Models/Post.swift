@@ -15,7 +15,6 @@ let placeholder = UIImage(named: "image-placeholder.jpeg")!
 let stored_placeholder = StoredImage(url: "example/image-placeholder.jpeg")
 
 class Post: Identifiable {
-//  var id: UUID
   var address: String
   var author: PreviewUser
   var food_photo: String = ""
@@ -26,16 +25,12 @@ class Post: Identifiable {
   var review_stars: Double
   var reviewed: Bool
   var likes: Int
-//  let rootRef = Database.database().reference()
 
   init(address: String, author: PreviewUser, food_photo: UIImage, review_restaurant: String, selfie_photo: UIImage = placeholder, review_dish: String = "", review_comment: String = "Your friend has not left any comments yet.", review_stars: Double = 0.0, reviewed: Bool = false) async {
     self.address = address
     self.author = author
-    
-    
     self.review_restaurant = review_restaurant
     // Optional
-    
     self.review_dish = review_dish
     self.review_comment = review_comment
     self.review_stars = review_stars
@@ -45,17 +40,14 @@ class Post: Identifiable {
     self.food_photo = stored_food_photo.url
     let stored_selfire_photo = await StoredImage(image: selfie_photo, contentType: "reaction")
     self.selfie_photo = stored_selfire_photo.url
-    
   }
 
   init?(snapshot: DataSnapshot) {
     guard
       let value = snapshot.value as? NSDictionary,
-//      let id = value["id"] as? UUID,
       let address = value["address"] as? String,
       let author = value["author"] as? NSDictionary,
       let food_photo_url = value["food_photo_url"] as? String,
-//      let food_foto_path = value["food_photo"] as? String,
       let selfie_photo_url = value["selfie_photo"] as? String,
       let review_restaurant = value["review_restaurant"] as? String,
       let review_dish = value["review_dish"] as? String,
@@ -66,7 +58,6 @@ class Post: Identifiable {
     else {
       return nil
     }
-//    self.id = id
     self.address = address
     self.author = PreviewUser(display_name: author["display_name"] as! String,
                               profile_picture: author["profile_picture"] as! String)
@@ -90,11 +81,6 @@ class Post: Identifiable {
     self.review_comment = review_comment
     self.review_stars = review_stars
     self.reviewed = true
-//    self.rootRef.child("Posts").child(self.id).setValue(["selfie_photo": stored_selfie_photo.path])
-  }
-  
-  func loadURL() async{
-    
   }
 
 }
