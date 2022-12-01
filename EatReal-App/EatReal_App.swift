@@ -40,7 +40,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 @main
-struct EatReall_AppApp: App {
+struct EatReal_App: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
   @StateObject var viewRouter = ViewRouter()
   var body: some Scene {
