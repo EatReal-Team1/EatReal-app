@@ -11,7 +11,11 @@ struct HomeView: View {
   @StateObject var viewRouter: ViewRouter
     var body: some View {
         VStack{
-          Logo()
+          HStack{
+            Logo().frame(alignment: .leading)
+            Search(viewRouter: viewRouter).frame(alignment: .trailing)
+            Spacer()
+          }
           PostScroll().frame(height: 600)
           Spacer()
           navBar(viewRouter: viewRouter)

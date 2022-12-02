@@ -8,4 +8,5 @@
 import SwiftUI
 class ViewRouter: ObservableObject {
   @Published var currentPage: Page = .createProfile
+  @Published var searchInput: String = ""
 }

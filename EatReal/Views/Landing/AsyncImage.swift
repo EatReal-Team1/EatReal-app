@@ -58,9 +58,6 @@ struct AsyncImage: View {
         Image(uiImage: image)
         .resizable()
         .aspectRatio(contentMode: .fill)
-        .frame(
-          width: 370,
-          height: 450)
         .onReceive(imageLoader.$image) { image in
             self.image = image
         }

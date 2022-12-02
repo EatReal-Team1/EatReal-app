@@ -73,7 +73,6 @@ class StoredImage: ObservableObject {
       }
       DispatchQueue.main.async {
         self.image = UIImage(data: data)!
-        
       }
     })
 
