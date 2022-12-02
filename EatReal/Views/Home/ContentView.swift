@@ -14,10 +14,11 @@ enum Page {
   case create
   case friend
   case profile
+  case search
 }
 
 struct ContentView: View {
-  
+  @EnvironmentObject var viewModel: ViewModel
   @StateObject var viewRouter: ViewRouter
     
     var body: some View {
@@ -39,6 +40,9 @@ struct ContentView: View {
           
         case .profile:
           ProfileView(viewRouter: viewRouter)
+        
+        case .search:
+        SearchView(viewRouter: viewRouter, viewModel: viewModel)
           
       }
     }

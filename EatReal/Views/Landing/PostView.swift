@@ -33,7 +33,7 @@ struct PostView: View {
           }
         }
         
-        Spacer().frame(height: 30)
+        Spacer().frame(height: 20)
         
         HStack{
           AsyncImage(url: post.author.profile_picture, type: "profile")
@@ -48,7 +48,6 @@ struct PostView: View {
         
         Text(post.review_comment)
           .font(.footnote)
-          .frame(width: .infinity)
           .padding(.horizontal, 12)
         
         Spacer().frame(height: 40)
@@ -58,6 +57,6 @@ struct PostView: View {
 
 //struct PostView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        PostView()
+//        PostView())
 //    }
 //}

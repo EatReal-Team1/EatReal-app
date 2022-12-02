@@ -15,7 +15,7 @@ class ViewModel: ObservableObject {
   @Published var selectedPost: Post?
   @Published var reviewingPost: Post?
   
-  @Published var postList: [Post]
+  @Published var postList: [Post] = []
   @Published var filteredPostList: [Post]
   @Published var numPosts: Int
   @Published var userList: [User]
@@ -113,10 +113,11 @@ class ViewModel: ObservableObject {
     return res
   }
   
-  func search(searchText: String) {
+  func search(searchText: String) -> [Post]{
     self.filteredPostList = postList.filter { post in
       return post.review_restaurant.lowercased().contains(searchText.lowercased())
     }
+    return self.filteredPostList
   }
   
 }

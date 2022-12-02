@@ -46,6 +46,9 @@
 		CDF4D149291CAA520071F603 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4D148291CAA520071F603 /* HomeView.swift */; };
 		FC62FC1B2926AD2900C8D218 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC62FC1A2926AD2900C8D218 /* AsyncImage.swift */; };
 		FC62FC2129380B7000C8D218 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC62FC2029380B7000C8D218 /* GoogleService-Info.plist */; };
+		FC6934CE293938A8004D06FB /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6934CD293938A8004D06FB /* Search.swift */; };
+		FC6934D029396FFF004D06FB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6934CF29396FFF004D06FB /* SearchView.swift */; };
+		FC6934D129396FFF004D06FB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6934CF29396FFF004D06FB /* SearchView.swift */; };
 		FC6B0130293857F900AFE1E8 /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6B01212938566C00AFE1E8 /* PostTests.swift */; };
 		FC6B013329385A1600AFE1E8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FC6B013229385A1600AFE1E8 /* FirebaseAnalytics */; };
 		FC6B013529385A1600AFE1E8 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = FC6B013429385A1600AFE1E8 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -142,6 +145,8 @@
 		CDF4D148291CAA520071F603 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FC62FC1A2926AD2900C8D218 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		FC62FC2029380B7000C8D218 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC6934CD293938A8004D06FB /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		FC6934CF29396FFF004D06FB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FC6B01212938566C00AFE1E8 /* PostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
 		FC6B0127293857EB00AFE1E8 /* EatRealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatRealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE4B8EC291B69B3004ED90E /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
@@ -359,6 +364,8 @@
 				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
 				CDF4D148291CAA520071F603 /* HomeView.swift */,
 				CDF4D144291CA9870071F603 /* Logo.swift */,
+				FC6934CD293938A8004D06FB /* Search.swift */,
+				FC6934CF29396FFF004D06FB /* SearchView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -555,6 +562,7 @@
 				C4A2E80A291D920300D15DE1 /* RatingReview.swift in Sources */,
 				CDF4D140291CA5820071F603 /* friendButton.swift in Sources */,
 				C4A2E83B291DEB0C00D15DE1 /* ImagePicker.swift in Sources */,
+				FC6934D029396FFF004D06FB /* SearchView.swift in Sources */,
 				C4A2E7E6291B72D700D15DE1 /* FoodCameraView.swift in Sources */,
 				C4A2E7BB2919E1CA00D15DE1 /* navBar.swift in Sources */,
 				CDF4D13E291CA54A0071F603 /* postButton.swift in Sources */,
@@ -568,6 +576,7 @@
 				C4A2E837291DE6EB00D15DE1 /* ViewModel.swift in Sources */,
 				CDE681C0291AD7BD00AF8BFD /* NotificationScroll.swift in Sources */,
 				C4A2E7BF2919EBDE00D15DE1 /* PostScroll.swift in Sources */,
+				FC6934CE293938A8004D06FB /* Search.swift in Sources */,
 				FCE4B8ED291B69B3004ED90E /* Firebase.swift in Sources */,
 				CDF4D149291CAA520071F603 /* HomeView.swift in Sources */,
 				C4A2E808291D884900D15DE1 /* FormView.swift in Sources */,
@@ -592,6 +601,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6934D129396FFF004D06FB /* SearchView.swift in Sources */,
 				FC6B0130293857F900AFE1E8 /* PostTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
