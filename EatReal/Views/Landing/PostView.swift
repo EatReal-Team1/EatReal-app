@@ -43,14 +43,13 @@ struct PostView: View {
         .padding(.horizontal, 12)
         
         Text(post.address)
-          .frame(width: .infinity)
           .padding(.horizontal, 12)
         
         Text(post.review_comment)
           .font(.footnote)
           .padding(.horizontal, 12)
         
-        Spacer().frame(height: 40)
+//        Spacer().frame(height: 40)
       }
     }
 }

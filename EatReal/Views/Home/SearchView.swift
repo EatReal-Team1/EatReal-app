@@ -16,18 +16,17 @@ struct SearchView: View {
   
     var body: some View {
       
-      VStack{
-//        Button(action: {
-//          viewRouter.currentPage = .home
-//        }){
-//          Image("left-arrow").resizable()
-//            .frame(width: 14.0, height: 14.0)
-//        }//.frame(alignment: .leading)
-
+      VStack(alignment: .leading){
+        Button(action: {
+          viewRouter.currentPage = .home
+        }){
+          Image("left-arrow").resizable()
+            .frame(width: 21.0, height: 21.0)
+        }.padding(.leading)
+        
         NavigationStack {
           ScrollView() {
             VStack(spacing: 5) {
-              Spacer()
               Spacer()
               ForEach (resultPosts) { post in
                 PostView(post: .constant(post))
