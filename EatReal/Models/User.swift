@@ -10,7 +10,7 @@ import Alamofire
 import Firebase
 import Foundation
 
-class User {
+class User: Identifiable {
 //  let id: UUID
   var display_name: String
   var username: String
@@ -55,10 +55,14 @@ class User {
   }
 
   func sendFriendRequest(to_user: User) {
-    let self_preview = PreviewUser(display_name: self.display_name, profile_picture: self.profile_picture.path)
-    let to_user_preview = PreviewUser(display_name: to_user.display_name, profile_picture: to_user.profile_picture.path)
+    let self_preview = PreviewUser(display_name: self.display_name, profile_picture: self.profile_picture.url)
+    let to_user_preview = PreviewUser(display_name: to_user.display_name, profile_picture: to_user.profile_picture.url)
     to_user.followers.append(self_preview)
     self.following.append(to_user_preview)
+  }
+  
+  func toPreviewuser() -> PreviewUser {
+    return PreviewUser(display_name: self.display_name, profile_picture: self.profile_picture.url)
   }
 
 }
@@ -83,10 +87,10 @@ class PreviewUser{
     self.following = []
   }
   
-  func sendFriendRequest(to_user: String) {
-      // V1 doesn't need approval
-    self.following.append(to_user)
-  }
+//  func sendFriendRequest(to_user: String) {
+//      // V1 doesn't need approval
+//    self.following.append(to_user)
+//  }
   
   func toAnyObject() -> Any {
          return [

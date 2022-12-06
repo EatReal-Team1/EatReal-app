@@ -59,12 +59,13 @@
       },
       "food_photo": "post/food4.JPG",
       "food_photo_url": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/post%2Ffood4.jpg?alt=media&token=bff739bf-c240-4bfe-b8fc-191961f1b6eb",
+      "id": 3,
       "likes": 0,
       "review_comment": "",
       "review_dish": "",
       "review_restaurant": " ",
       "review_stars": 0,
-      "reviewed": false,
+      "reviewed": true,
       "selfie_photo": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/reaction%2Femily_and_chicken.jpeg?alt=media&token=cff5f474-e745-4992-b987-fecff299760b"
     }
   ],

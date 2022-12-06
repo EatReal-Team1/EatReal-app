@@ -45,7 +45,7 @@ extension EmbeddedCameraView {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         self.parent.selectedImage = image
         
-        await self.parent.viewModel.selectedPost = Post(address: " ", author: self.parent.viewModel.currentUser, food_photo: image, review_restaurant: " ")
+        await self.parent.viewModel.selectedPost = Post(address: " ", author: self.parent.viewModel.currentUser.toPreviewuser(), food_photo: image, review_restaurant: " ")
         self.parent.viewModel.numPosts += 1
         self.parent.viewModel.savePost()
       }
