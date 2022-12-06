@@ -15,6 +15,8 @@ let placeholder = UIImage(named: "image-placeholder.jpeg")!
 let stored_placeholder = StoredImage(url: "example/image-placeholder.jpeg")
 
 class Post: Identifiable {
+  private let rootRef = Database.database().reference()
+  var id: Int = 0
   var address: String
   var author: PreviewUser
   var food_photo: String = ""
@@ -45,6 +47,7 @@ class Post: Identifiable {
   init?(snapshot: DataSnapshot) {
     guard
       let value = snapshot.value as? NSDictionary,
+      let id = value["id"] as? Int,
       let address = value["address"] as? String,
       let author = value["author"] as? NSDictionary,
       let food_photo_url = value["food_photo_url"] as? String,
@@ -58,6 +61,7 @@ class Post: Identifiable {
     else {
       return nil
     }
+    self.id = id
     self.address = address
     self.author = PreviewUser(display_name: author["display_name"] as! String,
                               profile_picture: author["profile_picture"] as! String)
@@ -82,7 +86,6 @@ class Post: Identifiable {
     self.review_stars = review_stars
     self.reviewed = true
   }
-
 }
 
 class PostList {
