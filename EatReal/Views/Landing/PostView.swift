@@ -49,7 +49,7 @@ struct PostView: View {
           .font(.footnote)
           .padding(.horizontal, 12)
         
-//        Spacer().frame(height: 40)
+        Spacer().frame(height: 20)
       }
     }
 }

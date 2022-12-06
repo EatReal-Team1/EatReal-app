@@ -26,18 +26,11 @@ class StoredImage: ObservableObject {
   }
   
   init(image: UIImage, contentType: String) async{
-    if contentType == "placeholder" {
-      self.image = image
-      self.path = ""
-      self.url = ""
-    }
-    else {
-      self.image = image
-      let randomID = UUID.init().uuidString
-      self.path = "\(contentType)/\(randomID)"
-      self.url = ""
-      await uploadImage(path: self.path, image: image)
-    }
+    self.image = image
+    let randomID = UUID.init().uuidString
+    self.path = "\(contentType)/\(randomID)"
+    self.url = ""
+    await uploadImage(path: self.path, image: image)
   }
 
   func uploadImage(path: String, image: UIImage) async {
