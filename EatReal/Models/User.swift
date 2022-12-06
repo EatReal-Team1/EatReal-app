@@ -18,8 +18,6 @@ class User {
   var followers: [PreviewUser]
   var following: [PreviewUser]
   //  let saved_posts: [Int] // simplified as int for now
-  //  let search_history:
-  //  let recent_posts: [Int]
   
   init(display_name: String, username: String, profile_picture: UIImage) {
     self.display_name = display_name
@@ -56,13 +54,11 @@ class User {
     self.profile_picture = StoredImage(url: profile_picture_url)
   }
 
-  func sendFriendRequest(to_user: User) -> FriendRequest {
-    // V1 doesn't need approval
+  func sendFriendRequest(to_user: User) {
     let self_preview = PreviewUser(display_name: self.display_name, profile_picture: self.profile_picture.path)
     let to_user_preview = PreviewUser(display_name: to_user.display_name, profile_picture: to_user.profile_picture.path)
     to_user.followers.append(self_preview)
     self.following.append(to_user_preview)
-    return FriendRequest(by: self, to: to_user)
   }
 
 }

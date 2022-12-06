@@ -26,7 +26,6 @@ class ViewModel: ObservableObject {
   
   init() {
     self.rootRef = Database.database().reference()
-//    self.rootRef = FirebaseDatabase.Database.database().reference()
     self.postList = []
     self.filteredPostList = []
     self.numPosts = 0
@@ -42,9 +41,26 @@ class ViewModel: ObservableObject {
     if let post = self.selectedPost {
       rootRef.child("Posts").child(String(self.numPosts)).setValue(
         [
+          "id": self.numPosts,
           "address": post.address,
           "author": post.author.toAnyObject(),
           "food_photo": post.food_photo,
+          "selfie_photo": post.selfie_photo,
+          "review_restaurant": post.review_restaurant,
+          "review_dish": post.review_dish,
+          "review_comment": post.review_comment,
+          "review_stars": post.review_stars,
+          "reviewed": post.reviewed,
+          "likes": post.likes
+        ]
+      )
+    }
+  }
+  
+  func updatePost(){
+    if let post = self.selectedPost {
+      rootRef.child("Posts").child(String(post.id)).updateChildValues(
+        [
           "selfie_photo": post.selfie_photo,
           "review_restaurant": post.review_restaurant,
           "review_dish": post.review_dish,

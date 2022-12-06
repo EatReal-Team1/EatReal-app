@@ -48,6 +48,7 @@
 		FC62FC2129380B7000C8D218 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC62FC2029380B7000C8D218 /* GoogleService-Info.plist */; };
 		FC6934CE293938A8004D06FB /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6934CD293938A8004D06FB /* Search.swift */; };
 		FC6934D029396FFF004D06FB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6934CF29396FFF004D06FB /* SearchView.swift */; };
+		FC6934D3293FA29D004D06FB /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6934D2293FA29D004D06FB /* UserTests.swift */; };
 		FC6B0130293857F900AFE1E8 /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6B01212938566C00AFE1E8 /* PostTests.swift */; };
 		FC6B013329385A1600AFE1E8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FC6B013229385A1600AFE1E8 /* FirebaseAnalytics */; };
 		FC6B013529385A1600AFE1E8 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = FC6B013429385A1600AFE1E8 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -146,6 +147,7 @@
 		FC62FC2029380B7000C8D218 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC6934CD293938A8004D06FB /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		FC6934CF29396FFF004D06FB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		FC6934D2293FA29D004D06FB /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		FC6B01212938566C00AFE1E8 /* PostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
 		FC6B0127293857EB00AFE1E8 /* EatRealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatRealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE4B8EC291B69B3004ED90E /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				FC6B01212938566C00AFE1E8 /* PostTests.swift */,
+				FC6934D2293FA29D004D06FB /* UserTests.swift */,
 			);
 			path = EatRealTests;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6934D3293FA29D004D06FB /* UserTests.swift in Sources */,
 				FC6B0130293857F900AFE1E8 /* PostTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
