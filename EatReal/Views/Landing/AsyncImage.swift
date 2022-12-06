@@ -52,8 +52,17 @@ struct AsyncImage: View {
           .onAppear {
             imageLoader.fetchImage()
           }
-      }
-        else
+      } else if (self.imageType == "friendPreview"){
+        Image(uiImage: image)
+        .resizable()
+        .frame(width: 50.0, height: 50.0)
+        .onReceive(imageLoader.$image) { image in
+            self.image = image
+        }
+        .onAppear {
+          imageLoader.fetchImage()
+        }
+      } else
       {
         Image(uiImage: image)
         .resizable()

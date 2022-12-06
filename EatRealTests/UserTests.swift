@@ -17,7 +17,7 @@ final class UserTests: XCTestCase {
   let selfieImage = UIImage(named: "image-placeholder.jpeg")!
 
     func testExample() async throws {
-      var user1 = User(display_name: "Xiaohan Sun", username: "xs", profile_picture: placeholderImage)
+      let user1 = User(display_name: "Xiaohan Sun", username: "xs", profile_picture: placeholderImage)
       var user2 = User(display_name: "Ze Rong", username: "zer", profile_picture: placeholderImage)
       XCTAssertTrue(user1.display_name == "Xiaohan Sun")
       XCTAssertTrue(user1.username == "xs")

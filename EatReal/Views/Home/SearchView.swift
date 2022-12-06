@@ -11,7 +11,6 @@ struct SearchView: View {
   @StateObject var viewRouter: ViewRouter
   @StateObject var viewModel: ViewModel
   @State private var searchText = ""
-//  @State var resultPosts = [Post]()
   @State var resultPosts: [Post] = []
   
     var body: some View {
@@ -39,12 +38,8 @@ struct SearchView: View {
           .onSubmit(of: .search) {
             runSearch()
           }
-//
-//        Text(String(resultPosts.count))
-//        Text(searchText)
-//        Text(String(viewModel.postList.count))
-        
       }
+      
     }
   func runSearch(){
     self.resultPosts = viewModel.search(searchText: searchText)

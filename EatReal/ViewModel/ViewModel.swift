@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 class ViewModel: ObservableObject {
-  @Published var rootRef: DatabaseReference
+  private var rootRef: DatabaseReference = Database.database().reference()
   @Published var image: UIImage?
   @Published var showPicker = false
   @Published var selectedPost: Post?
@@ -20,19 +20,16 @@ class ViewModel: ObservableObject {
   @Published var numPosts: Int
   @Published var userList: [User]
   @Published var numUsers: Int
-  @Published var currentUser: PreviewUser
-  
-//  var rootRef: DatabaseReference! = Database.database().reference()
+  @Published var currentUser: User
   
   init() {
-    self.rootRef = Database.database().reference()
     self.postList = []
     self.filteredPostList = []
     self.numPosts = 0
     self.userList = []
     self.numUsers = 1
-    self.currentUser = PreviewUser(display_name: "fake user", profile_picture: "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/reaction%2Femily_and_chicken.jpeg?alt=media&token=cff5f474-e745-4992-b987-fecff299760b")
-    
+    self.currentUser = User(display_name: "Leanne Sun", username: "leannesxh14", profile_picture: UIImage(named: "image-placeholder")!)
+    self.loadUser()
     self.loadAllPosts()
   }
 
@@ -107,11 +104,16 @@ class ViewModel: ObservableObject {
       for child in snapshot.children {
         if let snapshot = child as? DataSnapshot,
            let user = User(snapshot: snapshot) {
+          // Setting currentUser to the first user in db
+          if self.userList == [] {
+            self.currentUser = user
+          }
           self.userList.append(user)
           self.numUsers += 1
         }
       }
     })
+    
   }
   
   func postsNeedReview() -> [Post] {
@@ -134,6 +136,13 @@ class ViewModel: ObservableObject {
       return post.review_restaurant.lowercased().contains(searchText.lowercased())
     }
     return self.filteredPostList
+  }
+  
+  func searchUsers(searchText: String) -> [User]{
+    print("all users: ", userList.count)
+    return self.userList.filter{ user in
+      return user.username.lowercased().contains(searchText.lowercased())
+    }
   }
   
 }
