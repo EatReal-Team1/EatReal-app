@@ -24,6 +24,10 @@ struct ProfileView: View {
                 Spacer()
                 
                 
+                MemoryView()
+                SavedPostView()
+                
+                
                 navBar(viewRouter: viewRouter)
             }
             
