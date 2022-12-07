@@ -49,7 +49,7 @@ extension EmbeddedCameraView {
         await self.parent.viewModel.selectedPost = Post(address: " ", author: self.parent.viewModel.currentUser.toPreviewuser(), food_photo: image, review_restaurant: " ")
         self.parent.viewModel.numPosts += 1
         self.parent.viewModel.savePost()
-        self.parent.notificationManager.sendNotification(launchIn: 3)
+        self.parent.notificationManager.sendNotification(launchIn: 3600) // notify after 1 hr
       }
     }
   }
