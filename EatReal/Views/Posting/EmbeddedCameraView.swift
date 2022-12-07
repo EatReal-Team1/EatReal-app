@@ -11,6 +11,7 @@ struct EmbeddedCameraView: UIViewControllerRepresentable {
   typealias UIViewControllerType = UIImagePickerController
   @Binding var selectedImage: UIImage?
   @ObservedObject var viewModel: ViewModel = ViewModel()
+  @ObservedObject var notificationManager = LocalNotificationManager()
   
   func makeUIViewController(context: Context) -> UIViewControllerType {
     let viewController = UIViewControllerType()
@@ -42,12 +43,13 @@ extension EmbeddedCameraView {
 
     private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) async {
       if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         self.parent.selectedImage = image
-        
+        print("waiting to finish post")
         await self.parent.viewModel.selectedPost = Post(address: " ", author: self.parent.viewModel.currentUser.toPreviewuser(), food_photo: image, review_restaurant: " ")
         self.parent.viewModel.numPosts += 1
         self.parent.viewModel.savePost()
+        self.parent.notificationManager.sendNotification(launchIn: 3)
       }
     }
   }
