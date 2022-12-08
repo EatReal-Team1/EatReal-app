@@ -33,7 +33,7 @@ struct AddReview: View {
           
           
             //content view
-          SelfieCameraView(selectedImage: $selectedImage, showReviewForm: $showReviewForm).ignoresSafeArea()
+//          SelfieCameraView(selectedImage: $selectedImage, showReviewForm: $showReviewForm).ignoresSafeArea()
 
           
           Spacer()

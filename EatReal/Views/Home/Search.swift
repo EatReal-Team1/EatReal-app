@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Search: View {
-  @StateObject var viewRouter: ViewRouter
+  @ObservedObject var viewRouter: ViewRouter
     var body: some View {
       Button(action: {
         viewRouter.currentPage = .search
