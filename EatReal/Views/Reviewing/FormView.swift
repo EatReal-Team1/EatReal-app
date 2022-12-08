@@ -25,9 +25,9 @@ struct FormView: View {
   @State private var rating:Int = 0
   
   @State private var submitted = false
-  @State private var exit = false
   var selfie_photo: UIImage
   @ObservedObject var viewModel: ViewModel = ViewModel()
+  @ObservedObject var viewRouter: ViewRouter
 
   var body: some View {
     ZStack {
@@ -48,7 +48,7 @@ struct FormView: View {
           Spacer()
           
           Button(action: {
-            exit = true
+            self.viewRouter.currentPage = .review
           }){
             Text("X")
               .padding(.horizontal, 30)
@@ -59,7 +59,6 @@ struct FormView: View {
               .foregroundColor(.white)
           }
           
-          NavigationLink("", destination:  AddReview(), isActive: $exit).navigationBarBackButtonHidden(true)
         }
         
         VStack {
@@ -72,7 +71,7 @@ struct FormView: View {
                 height: 220)
               .overlay(
                 Section {
-                  Image("placeholder-reaction")
+                  Image(uiImage: selfie_photo)
                     .resizable()
                     .frame(width: 56,
                            height: 56)
@@ -124,9 +123,3 @@ struct FormView: View {
     
   }
 }
-//
-//struct FormView_Previews: PreviewProvider {
-//    static var previews: some View {
-//      FormView(selfie_photo: $selfie_photo)
-//    }
-//}
