@@ -79,7 +79,8 @@
       "display_name": "Leanne Sun",
       "following": [1],
       "profile_picture_url": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fleanne.jpg?alt=media&token=565a94a5-2b00-48ac-be1f-a0a1631866a0",
-      "username": "leannesxh14"
+      "username": "leannesxh14",
+      "saved_posts": [0,2]
     },
     {
       "id": 1,
@@ -87,14 +88,16 @@
       "following": [],
       "followers": [0, 2],
       "profile_picture_url": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fzeke.JPG?alt=media&token=496335a3-af2e-4c55-b2de-a2a50e3484b3",
-      "username": "zer"
+      "username": "zer",
+      "saved_posts": [1,3]
     },
     {
       "id": 2,
       "display_name": "Emily Feng",
       "following": [1],
       "profile_picture_url": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Femily.JPG?alt=media&token=c2a7afd1-35eb-4584-b21f-187c4d6e8f95",
-      "username": "efeng"
+      "username": "efeng",
+      "saved_posts": [0,1,2]
     }
   ]
 }
