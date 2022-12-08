@@ -77,7 +77,7 @@ struct CameraView: View {
   @StateObject var model = CameraModel()
   @ObservedObject var viewRouter: ViewRouter
   @State var currentZoomFactor: CGFloat = 1.0
-  @ObservedObject var notificationManager = LocalNotificationManager()
+  @StateObject var notificationManager:LocalNotificationManager
   
   var captureButton: some View {
     Button(action: {
@@ -255,7 +255,7 @@ struct CameraView: View {
     Button {
       print("Post Button in PostPreview pressed")
       viewRouter.currentPage = .home
-      notificationManager.sendNotification(launchIn: 1)
+      self.notificationManager.sendNotification(launchIn: 60*60)
     } label: {
       Text("Post")
         .font(Font.custom("Helvetica Neue", size: 25.0))

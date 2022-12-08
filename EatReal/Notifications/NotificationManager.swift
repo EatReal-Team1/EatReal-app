@@ -21,10 +21,11 @@ class LocalNotificationManager: ObservableObject {
   }
   
   func sendNotification(launchIn: Double) {
-    
+    print("send local notification")
     let content = UNMutableNotificationContent()
     content.title = "How was your food?"
     content.body = "Add a review to your post!"
+    content.sound = .default
 
       // A time interval trigger for demo purposes:
     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: launchIn, repeats: false)
@@ -39,7 +40,12 @@ class LocalNotificationManager: ObservableObject {
     let request = UNNotificationRequest(identifier: "reminderNotification", content: content, trigger: trigger)
     
     
-    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    UNUserNotificationCenter.current().add(request) { (error) in
+      if error != nil {
+        print(error)
+        print("Error = \(error?.localizedDescription ?? "error local notification")")
+      }
+    }
     
   }
 }
