@@ -15,6 +15,9 @@ enum Page {
   case friend
   case profile
   case search
+  case memory
+  case savedpost
+    
 }
 
 struct ContentView: View {
@@ -40,9 +43,15 @@ struct ContentView: View {
           
         case .profile:
           ProfileView(viewRouter: viewRouter)
+          
+      case .memory:
+        MemoryView(viewRouter: viewRouter)
         
-        case .search:
+     case .search:
         SearchView(viewRouter: viewRouter, viewModel: viewModel)
+          
+      case .savedpost:
+          SavedPostView(viewRouter: viewRouter)
           
       }
     }
