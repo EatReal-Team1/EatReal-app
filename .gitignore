@@ -1,3 +1,19 @@
+# files created by Xcode 3 or older
+*.pbxuser
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcclassmodel/
+# files created by Xcode 4
+xcuserdata/
+# build products
+*.build/
+build/
+DerivedData/
+# Misc
+.svn
+.DS_Store
 # Compiled source #
 ###################
 *.com
@@ -30,13 +46,16 @@
 ######################
 .DS_Store
 .DS_Store?
+EatReall-App/.DS_Store
 ._*
 .Spotlight-V100
 .Trashes
 ehthumbs.db
 Thumbs.db
 .xcodeproj/project.pbxproj
-# EatReal-v1.xcodeproj/project.pbxproj
+EatReal-v1.xcodeproj/project.pbxproj
 
-# userstate
+# Userstate
+EatReal-v1.xcodeproj/project.xcworkspace/xcuserdata/emilyfeng.xcuserdatad/UserInterfaceState.xcuserstate*
+EatReal-v1.xcodeproj/project.xcworkspace/xcuserdata/emilyfeng.xcuserdatad/UserInterfaceState.xcuserstate
 EatReal-v1.xcodeproj/project.xcworkspace/xcuserdata/leannesun.xcuserdatad/UserInterfaceState.xcuserstate
