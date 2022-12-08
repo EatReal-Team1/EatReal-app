@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputUsername: View {
-    @State private var username: String = ""
+    @Binding var username: String
     var body: some View {
         Text("Username").font(Font.custom("Helvetica Neue", size: 30.0))
         HStack{
@@ -18,9 +18,9 @@ struct InputUsername: View {
         }
     }
 }
-
-struct InputUsername_Previews: PreviewProvider {
-    static var previews: some View {
-        InputUsername()
-    }
-}
+//
+//struct InputUsername_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InputUsername()
+//    }
+//}

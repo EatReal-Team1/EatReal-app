@@ -73,6 +73,25 @@ class ViewModel: ObservableObject {
       )
     }
   }
+    
+    
+    func saveUser(name: String, username: String) {
+      let user = self.currentUser
+      rootRef.child("Users").child(String(self.numUsers+1)).setValue(
+        [
+          "display_name": name,
+          "username": username,
+  //        "profile_picture": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
+          "profile_picture": user.profile_picture,
+          "followers": user.followers,
+          "following": user.following,
+          "saved_posts":[],
+          "search_history": [],
+          "recent_posts":[]
+        ]
+      )
+    }
+    
   
   func updateUser() {
     let user = self.currentUser
@@ -140,6 +159,28 @@ class ViewModel: ObservableObject {
     return self.myPostList
       
   }
+    
+    func setCurrentUser(username: String) {
+      //var res: [Post] = []
+      rootRef.child("Users").observe(.value, with: { snapshot in
+        for child in snapshot.children {
+          if let snapshot = child as? DataSnapshot,
+             let user = User(snapshot: snapshot) {
+              //print(post.author.display_name == self.currentUser.display_name)
+                  // print(self.currentUser.display_name )
+              
+              if user.username == username {
+                 // print("1")
+                  self.currentUser = user
+                  //print(self.currentUser)
+            }
+          }
+        }
+      })
+        //print(res)
+     // return self.myPostList
+        
+    }
   
     
     func postsNeedReview() -> [Post] {
