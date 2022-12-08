@@ -10,7 +10,7 @@ import SwiftUI
 struct LogInView: View {
     @ObservedObject var viewRouter: ViewRouter
     @State public var username = ""
-    @ObservedObject var viewModel: ViewModel = ViewModel()
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
         Logo()
@@ -22,14 +22,13 @@ struct LogInView: View {
         HStack{
             Spacer()
             Button(action: {
+                
               
                // need to be done: find whether the person in the db
-                viewModel.setCurrentUser(username: username)
+                viewModel.setCurrentUser(username_ipt: username)
                 
-                
-              viewRouter.currentPage = .profile
-                
-                
+                print(viewModel.currentUser.display_name)
+                viewRouter.currentPage = .profile
                 
             }) {
                 Text("Log In").bold()
