@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct CreateProfileView: View {
-  @StateObject var viewRouter: ViewRouter
+  @ObservedObject var viewRouter: ViewRouter
+    @State public var name = ""
+    @State public var username = ""
+    @ObservedObject var viewModel: ViewModel = ViewModel()
   
     var body: some View {
         NavigationView{
@@ -16,7 +19,26 @@ struct CreateProfileView: View {
             VStack(){
                 
                 
+                
+                
                 Logo()
+                
+                
+                Button(action: {
+                  
+                  viewRouter.currentPage = .login
+                    
+                }) {
+                    Text("Log In").bold()
+                        .font(Font.custom("Helvetica Neue", size: 25.0))
+                        .padding(15)
+                        .foregroundColor(Color.white)
+                        .background(Color.black)
+                        .cornerRadius(5)
+                }
+                
+                
+                Text("OR")
                 
                 
                 Spacer().frame(height: 20)
@@ -32,18 +54,21 @@ struct CreateProfileView: View {
                     
                     Spacer().frame(height: 50)
                     
-                    InputName()
+                    InputName(name: $name)
                     
                     Spacer().frame(height: 50)
                     
-                    InputUsername()
+                    InputUsername(username: $username)
                     
                     Spacer().frame(height: 50)
                     
                     HStack{
                         Spacer()
                         Button(action: {
+                          
+                           // viewModel.saveUser(name: name, username: username)
                           viewRouter.currentPage = .profile
+                            
                         }) {
                             Text("Save").bold()
                                 .font(Font.custom("Helvetica Neue", size: 25.0))

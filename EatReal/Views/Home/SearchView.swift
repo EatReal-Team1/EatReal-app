@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SearchView: View {
-  @StateObject var viewRouter: ViewRouter
-  @StateObject var viewModel: ViewModel
+  @ObservedObject var viewRouter: ViewRouter
+  @ObservedObject var viewModel: ViewModel
   @State private var searchText = ""
   @State var resultPosts: [Post] = []
   

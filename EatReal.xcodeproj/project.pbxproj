@@ -27,10 +27,23 @@
 		C4A2E837291DE6EB00D15DE1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E836291DE6EB00D15DE1 /* ViewModel.swift */; };
 		C4A2E83B291DEB0C00D15DE1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2E83A291DEB0C00D15DE1 /* ImagePicker.swift */; };
 		C4DA1A042926B135005FDC1C /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A032926B135005FDC1C /* ViewRouter.swift */; };
+		C4DA1A282940C21B005FDC1C /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A272940C21B005FDC1C /* NotificationManager.swift */; };
+		C4DA1A6C2942587F005FDC1C /* CameraContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A6B2942587F005FDC1C /* CameraContentView.swift */; };
+		C4DA1A6E294258DE005FDC1C /* PostPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A6D294258DE005FDC1C /* PostPreviewView.swift */; };
+		C4DA1A702942590B005FDC1C /* PhotoCaptureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A6F2942590B005FDC1C /* PhotoCaptureProcessor.swift */; };
+		C4DA1A722942591E005FDC1C /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A712942591E005FDC1C /* CameraView.swift */; };
+		C4DA1A742942594C005FDC1C /* ImageResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A732942594C005FDC1C /* ImageResizer.swift */; };
+		C4DA1A7629425972005FDC1C /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A7529425972005FDC1C /* CameraService.swift */; };
+		C4DA1A7829425989005FDC1C /* CameraService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A7729425989005FDC1C /* CameraService+Extensions.swift */; };
+		C4DA1A7A294259A8005FDC1C /* CameraService+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A79294259A8005FDC1C /* CameraService+Enums.swift */; };
+		C4DA1A7C29426602005FDC1C /* ReactionCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A7B29426602005FDC1C /* ReactionCameraView.swift */; };
 		CD47BC20291D8B730083E983 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD47BC1F291D8B730083E983 /* CreateProfileView.swift */; };
 		CD47BC22291D8D410083E983 /* UploadProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD47BC21291D8D410083E983 /* UploadProfilePicture.swift */; };
 		CD47BC24291D8EBE0083E983 /* InputName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD47BC23291D8EBE0083E983 /* InputName.swift */; };
 		CD47BC28291D8EFF0083E983 /* InputUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD47BC27291D8EFF0083E983 /* InputUsername.swift */; };
+		CD79D5FF293FD38A000BB93A /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79D5FE293FD38A000BB93A /* MemoryView.swift */; };
+		CD79D601293FD594000BB93A /* SavedPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79D600293FD594000BB93A /* SavedPostView.swift */; };
+		CDAC0E0F2941E2E300A7C325 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC0E0E2941E2E300A7C325 /* LogInView.swift */; };
 		CDE65761291AF7E000EA3CE8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE681C7291AE34000AF8BFD /* ProfileView.swift */; };
 		CDE65765291AF89E00EA3CE8 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE65764291AF89E00EA3CE8 /* FriendView.swift */; };
 		CDE65769291B422A00EA3CE8 /* SearchFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE65768291B422A00EA3CE8 /* SearchFriendView.swift */; };
@@ -126,10 +139,23 @@
 		C4A2E836291DE6EB00D15DE1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		C4A2E83A291DEB0C00D15DE1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C4DA1A032926B135005FDC1C /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		C4DA1A272940C21B005FDC1C /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		C4DA1A6B2942587F005FDC1C /* CameraContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraContentView.swift; sourceTree = "<group>"; };
+		C4DA1A6D294258DE005FDC1C /* PostPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPreviewView.swift; sourceTree = "<group>"; };
+		C4DA1A6F2942590B005FDC1C /* PhotoCaptureProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureProcessor.swift; sourceTree = "<group>"; };
+		C4DA1A712942591E005FDC1C /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		C4DA1A732942594C005FDC1C /* ImageResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizer.swift; sourceTree = "<group>"; };
+		C4DA1A7529425972005FDC1C /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		C4DA1A7729425989005FDC1C /* CameraService+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraService+Extensions.swift"; sourceTree = "<group>"; };
+		C4DA1A79294259A8005FDC1C /* CameraService+Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraService+Enums.swift"; sourceTree = "<group>"; };
+		C4DA1A7B29426602005FDC1C /* ReactionCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionCameraView.swift; sourceTree = "<group>"; };
 		CD47BC1F291D8B730083E983 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 		CD47BC21291D8D410083E983 /* UploadProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProfilePicture.swift; sourceTree = "<group>"; };
 		CD47BC23291D8EBE0083E983 /* InputName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputName.swift; sourceTree = "<group>"; };
 		CD47BC27291D8EFF0083E983 /* InputUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputUsername.swift; sourceTree = "<group>"; };
+		CD79D5FE293FD38A000BB93A /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
+		CD79D600293FD594000BB93A /* SavedPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostView.swift; sourceTree = "<group>"; };
+		CDAC0E0E2941E2E300A7C325 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		CDE65764291AF89E00EA3CE8 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 		CDE65768291B422A00EA3CE8 /* SearchFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFriendView.swift; sourceTree = "<group>"; };
 		CDE681BD291AD77600AF8BFD /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -236,6 +262,7 @@
 		C4A2E7AB2919DD8A00D15DE1 /* EatReal */ = {
 			isa = PBXGroup;
 			children = (
+				C4DA1A262940C1FD005FDC1C /* Notifications */,
 				C4A2E80E291DD59800D15DE1 /* Views */,
 				C4A2E80D291DD57B00D15DE1 /* ViewModel */,
 				FCE4B8F7291B6DEB004ED90E /* Resources */,
@@ -274,6 +301,7 @@
 				C4A2E7E5291B72D700D15DE1 /* FoodCameraView.swift */,
 				C4A2E833291DE2CF00D15DE1 /* EmbeddedCameraView.swift */,
 				C4A2E83A291DEB0C00D15DE1 /* ImagePicker.swift */,
+				C4DA1A6D294258DE005FDC1C /* PostPreviewView.swift */,
 			);
 			path = Posting;
 			sourceTree = "<group>";
@@ -283,6 +311,7 @@
 			children = (
 				C4A2E802291D84EE00D15DE1 /* AddReview.swift */,
 				C461BE4129241D2800E5E70A /* SelfieCameraView.swift */,
+				C4DA1A7B29426602005FDC1C /* ReactionCameraView.swift */,
 				C4A2E807291D884900D15DE1 /* FormView.swift */,
 				C4A2E80B291D9CD100D15DE1 /* TextReview.swift */,
 				C4A2E809291D920300D15DE1 /* RatingReview.swift */,
@@ -302,6 +331,8 @@
 		C4A2E80E291DD59800D15DE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
+				C4DA1A6A29425852005FDC1C /* PhotoCapturing */,
 				CDF4D143291CA96D0071F603 /* Home */,
 				CDE65763291AF89200EA3CE8 /* Friend */,
 				CDE681C3291AE10B00AF8BFD /* Notification */,
@@ -312,6 +343,40 @@
 				C4A2E7E2291B722F00D15DE1 /* Posting */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C4DA1A262940C1FD005FDC1C /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				C4DA1A272940C21B005FDC1C /* NotificationManager.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		C4DA1A6A29425852005FDC1C /* PhotoCapturing */ = {
+			isa = PBXGroup;
+			children = (
+				C4DA1A6B2942587F005FDC1C /* CameraContentView.swift */,
+				C4DA1A6F2942590B005FDC1C /* PhotoCaptureProcessor.swift */,
+				C4DA1A712942591E005FDC1C /* CameraView.swift */,
+				C4DA1A732942594C005FDC1C /* ImageResizer.swift */,
+				C4DA1A7529425972005FDC1C /* CameraService.swift */,
+				C4DA1A7729425989005FDC1C /* CameraService+Extensions.swift */,
+				C4DA1A79294259A8005FDC1C /* CameraService+Enums.swift */,
+			);
+			path = PhotoCapturing;
+			sourceTree = "<group>";
+		};
+		CDAC0E0D2941DF4500A7C325 /* CreateProfile */ = {
+			isa = PBXGroup;
+			children = (
+				CD47BC1F291D8B730083E983 /* CreateProfileView.swift */,
+				CDAC0E0E2941E2E300A7C325 /* LogInView.swift */,
+				CD47BC21291D8D410083E983 /* UploadProfilePicture.swift */,
+				CD47BC27291D8EFF0083E983 /* InputUsername.swift */,
+				CD47BC23291D8EBE0083E983 /* InputName.swift */,
+			);
+			path = CreateProfile;
 			sourceTree = "<group>";
 		};
 		CDE65763291AF89200EA3CE8 /* Friend */ = {
@@ -338,10 +403,9 @@
 			isa = PBXGroup;
 			children = (
 				CDE681C7291AE34000AF8BFD /* ProfileView.swift */,
-				CD47BC1F291D8B730083E983 /* CreateProfileView.swift */,
-				CD47BC23291D8EBE0083E983 /* InputName.swift */,
-				CD47BC27291D8EFF0083E983 /* InputUsername.swift */,
-				CD47BC21291D8D410083E983 /* UploadProfilePicture.swift */,
+				CD79D600293FD594000BB93A /* SavedPostView.swift */,
+				CD79D5FE293FD38A000BB93A /* MemoryView.swift */,
+				CDAC0E0D2941DF4500A7C325 /* CreateProfile */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -363,7 +427,6 @@
 			isa = PBXGroup;
 			children = (
 				C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */,
-				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
 				CDF4D148291CAA520071F603 /* HomeView.swift */,
 				CDF4D144291CA9870071F603 /* Logo.swift */,
 				FC6934CD293938A8004D06FB /* Search.swift */,
@@ -556,6 +619,8 @@
 			files = (
 				FCE4B8F1291B6BFA004ED90E /* User.swift in Sources */,
 				C461BE4229241D2800E5E70A /* SelfieCameraView.swift in Sources */,
+				CD79D601293FD594000BB93A /* SavedPostView.swift in Sources */,
+				C4DA1A6E294258DE005FDC1C /* PostPreviewView.swift in Sources */,
 				CDE681C2291ADA8000AF8BFD /* SingleNotificationView.swift in Sources */,
 				C4DA1A042926B135005FDC1C /* ViewRouter.swift in Sources */,
 				CD47BC24291D8EBE0083E983 /* InputName.swift in Sources */,
@@ -565,27 +630,38 @@
 				CDF4D140291CA5820071F603 /* friendButton.swift in Sources */,
 				C4A2E83B291DEB0C00D15DE1 /* ImagePicker.swift in Sources */,
 				FC6934D029396FFF004D06FB /* SearchView.swift in Sources */,
+				C4DA1A282940C21B005FDC1C /* NotificationManager.swift in Sources */,
 				C4A2E7E6291B72D700D15DE1 /* FoodCameraView.swift in Sources */,
 				C4A2E7BB2919E1CA00D15DE1 /* navBar.swift in Sources */,
 				CDF4D13E291CA54A0071F603 /* postButton.swift in Sources */,
 				FC6934D5293FD613004D06FB /* PreviewUserView.swift in Sources */,
+				C4DA1A702942590B005FDC1C /* PhotoCaptureProcessor.swift in Sources */,
 				C4A2E7E1291B712F00D15DE1 /* LandingView.swift in Sources */,
 				CDE65769291B422A00EA3CE8 /* SearchFriendView.swift in Sources */,
 				FCE4B8F4291B6C23004ED90E /* Post.swift in Sources */,
+				C4DA1A7C29426602005FDC1C /* ReactionCameraView.swift in Sources */,
 				CDF4D13A291CA4A40071F603 /* homeButton.swift in Sources */,
+				C4DA1A722942591E005FDC1C /* CameraView.swift in Sources */,
 				CD47BC22291D8D410083E983 /* UploadProfilePicture.swift in Sources */,
 				CDF4D145291CA9870071F603 /* Logo.swift in Sources */,
 				C4A2E834291DE2CF00D15DE1 /* EmbeddedCameraView.swift in Sources */,
 				C4A2E837291DE6EB00D15DE1 /* ViewModel.swift in Sources */,
+				C4DA1A742942594C005FDC1C /* ImageResizer.swift in Sources */,
 				CDE681C0291AD7BD00AF8BFD /* NotificationScroll.swift in Sources */,
 				C4A2E7BF2919EBDE00D15DE1 /* PostScroll.swift in Sources */,
 				FC6934CE293938A8004D06FB /* Search.swift in Sources */,
+				C4DA1A7629425972005FDC1C /* CameraService.swift in Sources */,
 				FCE4B8ED291B69B3004ED90E /* Firebase.swift in Sources */,
+				CD79D5FF293FD38A000BB93A /* MemoryView.swift in Sources */,
+				C4DA1A7A294259A8005FDC1C /* CameraService+Enums.swift in Sources */,
 				CDF4D149291CAA520071F603 /* HomeView.swift in Sources */,
 				C4A2E808291D884900D15DE1 /* FormView.swift in Sources */,
+				CDAC0E0F2941E2E300A7C325 /* LogInView.swift in Sources */,
 				CDE681BE291AD77600AF8BFD /* NotificationView.swift in Sources */,
+				C4DA1A7829425989005FDC1C /* CameraService+Extensions.swift in Sources */,
 				C4A2E7AF2919DD8A00D15DE1 /* ContentView.swift in Sources */,
 				FCE4B8FB291C542E004ED90E /* Image.swift in Sources */,
+				C4DA1A6C2942587F005FDC1C /* CameraContentView.swift in Sources */,
 				C4A2E803291D84EE00D15DE1 /* AddReview.swift in Sources */,
 				C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */,
 				CD47BC20291D8B730083E983 /* CreateProfileView.swift in Sources */,
@@ -741,7 +817,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EatReal/Preview Content\"";
-				DEVELOPMENT_TEAM = M324XRK2LM;
+				DEVELOPMENT_TEAM = WJ53H49GSL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EatReal-Info.plist";
@@ -757,7 +833,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "CMU443F22.EatReall-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CMU443F22.EatReall-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -789,7 +865,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "CMU443F22.EatReall-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CMU443F22.EatReall-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

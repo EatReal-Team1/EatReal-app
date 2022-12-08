@@ -39,6 +39,18 @@ struct PostView: View {
           AsyncImage(url: post.author.profile_picture, type: "profile")
           Text(post.author.display_name)
           Spacer()
+            Button(action: {
+              
+            })
+            {
+                Text("Save")
+                    .bold()
+                    .font(Font.custom("Helvetica Neue", size: 15.0))
+                    .padding(10)
+                    .foregroundColor(Color.white)
+                    .background(Color.black)
+                    .cornerRadius(5)
+            }
         }
         .padding(.horizontal, 12)
         

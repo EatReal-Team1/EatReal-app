@@ -15,6 +15,10 @@ enum Page {
   case friend
   case profile
   case search
+  case memory
+  case savedpost
+  case login
+  case postPreview
 }
 
 struct ContentView: View {
@@ -26,6 +30,9 @@ struct ContentView: View {
         case .createProfile:
           CreateProfileView(viewRouter: viewRouter)
           
+      case .login:
+        LogInView(viewRouter: viewRouter)
+          
         case .home:
           HomeView(viewRouter: viewRouter)
           
@@ -33,16 +40,26 @@ struct ContentView: View {
           NotificationView(viewRouter: viewRouter)
           
         case .create:
-          FoodCameraView(viewRouter: viewRouter)
+//          FoodCameraView(viewRouter: viewRouter)
+          CameraView(viewRouter: viewRouter)
+          
+        case .postPreview:
+          PostPreviewView(viewRouter: viewRouter)
           
         case .friend:
           FriendView(viewRouter: viewRouter)
           
         case .profile:
           ProfileView(viewRouter: viewRouter)
+          
+      case .memory:
+        MemoryView(viewRouter: viewRouter)
         
-        case .search:
+     case .search:
         SearchView(viewRouter: viewRouter, viewModel: viewModel)
+          
+      case .savedpost:
+          SavedPostView(viewRouter: viewRouter)
           
       }
     }
