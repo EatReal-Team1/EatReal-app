@@ -328,6 +328,7 @@
 		C4A2E80E291DD59800D15DE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
 				C4DA1A6A29425852005FDC1C /* PhotoCapturing */,
 				CDF4D143291CA96D0071F603 /* Home */,
 				CDE65763291AF89200EA3CE8 /* Friend */,
@@ -423,7 +424,6 @@
 			isa = PBXGroup;
 			children = (
 				C4A2E7BE2919EBDE00D15DE1 /* PostScroll.swift */,
-				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
 				CDF4D148291CAA520071F603 /* HomeView.swift */,
 				CDF4D144291CA9870071F603 /* Logo.swift */,
 				FC6934CD293938A8004D06FB /* Search.swift */,
