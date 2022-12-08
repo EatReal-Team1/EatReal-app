@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotificationView: View {
-  @StateObject var viewRouter: ViewRouter
+  @ObservedObject var viewRouter: ViewRouter
   
     var body: some View {
       VStack{

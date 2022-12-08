@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MemoryView: View {
-    @StateObject var viewRouter: ViewRouter
+    @ObservedObject var viewRouter: ViewRouter
     @ObservedObject var viewModel: ViewModel = ViewModel()
     var body: some View {
         Logo()

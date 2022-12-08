@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FoodCameraView: View {
   @State private var selectedImage: UIImage?
-  @StateObject var viewRouter: ViewRouter
+  @ObservedObject var viewRouter: ViewRouter
   @ObservedObject var notificationManager = LocalNotificationManager()
 
   var body: some View {

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SavedPostView: View {
-    @StateObject var viewRouter: ViewRouter
+    @ObservedObject var viewRouter: ViewRouter
     @ObservedObject var viewModel: ViewModel = ViewModel()
     
     
