@@ -16,6 +16,7 @@ class ViewModel: ObservableObject {
   @Published var reviewingPost: Post?
   
   @Published var postList: [Post] = []
+  @Published var savedPost: [Post] = []
   @Published var filteredPostList: [Post]
   @Published var numPosts: Int
   @Published var userList: [User]
@@ -31,6 +32,7 @@ class ViewModel: ObservableObject {
     self.currentUser = User(display_name: "Leanne Sun", username: "leannesxh14", profile_picture: UIImage(named: "image-placeholder")!)
     self.loadUser()
     self.loadAllPosts()
+    self.loadSavedPosts()
   }
 
 
@@ -99,6 +101,10 @@ class ViewModel: ObservableObject {
       }
     })
   }
+  
+//  func loadSavedPosts() -> [Post] {
+//    
+//  }
   
   func loadUser() {
     rootRef.child("Users").observe(.value, with: { snapshot in

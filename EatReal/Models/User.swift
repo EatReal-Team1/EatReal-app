@@ -17,6 +17,7 @@ class User: Identifiable {
   var profile_picture: StoredImage = StoredImage()
   var followers: [Int] = []
   var following: [Int] = []
+  var savedPosts: [Int] = []
   
   init(display_name: String, username: String, profile_picture: UIImage) {
     self.display_name = display_name
@@ -40,6 +41,7 @@ class User: Identifiable {
     }
     self.following = value["following"] as? [Int] ?? []
     self.followers = value["followers"] as? [Int] ?? []
+    self.savedPosts = value["saved_post"] as? [Int] ?? []
     self.id = id
     self.display_name = display_name
     self.username = username
