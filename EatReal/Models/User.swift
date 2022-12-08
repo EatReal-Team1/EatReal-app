@@ -11,19 +11,17 @@ import Firebase
 import Foundation
 
 class User: Identifiable {
-//  let id: UUID
+  let id: Int
   var display_name: String
   var username: String
   var profile_picture: StoredImage = StoredImage()
-  var followers: [PreviewUser]
-  var following: [PreviewUser]
-  //  let saved_posts: [Int] // simplified as int for now
+  var followers: [Int] = []
+  var following: [Int] = []
   
   init(display_name: String, username: String, profile_picture: UIImage) {
     self.display_name = display_name
     self.username = username
-    self.followers = []
-    self.following = []
+    self.id = 0
     Task {
       let stored_profile_picture = await StoredImage(image: profile_picture, contentType: "profile")
       self.profile_picture = stored_profile_picture
@@ -33,36 +31,28 @@ class User: Identifiable {
   init?(snapshot: DataSnapshot) {
     guard
       let value = snapshot.value as? NSDictionary,
+      let id = value["id"] as? Int,
       let display_name = value["display_name"] as? String,
       let username = value["username"] as? String,
       let profile_picture_url = value["profile_picture_url"] as? String
     else {
       return nil
     }
-    if let followers = value["followers"] as? [PreviewUser]{
-      self.followers = followers
-    } else {
-      self.followers = []
-    }
-    if let following = value["following"] as? [PreviewUser] {
-      self.following = following
-    }else {
-      self.following = []
-    }
+    self.following = value["following"] as? [Int] ?? []
+    self.followers = value["followers"] as? [Int] ?? []
+    self.id = id
     self.display_name = display_name
     self.username = username
     self.profile_picture = StoredImage(url: profile_picture_url)
   }
 
   func sendFriendRequest(to_user: User) {
-    let self_preview = PreviewUser(display_name: self.display_name, profile_picture: self.profile_picture.url)
-    let to_user_preview = PreviewUser(display_name: to_user.display_name, profile_picture: to_user.profile_picture.url)
-    to_user.followers.append(self_preview)
-    self.following.append(to_user_preview)
+    to_user.followers.append(self.id)
+    self.following.append(to_user.id)
   }
   
   func toPreviewuser() -> PreviewUser {
-    return PreviewUser(display_name: self.display_name, profile_picture: self.profile_picture.url)
+    return PreviewUser(id: self.id, display_name: self.display_name, profile_picture: self.profile_picture.url)
   }
 
 }
@@ -73,30 +63,27 @@ extension User: Equatable {
   }
 }
 
-class PreviewUser{
-//  let id: UUID
+class PreviewUser: Decodable{
+  let id: Int
   let display_name: String
   let profile_picture: String
   var followers: [String]
   var following: [String]
 
-  init(display_name: String, profile_picture: String){
+  init(id: Int, display_name: String, profile_picture: String){
+    self.id = id
     self.display_name = display_name
     self.profile_picture = profile_picture
     self.followers = []
     self.following = []
   }
   
-//  func sendFriendRequest(to_user: String) {
-//      // V1 doesn't need approval
-//    self.following.append(to_user)
-//  }
-  
   func toAnyObject() -> Any {
-         return [
-             "display_name": display_name,
-             "profile_picture": profile_picture
-         ]
+       return [
+        "id": id,
+        "display_name": display_name,
+        "profile_picture": profile_picture
+       ]
    }
 }
 

@@ -28,10 +28,8 @@ final class UserTests: XCTestCase {
       
       // Test sendFriendRequest
       user1.sendFriendRequest(to_user: user2)
-      XCTAssertTrue(user1.following[0].display_name == "Ze Rong")
-      XCTAssertTrue(user1.following[0].profile_picture == user2.profile_picture.path)
-      XCTAssertTrue(user2.followers[0].display_name == "Xiaohan Sun")
-      XCTAssertTrue(user2.followers[0].profile_picture == user1.profile_picture.path)
+      XCTAssertTrue(user1.following[0] == user2.id)
+      XCTAssertTrue(user2.followers[0] == user1.id)
     }
 
 }

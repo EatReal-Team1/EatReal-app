@@ -63,7 +63,8 @@ class Post: Identifiable {
     }
     self.id = id
     self.address = address
-    self.author = PreviewUser(display_name: author["display_name"] as! String,
+    self.author = PreviewUser(id: author["id"] as? Int ?? 0,
+                              display_name: author["display_name"] as! String,
                               profile_picture: author["profile_picture"] as! String)
     self.food_photo = food_photo_url
     self.selfie_photo = selfie_photo_url

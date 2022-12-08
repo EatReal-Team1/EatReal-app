@@ -30,11 +30,12 @@ final class PostTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-      let user = PreviewUser(display_name: "Emily Feng", profile_picture: placeholderImageURL)
+      let user = PreviewUser(id: 2, display_name: "Emily Feng", profile_picture: placeholderImageURL)
       let examplePost = await Post(address: "123 Main St", author: user, food_photo: placeholderImage, review_restaurant: "hunan")
       XCTAssertTrue(examplePost.address == "123 Main St")
       XCTAssertTrue(examplePost.review_restaurant == "hunan")
       XCTAssertTrue(examplePost.author.display_name == "Emily Feng")
+      XCTAssertTrue(examplePost.author.id == 2)
       XCTAssertTrue(examplePost.author.profile_picture == placeholderImageURL)
       XCTAssertTrue(examplePost.review_comment == "Your friend has not left any comments yet.")
       XCTAssertFalse(examplePost.reviewed)

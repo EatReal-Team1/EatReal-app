@@ -56,6 +56,7 @@ class ViewModel: ObservableObject {
         ]
       )
     }
+    self.numPosts += 1
   }
   
   func updatePost(){
@@ -93,16 +94,16 @@ class ViewModel: ObservableObject {
     }
     
   
-  func updateUser() {
-    let user = self.currentUser
-    rootRef.child("Users").child(String(self.numUsers)).setValue(
+  func updateUser(id: Int) {
+    let curUser = self.userList[id]
+    rootRef.child("Users").child(String(id)).setValue(
       [
-        "display_name": user.display_name,
-        "username": user.display_name,
-//        "profile_picture": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
-        "profile_picture": user.profile_picture,
-        "followers": user.followers,
-        "following": user.following,
+        "id": curUser.id,
+        "display_name": curUser.display_name,
+        "username": curUser.username,
+        "profile_picture_url": curUser.profile_picture.url,
+        "followers": curUser.followers,
+        "following": curUser.following,
         "saved_posts":[],
         "search_history": [],
         "recent_posts":[]
@@ -207,7 +208,6 @@ class ViewModel: ObservableObject {
   }
   
   func searchUsers(searchText: String) -> [User]{
-    print("all users: ", userList.count)
     return self.userList.filter{ user in
       return user.username.lowercased().contains(searchText.lowercased())
     }

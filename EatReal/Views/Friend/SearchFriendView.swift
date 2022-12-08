@@ -24,7 +24,7 @@ struct SearchFriendView: View {
                     Spacer()
                     HStack{
                       ForEach (resultUsers) { user in
-                        PreviewUserView(user: .constant(user))
+                        PreviewUserView(selfUser: .constant(viewModel.currentUser), user: .constant(user))
                       }
                     }
                     
