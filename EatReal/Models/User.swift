@@ -15,8 +15,6 @@ class User: Identifiable {
   var display_name: String
   var username: String
   var profile_picture: StoredImage = StoredImage()
-//  var followers: [PreviewUser] = []
-//  var following: [PreviewUser] = []
   var followers: [Int] = []
   var following: [Int] = []
   
