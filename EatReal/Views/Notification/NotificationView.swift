@@ -13,7 +13,7 @@ struct NotificationView: View {
     var body: some View {
       VStack{
         Logo()
-        NotificationScroll()
+        NotificationScroll(viewRouter: viewRouter)
         Spacer()
         navBar(viewRouter: viewRouter)
       }

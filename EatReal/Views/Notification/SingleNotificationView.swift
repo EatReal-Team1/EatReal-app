@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SingleNotificationView: View {
   @ObservedObject var viewModel: ViewModel = ViewModel()
+  @ObservedObject var viewRouter: ViewRouter
   @State private var showReviewPage = false
   @Binding var post: Post
   
@@ -29,7 +30,7 @@ struct SingleNotificationView: View {
 
                     
                     Button(action: {
-                      showReviewPage = true
+                      self.viewRouter.currentPage = .review
                     })
                     {
                         Text("Add a Review")
@@ -48,7 +49,6 @@ struct SingleNotificationView: View {
 
                 
             }
-      NavigationLink("", destination:  AddReview(), isActive: $showReviewPage).navigationBarBackButtonHidden(true)
     }
 }
 

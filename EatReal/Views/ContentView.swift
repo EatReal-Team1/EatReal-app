@@ -18,6 +18,7 @@ enum Page {
   case memory
   case savedpost
   case login
+  case review
 }
 
 struct ContentView: View {
@@ -57,6 +58,9 @@ struct ContentView: View {
           
       case .savedpost:
           SavedPostView(viewRouter: viewRouter)
+          
+        case .review:
+          ReactionCameraView(viewRouter: viewRouter)
           
       }
     }

@@ -12,6 +12,7 @@ import AVFoundation
 struct ReactionCameraView: View {
   @StateObject var model = CameraModel()
   @State var currentZoomFactor: CGFloat = 1.0
+  @ObservedObject var viewRouter: ViewRouter
   
   var captureButton: some View {
     Button(action: {
@@ -126,7 +127,7 @@ struct ReactionCameraView: View {
   
   var reviewPostView: some View {
     let selfie: UIImage = model.photo.image!
-    return FormView(selfie_photo: selfie)
+    return FormView(selfie_photo: selfie,viewRouter: viewRouter)
   }
   
   var body: some View {
