@@ -34,7 +34,6 @@ class ViewModel: ObservableObject {
     self.currentUser = User(display_name: "Leanne Sun", username: "leannesxh14", profile_picture: UIImage(named: "image-placeholder")!)
     self.loadUser()
     self.loadAllPosts()
-    self.myPosts()
   }
 
 
@@ -82,7 +81,6 @@ class ViewModel: ObservableObject {
         [
           "display_name": name,
           "username": username,
-  //        "profile_picture": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
           "profile_picture": user.profile_picture,
           "followers": user.followers,
           "following": user.following,
@@ -151,25 +149,14 @@ class ViewModel: ObservableObject {
     
   }
   
-  func myPosts() -> [Post] {
-    //var res: [Post] = []
-    rootRef.child("Posts").observe(.value, with: { snapshot in
-      for child in snapshot.children {
-        if let snapshot = child as? DataSnapshot,
-           let post = Post(snapshot: snapshot) {
-            print(post.author.display_name == self.currentUser.display_name)
-                // print(self.currentUser.display_name )
-            
-            if post.author.display_name == self.currentUser.display_name {
-               // print("1")
-                self.myPostList.append(post)
-          }
-        }
+  func getMyPost() -> [Post] {
+    var res: [Post] = []
+    for post in postList{
+      if post.author.id == currentUser.id {
+        res.append(post)
       }
-    })
-      //print(res)
-    return self.myPostList
-      
+    }
+    return res
   }
     
     func setCurrentUser(username: String) {
