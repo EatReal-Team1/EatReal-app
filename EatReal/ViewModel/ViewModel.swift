@@ -132,6 +132,13 @@ class ViewModel: ObservableObject {
     return res
   }
   
+  func sendFriendRequest(from: Int, to: Int) {
+    if !userList[from].following.contains(to) {
+      userList[from].following.append(to)
+      userList[to].followers.append(from)
+    }
+  }
+  
   func search(searchText: String) -> [Post]{
     self.filteredPostList = postList.filter { post in
       return post.review_restaurant.lowercased().contains(searchText.lowercased())

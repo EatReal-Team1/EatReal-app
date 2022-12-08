@@ -33,8 +33,8 @@ struct PreviewUserView: View {
               .background(Color.black)
               .cornerRadius(4)
         } else {
-          Button(action: {viewModel.currentUser.sendFriendRequest(to_user: user)
-            viewModel.updateUser(id: viewModel.currentUser.id)
+          Button(action: {viewModel.sendFriendRequest(from: selfUser.id, to: user.id)
+            viewModel.updateUser(id: selfUser.id)
             viewModel.updateUser(id: user.id)
           }){
             Text("Follow")
