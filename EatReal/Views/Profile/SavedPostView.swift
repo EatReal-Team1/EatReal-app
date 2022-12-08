@@ -14,6 +14,8 @@ struct SavedPostView: View {
     
     
     var body: some View {
+        
+        Logo()
         Spacer()
         Text("show all saved posts here")
         Spacer()

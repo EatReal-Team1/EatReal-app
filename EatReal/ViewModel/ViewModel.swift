@@ -34,6 +34,7 @@ class ViewModel: ObservableObject {
     self.currentUser = User(display_name: "Leanne Sun", username: "leannesxh14", profile_picture: UIImage(named: "image-placeholder")!)
     self.loadUser()
     self.loadAllPosts()
+    self.myPosts()
   }
 
 
@@ -120,18 +121,24 @@ class ViewModel: ObservableObject {
   }
   
   func myPosts() -> [Post] {
-    var res: [Post] = []
+    //var res: [Post] = []
     rootRef.child("Posts").observe(.value, with: { snapshot in
       for child in snapshot.children {
         if let snapshot = child as? DataSnapshot,
            let post = Post(snapshot: snapshot) {
+            print(post.author.display_name == self.currentUser.display_name)
+                // print(self.currentUser.display_name )
+            
             if post.author.display_name == self.currentUser.display_name {
-                res.append(post)
+               // print("1")
+                self.myPostList.append(post)
           }
         }
       }
     })
-    return res
+      //print(res)
+    return self.myPostList
+      
   }
   
     
