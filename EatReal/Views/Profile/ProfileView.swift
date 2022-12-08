@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-  @StateObject var viewRouter: ViewRouter
+  @ObservedObject var viewRouter: ViewRouter
   //  @StateObject var viewRouter: ViewRouter
     //@State private var showSavedPostPage = false
   //  @State private var showMemoryPage = false

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct homeButton: View {
     @State var buttonClicked : String = "home"
-    @StateObject var viewRouter: ViewRouter
+    @ObservedObject var viewRouter: ViewRouter
     var body: some View {
         Button(action: {
           viewRouter.currentPage = .home

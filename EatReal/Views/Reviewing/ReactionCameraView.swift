@@ -1,87 +1,21 @@
-  //
-  //  CameraContentView.swift
-  //  EatReal
-  //
-  //  Created by Emily Feng on 12/8/22.
-  //
+//
+//  ReactionCameraView.swift
+//  EatReal
+//
+//  Created by Emily Feng on 12/8/22.
+//
+
 import SwiftUI
 import Combine
 import AVFoundation
 
-final class CameraModel: ObservableObject {
-  private let service = CameraService()
-  
-  @Published var photo: Photo!
-  
-  @Published var showAlertError = false
-  
-  @Published var isFlashOn = false
-  
-  @Published var willCapturePhoto = false
-  
-  var alertError: AlertError!
-  
-  var session: AVCaptureSession
-  
-  private var subscriptions = Set<AnyCancellable>()
-  
-  init() {
-    self.session = service.session
-    
-    service.$photo.sink { [weak self] (photo) in
-      guard let pic = photo else { return }
-      self?.photo = pic
-    }
-    .store(in: &self.subscriptions)
-    
-    service.$shouldShowAlertView.sink { [weak self] (val) in
-      self?.alertError = self?.service.alertError
-      self?.showAlertError = val
-    }
-    .store(in: &self.subscriptions)
-    
-    service.$flashMode.sink { [weak self] (mode) in
-      self?.isFlashOn = mode == .on
-    }
-    .store(in: &self.subscriptions)
-    
-    service.$willCapturePhoto.sink { [weak self] (val) in
-      self?.willCapturePhoto = val
-    }
-    .store(in: &self.subscriptions)
-  }
-  
-  func configure() {
-    service.checkForPermissions()
-    service.configure()
-  }
-  
-  func capturePhoto() {
-    service.capturePhoto()
-  }
-  
-  func flipCamera() {
-    service.changeCamera()
-  }
-  
-  func zoom(with factor: CGFloat) {
-    service.set(zoom: factor)
-  }
-  
-  func switchFlash() {
-    service.flashMode = service.flashMode == .on ? .off : .on
-  }
-}
-
-struct CameraView: View {
+struct ReactionCameraView: View {
   @StateObject var model = CameraModel()
-  @ObservedObject var viewRouter: ViewRouter
   @State var currentZoomFactor: CGFloat = 1.0
   
   var captureButton: some View {
     Button(action: {
       model.capturePhoto()
-      viewRouter.currentPage = .postPreview
     }, label: {
       Circle()
         .foregroundColor(.white)
@@ -94,41 +28,9 @@ struct CameraView: View {
     })
   }
   
-  var capturedPhotoThumbnail: some View {
-    Group {
-      if model.photo != nil {
-        Image(uiImage: model.photo.image!)
-          .resizable()
-          .aspectRatio(contentMode: .fill)
-          .frame(width: 60, height: 60)
-          .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-          .animation(.spring())
-        
-      } else {
-        RoundedRectangle(cornerRadius: 10)
-          .frame(width: 60, height: 60, alignment: .center)
-          .foregroundColor(.black)
-      }
-    }
-  }
-  
-  var flipCameraButton: some View {
-    Button(action: {
-      model.flipCamera()
-    }, label: {
-      Circle()
-        .foregroundColor(Color.gray.opacity(0.2))
-        .frame(width: 45, height: 45, alignment: .center)
-        .overlay(
-          Image(systemName: "camera.rotate.fill")
-            .foregroundColor(.white))
-    })
-  }
-  
   var cancelButton: some View {
     Button {
       print("Cancel Button in CameraView pressed")
-      viewRouter.currentPage = .home
     } label: {
       Text("Cancel")
         .foregroundColor(Color.white)
@@ -140,7 +42,7 @@ struct CameraView: View {
       Color.black
         .ignoresSafeArea()
       
-      Text("What are you eating?")
+      Text("How was your food?")
         .padding(.horizontal, 50)
         .font(.system(
           size: 30,
@@ -204,7 +106,6 @@ struct CameraView: View {
           
           
           HStack {
-              //            capturedPhotoThumbnail
             
             cancelButton
             
@@ -214,7 +115,7 @@ struct CameraView: View {
             
             Spacer()
             
-            flipCameraButton
+            
             
           }
           .padding(.horizontal, 20)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogInView: View {
-    @StateObject var viewRouter: ViewRouter
+    @ObservedObject var viewRouter: ViewRouter
     @State public var username = ""
     @ObservedObject var viewModel: ViewModel = ViewModel()
     
