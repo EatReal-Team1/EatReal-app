@@ -18,12 +18,12 @@ enum Page {
   case memory
   case savedpost
   case login
-  case postPreview
 }
 
 struct ContentView: View {
   @EnvironmentObject var viewModel: ViewModel
   @StateObject var viewRouter: ViewRouter
+  @ObservedObject var notificationManager = LocalNotificationManager()
     
     var body: some View {
       switch viewRouter.currentPage {
@@ -41,10 +41,7 @@ struct ContentView: View {
           
         case .create:
 //          FoodCameraView(viewRouter: viewRouter)
-          CameraView(viewRouter: viewRouter)
-          
-        case .postPreview:
-          PostPreviewView(viewRouter: viewRouter)
+          CameraView(viewRouter: viewRouter, notificationManager: notificationManager)
           
         case .friend:
           FriendView(viewRouter: viewRouter)
