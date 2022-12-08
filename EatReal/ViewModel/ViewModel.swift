@@ -16,6 +16,8 @@ class ViewModel: ObservableObject {
   @Published var reviewingPost: Post?
   
   @Published var postList: [Post] = []
+  @Published var myPostList: [Post] = []
+    
   @Published var filteredPostList: [Post]
   @Published var numPosts: Int
   @Published var userList: [User]
@@ -24,6 +26,7 @@ class ViewModel: ObservableObject {
   
   init() {
     self.postList = []
+      self.myPostList = []
     self.filteredPostList = []
     self.numPosts = 0
     self.userList = []
@@ -116,14 +119,14 @@ class ViewModel: ObservableObject {
     
   }
   
-  func postsNeedReview() -> [Post] {
+  func myPosts() -> [Post] {
     var res: [Post] = []
     rootRef.child("Posts").observe(.value, with: { snapshot in
       for child in snapshot.children {
         if let snapshot = child as? DataSnapshot,
            let post = Post(snapshot: snapshot) {
-          if post.reviewed == false {
-            res.append(post)
+            if post.author.display_name == self.currentUser.display_name {
+                res.append(post)
           }
         }
       }
@@ -131,6 +134,23 @@ class ViewModel: ObservableObject {
     return res
   }
   
+    
+    func postsNeedReview() -> [Post] {
+      var res: [Post] = []
+      rootRef.child("Posts").observe(.value, with: { snapshot in
+        for child in snapshot.children {
+          if let snapshot = child as? DataSnapshot,
+             let post = Post(snapshot: snapshot) {
+            if post.reviewed == false {
+              res.append(post)
+            }
+          }
+        }
+      })
+      return res
+    }
+    
+    
   func search(searchText: String) -> [Post]{
     self.filteredPostList = postList.filter { post in
       return post.review_restaurant.lowercased().contains(searchText.lowercased())

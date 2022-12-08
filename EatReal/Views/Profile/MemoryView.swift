@@ -9,10 +9,17 @@ import SwiftUI
 
 struct MemoryView: View {
     @StateObject var viewRouter: ViewRouter
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     var body: some View {
-        
-       Text("show all previous posts here")
-        Spacer()
+
+        ScrollView() {
+          VStack(spacing: 20) {
+            ForEach (viewModel.myPosts()) { post in
+              PostView(post: .constant(post))
+            }
+          }
+        }
+
         navBar(viewRouter: viewRouter)
     }
 }

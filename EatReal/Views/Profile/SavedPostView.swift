@@ -14,6 +14,7 @@ struct SavedPostView: View {
     
     
     var body: some View {
+        Spacer()
         Text("show all saved posts here")
         Spacer()
         navBar(viewRouter: viewRouter)
