@@ -45,11 +45,6 @@ class User: Identifiable {
     self.username = username
     self.profile_picture = StoredImage(url: profile_picture_url)
   }
-
-  func sendFriendRequest(to_user: User) {
-    to_user.followers.append(self.id)
-    self.following.append(to_user.id)
-  }
   
   func toPreviewuser() -> PreviewUser {
     return PreviewUser(id: self.id, display_name: self.display_name, profile_picture: self.profile_picture.url)

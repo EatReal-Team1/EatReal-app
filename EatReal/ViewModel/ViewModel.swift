@@ -183,23 +183,28 @@ class ViewModel: ObservableObject {
         
     }
   
+  func sendFriendRequest(from: Int, to: Int) {
+    if !userList[from].following.contains(to) {
+      userList[from].following.append(to)
+      userList[to].followers.append(from)
+    }
+  }
     
-    func postsNeedReview() -> [Post] {
-      var res: [Post] = []
-      rootRef.child("Posts").observe(.value, with: { snapshot in
-        for child in snapshot.children {
-          if let snapshot = child as? DataSnapshot,
-             let post = Post(snapshot: snapshot) {
-            if post.reviewed == false {
-              res.append(post)
-            }
+  func postsNeedReview() -> [Post] {
+    var res: [Post] = []
+    rootRef.child("Posts").observe(.value, with: { snapshot in
+      for child in snapshot.children {
+        if let snapshot = child as? DataSnapshot,
+           let post = Post(snapshot: snapshot) {
+          if post.reviewed == false {
+            res.append(post)
           }
         }
-      })
-      return res
-    }
-    
-    
+      }
+    })
+    return res
+  }
+
   func search(searchText: String) -> [Post]{
     self.filteredPostList = postList.filter { post in
       return post.review_restaurant.lowercased().contains(searchText.lowercased())

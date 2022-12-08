@@ -11,7 +11,7 @@ struct SearchFriendView: View {
     @ObservedObject var viewModel: ViewModel = ViewModel()
     @State private var searchText = ""
     @State var resultUsers: [User] = []
-  @State var searched: Bool = false
+    @State var searched: Bool = false
     
     var body: some View {
           VStack(alignment: .leading){
