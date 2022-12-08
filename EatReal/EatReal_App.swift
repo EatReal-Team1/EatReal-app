@@ -16,6 +16,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
     Database.database().isPersistenceEnabled = true
+    UNUserNotificationCenter.current().delegate = self
     
 //    firebaseDemo()
 
@@ -39,9 +40,16 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   }
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+  func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    completionHandler([.alert, .badge, .sound])
+    UNUserNotificationCenter.current().delegate = self
+  }
+}
+
 @main
 struct EatReal_App: App {
-  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   @StateObject var viewRouter = ViewRouter()
   var body: some Scene {
     WindowGroup {
