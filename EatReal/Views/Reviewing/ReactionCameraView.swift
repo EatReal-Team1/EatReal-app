@@ -53,7 +53,7 @@ struct ReactionCameraView: View {
     }.frame(height: 100.0)
   }
   
-  var body: some View {
+  var selfieCaptureView: some View {
     GeometryReader { reader in
       ZStack {
         Color.black.edgesIgnoringSafeArea(.all)
@@ -121,6 +121,19 @@ struct ReactionCameraView: View {
           .padding(.horizontal, 20)
         }
       }
+    }
+  }
+  
+  var reviewPostView: some View {
+    let selfie: UIImage = model.photo.image!
+    return FormView(selfie_photo: selfie)
+  }
+  
+  var body: some View {
+    if model.photo != nil {
+      reviewPostView
+    } else {
+      selfieCaptureView
     }
   }
 }
