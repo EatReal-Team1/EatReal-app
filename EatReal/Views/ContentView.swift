@@ -59,7 +59,7 @@ struct ContentView: View {
         SearchView(viewRouter: viewRouter, viewModel: viewModel)
           
       case .savedpost:
-          SavedPostView(viewRouter: viewRouter)
+          SavedPostView(viewRouter: viewRouter, viewModel: viewModel)
           
       }
     }
