@@ -32,10 +32,24 @@ struct ReactionCameraView: View {
   var cancelButton: some View {
     Button {
       print("Cancel Button in CameraView pressed")
+      viewRouter.currentPage = .home
     } label: {
       Text("Cancel")
         .foregroundColor(Color.white)
     }
+  }
+  
+  var flipCameraButton: some View {
+    Button(action: {
+      model.flipCamera()
+    }, label: {
+      Circle()
+        .foregroundColor(Color.gray.opacity(0.2))
+        .frame(width: 45, height: 45, alignment: .center)
+        .overlay(
+          Image(systemName: "camera.rotate.fill")
+            .foregroundColor(.white))
+    })
   }
   
   var headerText: some View {
@@ -116,7 +130,7 @@ struct ReactionCameraView: View {
             
             Spacer()
             
-            
+            flipCameraButton
             
           }
           .padding(.horizontal, 20)

@@ -48,7 +48,7 @@ struct FormView: View {
           Spacer()
           
           Button(action: {
-            self.viewRouter.currentPage = .review
+            self.viewRouter.currentPage = .home
           }){
             Text("X")
               .padding(.horizontal, 30)
