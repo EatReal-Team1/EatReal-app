@@ -31,7 +31,7 @@ struct ContentView: View {
           CreateProfileView(viewRouter: viewRouter)
           
       case .login:
-        LogInView(viewRouter: viewRouter)
+        LogInView(viewRouter: viewRouter, viewModel: viewModel)
           
         case .home:
           HomeView(viewRouter: viewRouter)
@@ -50,10 +50,10 @@ struct ContentView: View {
           FriendView(viewRouter: viewRouter)
           
         case .profile:
-          ProfileView(viewRouter: viewRouter)
+          ProfileView(viewRouter: viewRouter, viewModel: viewModel)
           
       case .memory:
-        MemoryView(viewRouter: viewRouter)
+        MemoryView(viewRouter: viewRouter, viewModel: viewModel)
         
      case .search:
         SearchView(viewRouter: viewRouter, viewModel: viewModel)

@@ -153,6 +153,7 @@ class ViewModel: ObservableObject {
   
   func myPosts() -> [Post] {
     //var res: [Post] = []
+    //self.myPostList = []
     rootRef.child("Posts").observe(.value, with: { snapshot in
       for child in snapshot.children {
         if let snapshot = child as? DataSnapshot,
@@ -172,7 +173,7 @@ class ViewModel: ObservableObject {
       
   }
     
-    func setCurrentUser(username: String) {
+    func setCurrentUser(username_ipt: String) {
       //var res: [Post] = []
       rootRef.child("Users").observe(.value, with: { snapshot in
         for child in snapshot.children {
@@ -181,14 +182,16 @@ class ViewModel: ObservableObject {
               //print(post.author.display_name == self.currentUser.display_name)
                   // print(self.currentUser.display_name )
               
-              if user.username == username {
-                 // print("1")
+              if user.username == username_ipt {
+                  print("1")
                   self.currentUser = user
                   //print(self.currentUser)
             }
           }
         }
       })
+        myPostList = []
+        myPostList = myPosts()
         //print(res)
      // return self.myPostList
         
