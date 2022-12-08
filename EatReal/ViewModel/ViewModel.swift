@@ -218,5 +218,10 @@ class ViewModel: ObservableObject {
     }
   }
   
+  func getNeedReviewPosts() -> [Post] {
+    return self.postList.filter{ post in
+      return !post.reviewed && post.author.id == currentUser.id
+    }
+  }
 }
 
