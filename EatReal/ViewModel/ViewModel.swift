@@ -44,7 +44,7 @@ class ViewModel: ObservableObject {
           "id": self.numPosts,
           "address": post.address,
           "author": post.author.toAnyObject(),
-          "food_photo": post.food_photo,
+          "food_photo_url": post.food_photo,
           "selfie_photo": post.selfie_photo,
           "review_restaurant": post.review_restaurant,
           "review_dish": post.review_dish,
@@ -176,8 +176,8 @@ class ViewModel: ObservableObject {
           }
         }
       })
-        myPostList = []
-        myPostList = myPosts()
+//        myPostList = []
+//        myPostList = myPosts()
         //print(res)
      // return self.myPostList
         
