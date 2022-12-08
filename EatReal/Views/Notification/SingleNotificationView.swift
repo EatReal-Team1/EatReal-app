@@ -10,6 +10,7 @@ import SwiftUI
 struct SingleNotificationView: View {
   @ObservedObject var viewModel: ViewModel = ViewModel()
   @State private var showReviewPage = false
+  @Binding var post: Post
   
     var body: some View {
 
@@ -17,12 +18,11 @@ struct SingleNotificationView: View {
             VStack(spacing: 10.0){
                 
                 //picture of the post
-                    Image("notification").resizable()
-                        .frame(width: 300, height: 300).cornerRadius(10)
+              AsyncImage(url: post.food_photo, type: "need_review")
 
                 
                 //name of the restaurant
-                Text("Took Took").font(.system(size: 25))
+              Text(post.review_restaurant).font(.system(size: 25))
                 
                 // button: add a review
                 // need to add an action

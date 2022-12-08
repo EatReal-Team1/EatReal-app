@@ -63,16 +63,27 @@ struct AsyncImage: View {
           imageLoader.fetchImage()
         }
       } else if (self.imageType == "myProfile"){
-          Image(uiImage: image)
+        Image(uiImage: image)
+        .resizable()
+        .frame(width: 250.0, height: 250.0)
+        .onReceive(imageLoader.$image) { image in
+            self.image = image
+        }
+        .onAppear {
+          imageLoader.fetchImage()
+        }
+      } else if (self.imageType == "need_review"){
+        Image(uiImage: image)
           .resizable()
-          .frame(width: 250.0, height: 250.0)
+          .frame(width: 300, height: 300)
+          .cornerRadius(10)
           .onReceive(imageLoader.$image) { image in
               self.image = image
           }
           .onAppear {
             imageLoader.fetchImage()
           }
-        } else
+      } else
       {
         Image(uiImage: image)
         .resizable()

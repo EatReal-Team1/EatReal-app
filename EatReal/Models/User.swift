@@ -37,13 +37,11 @@ class User: Identifiable {
       let username = value["username"] as? String,
       let profile_picture_url = value["profile_picture_url"] as? String
     else {
-      print(snapshot)
       return nil
     }
-//    self.following = value["following"] as? [Int] ?? []
-//    self.followers = value["followers"] as? [Int] ?? []
-//    self.savedPosts = value["saved_posts"] as? [Int] ?? []
-    print("saved posts: \(savedPosts)")
+    self.following = value["following"] as? [Int] ?? []
+    self.followers = value["followers"] as? [Int] ?? []
+    self.savedPosts = value["saved_posts"] as? [Int] ?? []
     self.id = id
     self.display_name = display_name
     self.username = username
