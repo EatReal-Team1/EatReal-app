@@ -17,7 +17,7 @@ class ViewModel: ObservableObject {
   
   @Published var postList: [Post] = []
   @Published var myPostList: [Post] = []
-    
+
   @Published var filteredPostList: [Post]
   @Published var numPosts: Int
   @Published var userList: [User]
@@ -78,7 +78,7 @@ class ViewModel: ObservableObject {
     
     func saveUser(name: String, username: String) {
       let user = self.currentUser
-      rootRef.child("Users").child(String(self.numUsers+1)).setValue(
+      rootRef.child("Users").child(String(self.numUsers)).setValue(
         [
           "display_name": name,
           "username": username,
@@ -91,6 +91,7 @@ class ViewModel: ObservableObject {
           "recent_posts":[]
         ]
       )
+      self.numUsers += 1
     }
     
   
@@ -121,6 +122,16 @@ class ViewModel: ObservableObject {
         }
       }
     })
+  }
+  
+  func getSavedPosts() -> [Post] {
+    var savedPosts: [Post] = []
+    for post_id in currentUser.savedPosts {
+      savedPosts.append(postList[post_id])
+    }
+//    print(savedPosts)
+    return savedPosts
+    
   }
   
   func loadUser() {

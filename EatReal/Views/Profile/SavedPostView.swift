@@ -36,7 +36,7 @@ struct SavedPostView: View {
         
         ScrollView() {
           VStack(spacing: 20) {
-              ForEach (viewModel.myPosts()) { post in
+              ForEach (viewModel.getSavedPosts()) { post in
             //ForEach (viewModel.savedPostList) { post in
               PostView(post: .constant(post))
             }

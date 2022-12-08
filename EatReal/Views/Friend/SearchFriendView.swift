@@ -42,8 +42,6 @@ struct SearchFriendView: View {
   func runSearch() {
     self.resultUsers = viewModel.searchUsers(searchText: self.searchText)
     searched = true
-    print(resultUsers.count)
-//    print(self.resultUsers[0].profile_picture.url)
   }
   
 }
