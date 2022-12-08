@@ -77,11 +77,12 @@ struct CameraView: View {
   @StateObject var model = CameraModel()
   @ObservedObject var viewRouter: ViewRouter
   @State var currentZoomFactor: CGFloat = 1.0
+  @ObservedObject var notificationManager = LocalNotificationManager()
   
   var captureButton: some View {
     Button(action: {
       model.capturePhoto()
-      viewRouter.currentPage = .postPreview
+//      viewRouter.currentPage = .postPreview
     }, label: {
       Circle()
         .foregroundColor(.white)
@@ -151,7 +152,7 @@ struct CameraView: View {
     }.frame(height: 100.0)
   }
   
-  var body: some View {
+  var capturingPhotoView: some View {
     GeometryReader { reader in
       ZStack {
         Color.black.edgesIgnoringSafeArea(.all)
@@ -204,22 +205,84 @@ struct CameraView: View {
           
           
           HStack {
-              //            capturedPhotoThumbnail
-            
             cancelButton
-            
             Spacer()
-            
             captureButton
-            
             Spacer()
-            
             flipCameraButton
-            
           }
           .padding(.horizontal, 20)
         }
       }
+    }
+  }
+  
+  var postingHeaderText: some View {
+    ZStack {
+      Color.black
+        .ignoresSafeArea()
+      
+      Text("Posting...")
+        .padding(.horizontal, 50)
+        .font(.system(
+          size: 30,
+          weight: .semibold,
+          design: .default))
+        .foregroundColor(.white)
+      
+    }.frame(height: 100.0)
+  }
+  
+  var photoPreviewThumbnil: some View {
+    Group {
+      if model.photo != nil {
+        Image(uiImage: model.photo.image!)
+          .resizable()
+          .aspectRatio(contentMode: .fill)
+//          .frame(width: 100, height: 100)
+          .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+//          .animation(.spring())
+        
+      } else {
+        RoundedRectangle(cornerRadius: 10)
+          .frame(width: 100, height: 100, alignment: .center)
+          .foregroundColor(.black)
+      }
+    }
+  }
+  
+  var postButton: some View {
+    Button {
+      print("Post Button in PostPreview pressed")
+      viewRouter.currentPage = .home
+      notificationManager.sendNotification(launchIn: 1)
+    } label: {
+      Text("Post")
+        .font(Font.custom("Helvetica Neue", size: 25.0))
+        .padding(50)
+        .foregroundColor(.white)
+    }
+  }
+  
+  var postPreview: some View {
+    ZStack {
+      Color.black
+        .ignoresSafeArea()
+      VStack{
+        postingHeaderText
+        photoPreviewThumbnil
+        Spacer().frame()
+        postButton
+      }
+      Spacer()
+    }
+  }
+  
+  var body: some View {
+    if model.photo != nil {
+      postPreview
+    } else {
+      capturingPhotoView
     }
   }
 }
