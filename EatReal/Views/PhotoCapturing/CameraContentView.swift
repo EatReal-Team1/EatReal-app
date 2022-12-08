@@ -76,6 +76,7 @@ final class CameraModel: ObservableObject {
 struct CameraView: View {
   @StateObject var model = CameraModel()
   @ObservedObject var viewRouter: ViewRouter
+  @ObservedObject var viewModel: ViewModel = ViewModel()
   @State var currentZoomFactor: CGFloat = 1.0
   @StateObject var notificationManager:LocalNotificationManager
   
@@ -254,6 +255,14 @@ struct CameraView: View {
   var postButton: some View {
     Button {
       print("Post Button in PostPreview pressed")
+      // MARK: create a post logic
+      Task {
+        let image: UIImage = model.photo.image!
+        print("waiting to finish post")
+        await self.viewModel.selectedPost = Post(address: " ", author: self.viewModel.currentUser.toPreviewuser(), food_photo: image, review_restaurant: " ")
+        self.viewModel.savePost()
+      }
+      
       viewRouter.currentPage = .home
       self.notificationManager.sendNotification(launchIn: 60*60)
     } label: {
