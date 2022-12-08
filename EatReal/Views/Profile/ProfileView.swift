@@ -10,15 +10,13 @@ import SwiftUI
 struct ProfileView: View {
   @ObservedObject var viewRouter: ViewRouter
   @StateObject var viewModel: ViewModel
-  //  @StateObject var viewRouter: ViewRouter
-    //@State private var showSavedPostPage = false
-  //  @State private var showMemoryPage = false
+  //@StateObject var viewRouter: ViewRouter
+  //@State private var showSavedPostPage = false
+  //@State private var showMemoryPage = false
    
-    
     var body: some View {
         
      //   NavigationView {
-            
         VStack{
             Logo()
             Spacer()
@@ -42,7 +40,7 @@ struct ProfileView: View {
                     .background(Color.black)
                     .cornerRadius(5)
             }
-            
+         
             Button(action: {
               //  showSavedPostPage = true
                 viewRouter.currentPage = .savedpost
@@ -54,18 +52,10 @@ struct ProfileView: View {
                     .background(Color.black)
                     .cornerRadius(5)
             }
-            
             // }
-            
-        
-            
             //SavedPostView()
         }
-                
                 navBar(viewRouter: viewRouter)
             }
-            
-            
-        
     }
 

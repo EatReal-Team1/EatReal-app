@@ -10,12 +10,9 @@ import SwiftUI
 
 struct SavedPostView: View {
     @ObservedObject var viewRouter: ViewRouter
-    @ObservedObject var viewModel: ViewModel = ViewModel()
-    
-    
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
-        
         Logo()
         HStack{
             Button(action: {
