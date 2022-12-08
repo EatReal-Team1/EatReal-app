@@ -3,6 +3,7 @@
     {
       "address": "",
       "author": {
+        "id": 0,
         "display_name": "Leanne Sun",
         "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fleanne.jpg?alt=media&token=565a94a5-2b00-48ac-be1f-a0a1631866a0"
       },
@@ -20,6 +21,7 @@
     {
       "address": "",
       "author": {
+        "id": 1,
         "display_name": "Zeke Rong",
         "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fzeke.JPG?alt=media&token=496335a3-af2e-4c55-b2de-a2a50e3484b3"
       },
@@ -37,6 +39,7 @@
     {
       "address": " ",
       "author": {
+        "id": 1,
         "display_name": "Zeke Rong",
         "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fzeke.JPG?alt=media&token=496335a3-af2e-4c55-b2de-a2a50e3484b3"
       },
@@ -54,6 +57,7 @@
     {
       "address": " ",
       "author": {
+        "id": 2,
         "display_name": "Emily Feng",
         "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Femily.JPG?alt=media&token=c2a7afd1-35eb-4584-b21f-187c4d6e8f95"
       },
@@ -71,43 +75,24 @@
   ],
   "Users": [
     {
+      "id": 0,
       "display_name": "Leanne Sun",
-      "following": [
-        {
-          "display_name": "Zeke Rong",
-          "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fzeke.JPG?alt=media&token=496335a3-af2e-4c55-b2de-a2a50e3484b3"
-        }
-      ],
-      "profile_picture": "profile/leanne.JPG",
+      "following": [1],
       "profile_picture_url": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fleanne.jpg?alt=media&token=565a94a5-2b00-48ac-be1f-a0a1631866a0",
       "username": "leannesxh14"
     },
     {
+      "id": 1,
       "display_name": "Zeke Rong",
       "following": [],
-      "followers": [
-        {
-          "display_name": "Leanne Sun",
-          "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fleanne.jpg?alt=media&token=565a94a5-2b00-48ac-be1f-a0a1631866a0"
-        },
-        {
-          "display_name": "Emily Feng",
-          "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Femily.JPG?alt=media&token=c2a7afd1-35eb-4584-b21f-187c4d6e8f95"
-        }
-      ],
-      "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fzeke.JPG?alt=media&token=496335a3-af2e-4c55-b2de-a2a50e3484b3",
+      "followers": [0, 2],
       "profile_picture_url": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fzeke.JPG?alt=media&token=496335a3-af2e-4c55-b2de-a2a50e3484b3",
       "username": "zer"
     },
     {
+      "id": 2,
       "display_name": "Emily Feng",
-      "following": [
-        {
-          "display_name": "Zeke Rong",
-          "profile_picture": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Fzeke.JPG?alt=media&token=496335a3-af2e-4c55-b2de-a2a50e3484b3"
-        }
-      ],
-      "profile_picture": "profile/emily.JPG",
+      "following": [1],
       "profile_picture_url": "https://firebasestorage.googleapis.com/v0/b/eatreal-s22.appspot.com/o/profile%2Femily.JPG?alt=media&token=c2a7afd1-35eb-4584-b21f-187c4d6e8f95",
       "username": "efeng"
     }

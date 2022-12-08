@@ -8,28 +8,46 @@
 import SwiftUI
 
 struct PreviewUserView: View {
+  @Binding var selfUser: User
   @Binding var user: User
   @ObservedObject var viewModel: ViewModel = ViewModel()
     var body: some View {
-      VStack {
-        HStack{
-          AsyncImage(url: user.profile_picture.url, type: "friendPreview")
-          Text(user.display_name)
-          Spacer()
-        }.padding(20)
-        
-        Button(action: {viewModel.currentUser.sendFriendRequest(to_user: user)
-          viewModel.updateUser()
-        }){
-          Text("Follow")
-            .bold()
-            .font(Font.custom("Helvetica Neue", size: 20))
-            .padding(5)
-            .foregroundColor(Color.white)
-            .background(Color.black)
-            .cornerRadius(2)
+      HStack{
+        AsyncImage(url: user.profile_picture.url, type: "friendPreview")
+        Text(user.display_name)
+        Spacer()
+        if (selfUser.following.contains(user.id)) {
+          Text("Followed")
+              .bold()
+              .font(Font.custom("Helvetica Neue", size: 20))
+              .padding(7)
+              .foregroundColor(Color.white)
+              .background(Color.black)
+              .cornerRadius(4)
+        } else if (selfUser.id == user.id) {
+          Text("Me")
+              .bold()
+              .font(Font.custom("Helvetica Neue", size: 20))
+              .padding(7)
+              .foregroundColor(Color.white)
+              .background(Color.black)
+              .cornerRadius(4)
+        } else {
+          Button(action: {viewModel.currentUser.sendFriendRequest(to_user: user)
+            viewModel.updateUser(id: viewModel.currentUser.id)
+            viewModel.updateUser(id: user.id)
+          }){
+            Text("Follow")
+              .bold()
+              .font(Font.custom("Helvetica Neue", size: 20))
+              .padding(7)
+              .foregroundColor(Color.white)
+              .background(Color.black)
+              .cornerRadius(4)
+          }
         }
-      } // VStack
+        
+      }.padding(20)
       
     } // body
 }
