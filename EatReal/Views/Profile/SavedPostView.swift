@@ -12,10 +12,7 @@ struct SavedPostView: View {
     @ObservedObject var viewRouter: ViewRouter
     @StateObject var viewModel: ViewModel
     
-    
-    
     var body: some View {
-        
         Logo()
         HStack{
             Button(action: {
