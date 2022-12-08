@@ -10,11 +10,38 @@ import SwiftUI
 
 struct SavedPostView: View {
     @StateObject var viewRouter: ViewRouter
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     
     
     
     var body: some View {
-        Text("show all saved posts here")
+        
+        Logo()
+        HStack{
+            Button(action: {
+                viewRouter.currentPage = .profile
+            })
+            {
+                Text("Back")
+                    .bold()
+                    .font(Font.custom("Helvetica Neue", size: 15.0))
+                    .padding(10)
+                    .foregroundColor(Color.white)
+                    .background(Color.black)
+                    .cornerRadius(5)
+            }
+            Spacer()
+        }
+        Spacer()
+        
+        ScrollView() {
+          VStack(spacing: 20) {
+              ForEach (viewModel.myPostList) { post in
+            //ForEach (viewModel.savedPostList) { post in
+              PostView(post: .constant(post))
+            }
+          }
+        }
         Spacer()
         navBar(viewRouter: viewRouter)
     }

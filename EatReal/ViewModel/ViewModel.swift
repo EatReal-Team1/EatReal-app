@@ -16,6 +16,8 @@ class ViewModel: ObservableObject {
   @Published var reviewingPost: Post?
   
   @Published var postList: [Post] = []
+  @Published var myPostList: [Post] = []
+    
   @Published var filteredPostList: [Post]
   @Published var numPosts: Int
   @Published var userList: [User]
@@ -24,6 +26,7 @@ class ViewModel: ObservableObject {
   
   init() {
     self.postList = []
+      self.myPostList = []
     self.filteredPostList = []
     self.numPosts = 0
     self.userList = []
@@ -31,6 +34,7 @@ class ViewModel: ObservableObject {
     self.currentUser = User(display_name: "Leanne Sun", username: "leannesxh14", profile_picture: UIImage(named: "image-placeholder")!)
     self.loadUser()
     self.loadAllPosts()
+    self.myPosts()
   }
 
 
@@ -69,6 +73,25 @@ class ViewModel: ObservableObject {
       )
     }
   }
+    
+    
+    func saveUser(name: String, username: String) {
+      let user = self.currentUser
+      rootRef.child("Users").child(String(self.numUsers+1)).setValue(
+        [
+          "display_name": name,
+          "username": username,
+  //        "profile_picture": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
+          "profile_picture": user.profile_picture,
+          "followers": user.followers,
+          "following": user.following,
+          "saved_posts":[],
+          "search_history": [],
+          "recent_posts":[]
+        ]
+      )
+    }
+    
   
   func updateUser() {
     let user = self.currentUser
@@ -116,21 +139,66 @@ class ViewModel: ObservableObject {
     
   }
   
-  func postsNeedReview() -> [Post] {
-    var res: [Post] = []
+  func myPosts() -> [Post] {
+    //var res: [Post] = []
     rootRef.child("Posts").observe(.value, with: { snapshot in
       for child in snapshot.children {
         if let snapshot = child as? DataSnapshot,
            let post = Post(snapshot: snapshot) {
-          if post.reviewed == false {
-            res.append(post)
+            print(post.author.display_name == self.currentUser.display_name)
+                // print(self.currentUser.display_name )
+            
+            if post.author.display_name == self.currentUser.display_name {
+               // print("1")
+                self.myPostList.append(post)
           }
         }
       }
     })
-    return res
+      //print(res)
+    return self.myPostList
+      
   }
+    
+    func setCurrentUser(username: String) {
+      //var res: [Post] = []
+      rootRef.child("Users").observe(.value, with: { snapshot in
+        for child in snapshot.children {
+          if let snapshot = child as? DataSnapshot,
+             let user = User(snapshot: snapshot) {
+              //print(post.author.display_name == self.currentUser.display_name)
+                  // print(self.currentUser.display_name )
+              
+              if user.username == username {
+                 // print("1")
+                  self.currentUser = user
+                  //print(self.currentUser)
+            }
+          }
+        }
+      })
+        //print(res)
+     // return self.myPostList
+        
+    }
   
+    
+    func postsNeedReview() -> [Post] {
+      var res: [Post] = []
+      rootRef.child("Posts").observe(.value, with: { snapshot in
+        for child in snapshot.children {
+          if let snapshot = child as? DataSnapshot,
+             let post = Post(snapshot: snapshot) {
+            if post.reviewed == false {
+              res.append(post)
+            }
+          }
+        }
+      })
+      return res
+    }
+    
+    
   func search(searchText: String) -> [Post]{
     self.filteredPostList = postList.filter { post in
       return post.review_restaurant.lowercased().contains(searchText.lowercased())

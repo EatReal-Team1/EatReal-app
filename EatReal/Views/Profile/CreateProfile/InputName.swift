@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputName: View {
-    @State private var name: String = ""
+    @Binding var name: String
     var body: some View {
         Text("Name").font(Font.custom("Helvetica Neue", size: 30.0))
         HStack{
@@ -18,9 +18,9 @@ struct InputName: View {
     }
     }
 }
-
-struct InputName_Previews: PreviewProvider {
-    static var previews: some View {
-        InputName()
-    }
-}
+//
+//struct InputName_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InputName()
+//    }
+//}

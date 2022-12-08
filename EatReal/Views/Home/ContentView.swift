@@ -17,6 +17,7 @@ enum Page {
   case search
   case memory
   case savedpost
+  case login
     
 }
 
@@ -28,6 +29,9 @@ struct ContentView: View {
       switch viewRouter.currentPage {
         case .createProfile:
           CreateProfileView(viewRouter: viewRouter)
+          
+      case .login:
+        LogInView(viewRouter: viewRouter)
           
         case .home:
           HomeView(viewRouter: viewRouter)
