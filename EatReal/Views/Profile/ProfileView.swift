@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
   @ObservedObject var viewRouter: ViewRouter
+  @StateObject var viewModel: ViewModel
   //  @StateObject var viewRouter: ViewRouter
     //@State private var showSavedPostPage = false
   //  @State private var showMemoryPage = false
@@ -21,12 +22,11 @@ struct ProfileView: View {
         VStack{
             Logo()
             Spacer()
-            Image("Profile").resizable()
-                .frame(width: 200, height: 200)
+            AsyncImage(url: viewModel.currentUser.profile_picture.url, type: "myProfile")
             Group{
                 Text(" ")
-                Text("Leanne Sun").font(Font.custom("Helvetica Neue", size: 40.0))
-                Text("Username: leannesxh14").font(Font.custom("Helvetica Neue", size: 20))
+                Text(viewModel.currentUser.display_name).font(Font.custom("Helvetica Neue", size: 40.0))
+                Text("Username: " + viewModel.currentUser.username).font(Font.custom("Helvetica Neue", size: 20))
                 Spacer()
             }
             
