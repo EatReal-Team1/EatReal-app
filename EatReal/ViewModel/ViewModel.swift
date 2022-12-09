@@ -168,7 +168,7 @@ class ViewModel: ObservableObject {
               //print(post.author.display_name == self.currentUser.display_name)
                   // print(self.currentUser.display_name )
               
-              if user.username.lowercased() == username_ipt {
+              if user.username.lowercased() == username_ipt.lowercased() {
                   print("1")
                   self.currentUser = user
                   //print(self.currentUser)

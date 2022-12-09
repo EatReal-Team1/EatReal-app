@@ -28,7 +28,7 @@ struct SearchView: View {
             VStack(spacing: 5) {
               Spacer()
               ForEach (resultPosts) { post in
-                  PostView(post: .constant(post), viewModel: viewModel)
+                  PostView(post: .constant(post))
               }
             }
           }
