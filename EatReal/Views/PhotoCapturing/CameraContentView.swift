@@ -76,7 +76,7 @@ final class CameraModel: ObservableObject {
 struct CameraView: View {
   @StateObject var model = CameraModel()
   @ObservedObject var viewRouter: ViewRouter
-  @ObservedObject var viewModel: ViewModel = ViewModel()
+  @EnvironmentObject var viewModel: ViewModel
   @State var currentZoomFactor: CGFloat = 1.0
   @StateObject var notificationManager:LocalNotificationManager
   

@@ -10,7 +10,7 @@ import SwiftUI
 struct EmbeddedCameraView: UIViewControllerRepresentable {
   typealias UIViewControllerType = UIImagePickerController
   @Binding var selectedImage: UIImage?
-  @ObservedObject var viewModel: ViewModel = ViewModel()
+  @EnvironmentObject var viewModel: ViewModel
   @ObservedObject var notificationManager = LocalNotificationManager()
   
   func makeUIViewController(context: Context) -> UIViewControllerType {

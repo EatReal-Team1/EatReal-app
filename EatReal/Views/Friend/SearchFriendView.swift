@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchFriendView: View {
-    @ObservedObject var viewModel: ViewModel = ViewModel()
+    @EnvironmentObject var viewModel: ViewModel
     @State private var searchText = ""
     @State var resultUsers: [User] = []
     @State var searched: Bool = false
