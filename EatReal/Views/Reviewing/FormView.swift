@@ -22,7 +22,8 @@ struct FormView: View {
   @State private var dishes = ""
   @State private var review = ""
   @State private var displayed = false
-  @State private var rating:Int = 0
+  @State private var rating: Int = 0
+//  var post: Post
   
   @State private var submitted = false
   var selfie_photo: UIImage
@@ -63,12 +64,7 @@ struct FormView: View {
         
         VStack {
           ZStack{
-            Image("placeholder-food")
-              .resizable()
-              .aspectRatio(contentMode: .fill)
-              .frame(
-                width: 187,
-                height: 220)
+            AsyncImage(url: viewModel.reviewingPost!.food_photo, type: "review")
               .overlay(
                 Section {
                   Image(uiImage: selfie_photo)

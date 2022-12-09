@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct NotificationScroll: View {
-  @ObservedObject var viewModel: ViewModel = ViewModel()
+  @ObservedObject var viewModel: ViewModel
   @ObservedObject var viewRouter: ViewRouter
   
     var body: some View {
       ScrollView() {
         VStack(spacing: 20) {
           ForEach (viewModel.getNeedReviewPosts()){ post in
-            SingleNotificationView(viewRouter: viewRouter, post: .constant(post))
+            SingleNotificationView(viewRouter: viewRouter, viewModel: viewModel, post: .constant(post))
           }
         }
       }
