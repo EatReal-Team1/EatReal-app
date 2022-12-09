@@ -233,12 +233,13 @@ class ViewModel: ObservableObject {
         rootRef.child("Users").child(String(self.currentUser.id)).setValue(
           [
             "id": self.currentUser.id,
+            
             "display_name": self.currentUser.display_name,
             "username": self.currentUser.username,
             "profile_picture_url": self.currentUser.profile_picture.url,
-           // "followers": self.currentUser.followers,
+            "followers": self.currentUser.followers,
             "following": self.currentUser.following,
-            "saved_posts":self.currentUser.savedPosts.append(postID)
+            "saved_posts": self.currentUser.savedPosts.append(postID)
          //   "search_history": [],
             //   "recent_posts":[]
           ]
