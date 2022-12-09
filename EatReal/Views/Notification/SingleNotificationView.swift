@@ -31,6 +31,7 @@ struct SingleNotificationView: View {
                     
                     Button(action: {
                       self.viewRouter.currentPage = .review
+                      self.viewModel.reviewingPost = post
                     })
                     {
                         Text("Add a Review")
