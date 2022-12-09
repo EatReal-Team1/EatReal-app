@@ -36,6 +36,7 @@ struct SavedPostView: View {
               ForEach (viewModel.getSavedPosts()) { post in
             //ForEach (viewModel.savedPostList) { post in
                   PostView(post: .constant(post))
+           
             }
           }
         }

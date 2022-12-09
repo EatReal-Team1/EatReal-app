@@ -103,7 +103,7 @@ class ViewModel: ObservableObject {
         "profile_picture_url": curUser.profile_picture.url,
         "followers": curUser.followers,
         "following": curUser.following,
-        "saved_posts":[],
+        "saved_posts":curUser.savedPosts,
         "search_history": [],
         "recent_posts":[]
       ]
@@ -230,20 +230,11 @@ class ViewModel: ObservableObject {
     
     func postsaved(postID: Int) {
         // let curUser = self.userList[id]
-        rootRef.child("Users").child(String(self.currentUser.id)).setValue(
-          [
-            "id": self.currentUser.id,
-            
-            "display_name": self.currentUser.display_name,
-            "username": self.currentUser.username,
-            "profile_picture_url": self.currentUser.profile_picture.url,
-            "followers": self.currentUser.followers,
-            "following": self.currentUser.following,
-            "saved_posts": self.currentUser.savedPosts.append(postID)
+        self.currentUser.savedPosts.append(postID)
          //   "search_history": [],
             //   "recent_posts":[]
-          ]
-        )
+          
+        
         
     }
 }
