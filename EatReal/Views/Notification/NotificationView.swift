@@ -14,7 +14,7 @@ struct NotificationView: View {
     var body: some View {
       VStack{
         Logo()
-        NotificationScroll(viewModel: viewModel, viewRouter: viewRouter)
+        NotificationScroll(viewRouter: viewRouter).environmentObject(viewModel)
         Spacer()
         navBar(viewRouter: viewRouter)
       }
