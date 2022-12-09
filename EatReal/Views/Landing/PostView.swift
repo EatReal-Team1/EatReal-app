@@ -51,6 +51,7 @@ struct PostView: View {
               } else {
                   Button(action: {
                       viewModel.postsaved(postID: post.id)//userID: viewModel.currentUser.id)
+                      viewModel.updateUser(id: viewModel.currentUser.id)
                   })
                   {
                       Text("Save").bold()
