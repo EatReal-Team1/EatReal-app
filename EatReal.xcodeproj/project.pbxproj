@@ -28,7 +28,6 @@
 		C4DA1A042926B135005FDC1C /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A032926B135005FDC1C /* ViewRouter.swift */; };
 		C4DA1A282940C21B005FDC1C /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A272940C21B005FDC1C /* NotificationManager.swift */; };
 		C4DA1A6C2942587F005FDC1C /* CameraContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A6B2942587F005FDC1C /* CameraContentView.swift */; };
-		C4DA1A6E294258DE005FDC1C /* PostPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A6D294258DE005FDC1C /* PostPreviewView.swift */; };
 		C4DA1A702942590B005FDC1C /* PhotoCaptureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A6F2942590B005FDC1C /* PhotoCaptureProcessor.swift */; };
 		C4DA1A722942591E005FDC1C /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A712942591E005FDC1C /* CameraView.swift */; };
 		C4DA1A742942594C005FDC1C /* ImageResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A732942594C005FDC1C /* ImageResizer.swift */; };
@@ -139,7 +138,6 @@
 		C4DA1A032926B135005FDC1C /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		C4DA1A272940C21B005FDC1C /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C4DA1A6B2942587F005FDC1C /* CameraContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraContentView.swift; sourceTree = "<group>"; };
-		C4DA1A6D294258DE005FDC1C /* PostPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPreviewView.swift; sourceTree = "<group>"; };
 		C4DA1A6F2942590B005FDC1C /* PhotoCaptureProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureProcessor.swift; sourceTree = "<group>"; };
 		C4DA1A712942591E005FDC1C /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		C4DA1A732942594C005FDC1C /* ImageResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizer.swift; sourceTree = "<group>"; };
@@ -299,7 +297,6 @@
 				C4A2E7E5291B72D700D15DE1 /* FoodCameraView.swift */,
 				C4A2E833291DE2CF00D15DE1 /* EmbeddedCameraView.swift */,
 				C4A2E83A291DEB0C00D15DE1 /* ImagePicker.swift */,
-				C4DA1A6D294258DE005FDC1C /* PostPreviewView.swift */,
 			);
 			path = Posting;
 			sourceTree = "<group>";
@@ -617,7 +614,6 @@
 				FCE4B8F1291B6BFA004ED90E /* User.swift in Sources */,
 				C461BE4229241D2800E5E70A /* SelfieCameraView.swift in Sources */,
 				CD79D601293FD594000BB93A /* SavedPostView.swift in Sources */,
-				C4DA1A6E294258DE005FDC1C /* PostPreviewView.swift in Sources */,
 				CDE681C2291ADA8000AF8BFD /* SingleNotificationView.swift in Sources */,
 				C4DA1A042926B135005FDC1C /* ViewRouter.swift in Sources */,
 				CD47BC24291D8EBE0083E983 /* InputName.swift in Sources */,
