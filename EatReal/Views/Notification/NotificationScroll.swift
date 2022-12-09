@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotificationScroll: View {
-  @ObservedObject var viewModel: ViewModel
+  @EnvironmentObject var viewModel: ViewModel
   @ObservedObject var viewRouter: ViewRouter
   
     var body: some View {

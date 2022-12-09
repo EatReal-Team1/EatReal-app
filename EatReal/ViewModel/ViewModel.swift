@@ -103,7 +103,7 @@ class ViewModel: ObservableObject {
         "profile_picture_url": curUser.profile_picture.url,
         "followers": curUser.followers,
         "following": curUser.following,
-        "saved_posts":[],
+        "saved_posts":curUser.savedPosts,
         "search_history": [],
         "recent_posts":[]
       ]
@@ -168,7 +168,7 @@ class ViewModel: ObservableObject {
               //print(post.author.display_name == self.currentUser.display_name)
                   // print(self.currentUser.display_name )
               
-              if user.username == username_ipt {
+              if user.username.lowercased() == username_ipt.lowercased() {
                   print("1")
                   self.currentUser = user
                   //print(self.currentUser)
@@ -228,5 +228,19 @@ class ViewModel: ObservableObject {
     }
     return res
   }
+    
+    func isSaved(postID: Int) -> Bool {
+        return self.currentUser.savedPosts.contains(postID)
+    }
+    
+    func postsaved(postID: Int) {
+        // let curUser = self.userList[id]
+        self.currentUser.savedPosts.append(postID)
+         //   "search_history": [],
+            //   "recent_posts":[]
+          
+        
+        
+    }
 }
 

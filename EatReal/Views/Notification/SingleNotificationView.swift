@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SingleNotificationView: View {
-//  @ObservedObject var viewModel: ViewModel// = ViewModel()
+  @EnvironmentObject var viewModel: ViewModel
   @ObservedObject var viewRouter: ViewRouter
   var viewModel: ViewModel
   @State private var showReviewPage = false
@@ -42,6 +42,7 @@ struct SingleNotificationView: View {
               }
               // divider
               Divider().frame(width: 300).background(Color.black).frame(height: 5)
+
 
                 
             }

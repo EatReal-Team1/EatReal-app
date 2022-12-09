@@ -9,21 +9,25 @@ import SwiftUI
 
 struct PostScroll: View {
 
-    @ObservedObject var viewModel: ViewModel = ViewModel()
+    @EnvironmentObject var viewModel: ViewModel
 
-    var body: some View {
+  var body: some View {
+    NavigationView {
       ScrollView() {
         VStack(spacing: 20) {
           ForEach (viewModel.postList) { post in
-            PostView(post: .constant(post))
+            NavigationLink(destination: PostDetailView(post: .constant(post))) {
+              PostView(post: .constant(post))
+            }
           }
         }
       }
     }
+  }
 }
-
-struct ScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-      PostScroll()
-    }
-}
+//
+//struct ScrollView_Previews: PreviewProvider {
+//    static var previews: some View {
+//      PostScroll()
+//    }
+//}

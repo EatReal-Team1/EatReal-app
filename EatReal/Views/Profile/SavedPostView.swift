@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SavedPostView: View {
     @ObservedObject var viewRouter: ViewRouter
-    @StateObject var viewModel: ViewModel
+    @EnvironmentObject var viewModel: ViewModel
     
     var body: some View {
         Logo()
@@ -35,7 +35,8 @@ struct SavedPostView: View {
           VStack(spacing: 20) {
               ForEach (viewModel.getSavedPosts()) { post in
             //ForEach (viewModel.savedPostList) { post in
-              PostView(post: .constant(post))
+                  PostView(post: .constant(post))
+           
             }
           }
         }

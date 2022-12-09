@@ -27,8 +27,12 @@ struct FormView: View {
   
   @State private var submitted = false
   var selfie_photo: UIImage
-  @ObservedObject var viewModel: ViewModel = ViewModel()
+  @EnvironmentObject var viewModel: ViewModel
   @ObservedObject var viewRouter: ViewRouter
+  
+  func getRestaurant() -> String {
+    return self.viewModel.reviewingPost?.review_restaurant ?? "Unknown Place"
+  }
 
   var body: some View {
     ZStack {
@@ -49,7 +53,7 @@ struct FormView: View {
           Spacer()
           
           Button(action: {
-            self.viewRouter.currentPage = .review
+            self.viewRouter.currentPage = .home
           }){
             Text("X")
               .padding(.horizontal, 30)
@@ -86,7 +90,7 @@ struct FormView: View {
           Spacer().frame(height:20)
 
           
-          Text("Providence, RI")
+          Text(self.getRestaurant())
             .padding(.horizontal, 30)
             .font(.system(
               size: 15,
@@ -97,7 +101,7 @@ struct FormView: View {
         
         Spacer().frame(height:10)
         
-        TextReview(restaurant: $restaurant, dishes: $dishes, review: $review)
+        TextReview(dishes: $dishes, review: $review)
         
         RatingReview(rating: $rating)
         

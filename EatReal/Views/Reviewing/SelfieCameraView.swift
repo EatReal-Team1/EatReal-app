@@ -18,7 +18,7 @@ struct SelfieCameraView: UIViewControllerRepresentable {
   typealias UIViewControllerType = UIImagePickerController
   @Binding var selectedImage: UIImage?
   @Binding var showReviewForm: Bool
-  @ObservedObject var viewModel: ViewModel = ViewModel()
+  @EnvironmentObject var viewModel: ViewModel
   
   func makeUIViewController(context: Context) -> UIViewControllerType {
     let viewController = UIViewControllerType()
