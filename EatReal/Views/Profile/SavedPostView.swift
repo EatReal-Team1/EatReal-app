@@ -35,7 +35,7 @@ struct SavedPostView: View {
           VStack(spacing: 20) {
               ForEach (viewModel.getSavedPosts()) { post in
             //ForEach (viewModel.savedPostList) { post in
-                  PostView(post: .constant(post), viewModel: viewModel)
+                  PostView(post: .constant(post))
             }
           }
         }

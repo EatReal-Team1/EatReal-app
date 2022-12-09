@@ -13,7 +13,7 @@ let placeholder_profile_img = UIImage(named: "placeholder-profile-img")!
 
 struct PostView: View {
   @Binding var post: Post
-  @StateObject var viewModel: ViewModel
+  @EnvironmentObject var viewModel: ViewModel
 
   let radius: CGFloat = 100
   var offset: CGFloat {

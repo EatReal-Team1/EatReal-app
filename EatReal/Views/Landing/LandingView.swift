@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LandingView: View {
   @ObservedObject var viewRouter: ViewRouter
-    @ObservedObject var viewModel: ViewModel = ViewModel()
+    @EnvironmentObject var viewModel: ViewModel
     
   var body: some View {
     VStack{
@@ -18,7 +18,7 @@ struct LandingView: View {
           .frame(width: 115.0, height: 70.0)
         Spacer()
       }
-        PostScroll(viewModel: viewModel)
+        PostScroll()
       navBar(viewRouter: viewRouter)
     }
   }

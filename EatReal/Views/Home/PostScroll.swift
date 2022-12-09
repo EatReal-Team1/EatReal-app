@@ -15,7 +15,7 @@ struct PostScroll: View {
       ScrollView() {
         VStack(spacing: 20) {
           ForEach (viewModel.postList) { post in
-              PostView(post: .constant(post), viewModel: viewModel)
+              PostView(post: .constant(post))
           }
         }
       }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
   @ObservedObject var viewRouter: ViewRouter
-    @ObservedObject var viewModel: ViewModel = ViewModel()
+    @EnvironmentObject var viewModel: ViewModel
     var body: some View {
         VStack{
           HStack{
@@ -17,7 +17,7 @@ struct HomeView: View {
             Search(viewRouter: viewRouter).frame(alignment: .trailing)
             Spacer()
           }
-            PostScroll(viewModel: viewModel).frame(height: 600)
+            PostScroll().frame(height: 600)
           Spacer()
           navBar(viewRouter: viewRouter)
         }
