@@ -26,7 +26,7 @@ struct FormView: View {
   
   @State private var submitted = false
   var selfie_photo: UIImage
-  @ObservedObject var viewModel: ViewModel = ViewModel()
+  @EnvironmentObject var viewModel: ViewModel
   @ObservedObject var viewRouter: ViewRouter
   
   func getRestaurant() -> String {
