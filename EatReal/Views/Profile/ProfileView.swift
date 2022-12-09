@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
   @ObservedObject var viewRouter: ViewRouter
-  @StateObject var viewModel: ViewModel
+  @EnvironmentObject var viewModel: ViewModel
   //@StateObject var viewRouter: ViewRouter
   //@State private var showSavedPostPage = false
   //@State private var showMemoryPage = false

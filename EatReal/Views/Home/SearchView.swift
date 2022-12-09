@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
   @ObservedObject var viewRouter: ViewRouter
-  @ObservedObject var viewModel: ViewModel
+  @EnvironmentObject var viewModel: ViewModel
   @State private var searchText = ""
   @State var resultPosts: [Post] = []
   
@@ -55,6 +55,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(viewRouter: ViewRouter(), viewModel: ViewModel())
+        SearchView(viewRouter: ViewRouter())
     }
 }

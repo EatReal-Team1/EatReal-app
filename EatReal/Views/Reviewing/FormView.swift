@@ -25,9 +25,13 @@ struct FormView: View {
   @State private var rating:Int = 0
   
   @State private var submitted = false
-  @State private var exit = false
   var selfie_photo: UIImage
-  @ObservedObject var viewModel: ViewModel = ViewModel()
+  @EnvironmentObject var viewModel: ViewModel
+  @ObservedObject var viewRouter: ViewRouter
+  
+  func getRestaurant() -> String {
+    return self.viewModel.reviewingPost?.review_restaurant ?? "Unknown Place"
+  }
 
   var body: some View {
     ZStack {
@@ -48,7 +52,7 @@ struct FormView: View {
           Spacer()
           
           Button(action: {
-            exit = true
+            self.viewRouter.currentPage = .home
           }){
             Text("X")
               .padding(.horizontal, 30)
@@ -59,7 +63,6 @@ struct FormView: View {
               .foregroundColor(.white)
           }
           
-          NavigationLink("", destination:  AddReview(), isActive: $exit).navigationBarBackButtonHidden(true)
         }
         
         VStack {
@@ -72,7 +75,7 @@ struct FormView: View {
                 height: 220)
               .overlay(
                 Section {
-                  Image("placeholder-reaction")
+                  Image(uiImage: selfie_photo)
                     .resizable()
                     .frame(width: 56,
                            height: 56)
@@ -91,7 +94,7 @@ struct FormView: View {
           Spacer().frame(height:20)
 
           
-          Text("Providence, RI")
+          Text(self.getRestaurant())
             .padding(.horizontal, 30)
             .font(.system(
               size: 15,
@@ -102,7 +105,7 @@ struct FormView: View {
         
         Spacer().frame(height:10)
         
-        TextReview(restaurant: $restaurant, dishes: $dishes, review: $review)
+        TextReview(dishes: $dishes, review: $review)
         
         RatingReview(rating: $rating)
         
@@ -124,9 +127,3 @@ struct FormView: View {
     
   }
 }
-//
-//struct FormView_Previews: PreviewProvider {
-//    static var previews: some View {
-//      FormView(selfie_photo: $selfie_photo)
-//    }
-//}

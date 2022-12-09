@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct PostScroll: View {
-  
-    @StateObject var viewModel: ViewModel
+
+    @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
       ScrollView() {

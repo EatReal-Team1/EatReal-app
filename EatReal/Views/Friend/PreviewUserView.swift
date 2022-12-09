@@ -10,7 +10,7 @@ import SwiftUI
 struct PreviewUserView: View {
   @Binding var selfUser: User
   @Binding var user: User
-  @ObservedObject var viewModel: ViewModel = ViewModel()
+  @EnvironmentObject var viewModel: ViewModel
     var body: some View {
       HStack{
         AsyncImage(url: user.profile_picture.url, type: "friendPreview")

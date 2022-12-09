@@ -11,7 +11,7 @@ struct CreateProfileView: View {
   @ObservedObject var viewRouter: ViewRouter
     @State public var name = ""
     @State public var username = ""
-    @ObservedObject var viewModel: ViewModel = ViewModel()
+    @EnvironmentObject var viewModel: ViewModel
   
     var body: some View {
         NavigationView{

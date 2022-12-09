@@ -10,7 +10,7 @@ import SwiftUI
 struct LogInView: View {
     @ObservedObject var viewRouter: ViewRouter
     @State public var username = ""
-    @StateObject var viewModel: ViewModel
+  @EnvironmentObject var viewModel: ViewModel
     
     var body: some View {
         Logo()

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MemoryView: View {
     @ObservedObject var viewRouter: ViewRouter
-    @StateObject var viewModel: ViewModel
+    @EnvironmentObject var viewModel: ViewModel
     var body: some View {
         Logo()
         HStack{
