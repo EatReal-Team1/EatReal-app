@@ -8,24 +8,10 @@
 import SwiftUI
 
 struct TextReview: View {
-  @Binding var restaurant: String
   @Binding var dishes: String
   @Binding var review: String
   @State private var displayed = false
     var body: some View {
-      
-      Text("Restaurant:")
-        .font(.system(
-          size: 25,
-          weight: .semibold,
-          design: .default))
-        .foregroundColor(.white)
-      TextField("Restaurant", text: $restaurant)
-        .font(.system(
-          size: 25,
-          weight: .semibold,
-          design: .default))
-        .background(.white)
       Text("Dishes:")
         .font(.system(
           size: 25,
