@@ -10,7 +10,6 @@ import SwiftUI
 struct SingleNotificationView: View {
   @EnvironmentObject var viewModel: ViewModel
   @ObservedObject var viewRouter: ViewRouter
-  var viewModel: ViewModel
   @State private var showReviewPage = false
   @Binding var post: Post
   

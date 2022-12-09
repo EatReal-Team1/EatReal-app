@@ -15,7 +15,7 @@ struct NotificationScroll: View {
       ScrollView() {
         VStack(spacing: 20) {
           ForEach (viewModel.getNeedReviewPosts()){ post in
-            SingleNotificationView(viewRouter: viewRouter, viewModel: viewModel, post: .constant(post))
+            SingleNotificationView(viewModel: _viewModel, viewRouter: viewRouter, post: .constant(post))
           }
         }
       }
