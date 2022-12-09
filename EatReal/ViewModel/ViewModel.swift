@@ -219,9 +219,14 @@ class ViewModel: ObservableObject {
   }
   
   func getNeedReviewPosts() -> [Post] {
-    return self.postList.filter{ post in
-      return !post.reviewed && post.author.id == currentUser.id
+    var res: [Post] = []
+    for post in self.postList {
+      if !post.reviewed && post.author.id == currentUser.id{
+        res.append(post)
+        print(post.id)
+      }
     }
+    return res
   }
     
     func isSaved(postID: Int) -> Bool {

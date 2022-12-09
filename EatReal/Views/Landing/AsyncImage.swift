@@ -83,6 +83,17 @@ struct AsyncImage: View {
           .onAppear {
             imageLoader.fetchImage()
           }
+      } else if (self.imageType == "need_review"){
+        Image(uiImage: image)
+          .resizable()
+          .frame(width: 300, height: 300)
+          .cornerRadius(10)
+          .onReceive(imageLoader.$image) { image in
+              self.image = image
+          }
+          .onAppear {
+            imageLoader.fetchImage()
+          }
       } else
       {
         Image(uiImage: image)

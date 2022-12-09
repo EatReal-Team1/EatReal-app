@@ -38,7 +38,7 @@ struct ContentView: View {
           HomeView(viewRouter: viewRouter)
           
         case .notification:
-          NotificationView(viewRouter: viewRouter)
+        NotificationView(viewRouter: viewRouter, viewModel: viewModel)
           
         case .create:
 //          FoodCameraView(viewRouter: viewRouter)
@@ -60,7 +60,7 @@ struct ContentView: View {
           SavedPostView(viewRouter: viewRouter)
           
         case .review:
-          ReactionCameraView(viewRouter: viewRouter)
+        ReactionCameraView(viewRouter: viewRouter)
           
       }
     }

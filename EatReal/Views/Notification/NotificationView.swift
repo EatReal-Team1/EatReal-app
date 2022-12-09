@@ -9,11 +9,12 @@ import SwiftUI
 
 struct NotificationView: View {
   @ObservedObject var viewRouter: ViewRouter
+  @ObservedObject var viewModel: ViewModel
   
     var body: some View {
       VStack{
         Logo()
-        NotificationScroll(viewRouter: viewRouter)
+        NotificationScroll(viewModel: viewModel, viewRouter: viewRouter)
         Spacer()
         navBar(viewRouter: viewRouter)
       }
