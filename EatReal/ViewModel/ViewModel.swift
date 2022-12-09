@@ -168,7 +168,7 @@ class ViewModel: ObservableObject {
               //print(post.author.display_name == self.currentUser.display_name)
                   // print(self.currentUser.display_name )
               
-              if user.username == username_ipt {
+              if user.username.lowercased() == username_ipt {
                   print("1")
                   self.currentUser = user
                   //print(self.currentUser)
@@ -223,5 +223,27 @@ class ViewModel: ObservableObject {
       return !post.reviewed && post.author.id == currentUser.id
     }
   }
+    
+    func isSaved(postID: Int) -> Bool {
+        return self.currentUser.savedPosts.contains(postID)
+    }
+    
+    func postsaved(postID: Int) {
+        // let curUser = self.userList[id]
+        rootRef.child("Users").child(String(self.currentUser.id)).setValue(
+          [
+            "id": self.currentUser.id,
+            "display_name": self.currentUser.display_name,
+            "username": self.currentUser.username,
+            "profile_picture_url": self.currentUser.profile_picture.url,
+           // "followers": self.currentUser.followers,
+            "following": self.currentUser.following,
+            "saved_posts":self.currentUser.savedPosts.append(postID)
+         //   "search_history": [],
+            //   "recent_posts":[]
+          ]
+        )
+        
+    }
 }
 

@@ -28,7 +28,7 @@ struct SearchView: View {
             VStack(spacing: 5) {
               Spacer()
               ForEach (resultPosts) { post in
-                PostView(post: .constant(post))
+                  PostView(post: .constant(post), viewModel: viewModel)
               }
             }
           }
@@ -39,7 +39,6 @@ struct SearchView: View {
             runSearch()
           }
       }
-      
     }
   func runSearch(){
     self.resultPosts = viewModel.search(searchText: searchText)

@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct PostScroll: View {
-
-    @ObservedObject var viewModel: ViewModel = ViewModel()
+  
+    @StateObject var viewModel: ViewModel
 
     var body: some View {
       ScrollView() {
         VStack(spacing: 20) {
           ForEach (viewModel.postList) { post in
-            PostView(post: .constant(post))
+              PostView(post: .constant(post), viewModel: viewModel)
           }
         }
       }
     }
 }
-
-struct ScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-      PostScroll()
-    }
-}
+//
+//struct ScrollView_Previews: PreviewProvider {
+//    static var previews: some View {
+//      PostScroll()
+//    }
+//}
