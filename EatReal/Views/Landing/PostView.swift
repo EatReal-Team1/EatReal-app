@@ -13,6 +13,8 @@ let placeholder_profile_img = UIImage(named: "placeholder-profile-img")!
 
 struct PostView: View {
   @Binding var post: Post
+  @EnvironmentObject var viewModel: ViewModel
+
   let radius: CGFloat = 100
   var offset: CGFloat {
     sqrt(radius * radius / 2)
@@ -35,23 +37,32 @@ struct PostView: View {
         
         Spacer().frame(height: 20)
         
-        HStack{
-          AsyncImage(url: post.author.profile_picture, type: "profile")
-          Text(post.author.display_name)
-          Spacer()
-            Button(action: {
-              
-            })
-            {
-                Text("Save")
-                    .bold()
-                    .font(Font.custom("Helvetica Neue", size: 15.0))
-                    .padding(10)
-                    .foregroundColor(Color.white)
-                    .background(Color.black)
-                    .cornerRadius(5)
-            }
-        }
+          HStack{
+              AsyncImage(url: post.author.profile_picture, type: "profile")
+              Text(post.author.display_name)
+              Spacer()
+              if viewModel.isSaved(postID: post.id){
+                  Text("Saved").bold()
+                      .font(Font.custom("Helvetica Neue", size: 15.0))
+                      .padding(10)
+                      .foregroundColor(Color.white)
+                      .background(Color.black)
+                      .cornerRadius(5)
+              } else {
+                  Button(action: {
+                      viewModel.postsaved(postID: post.id)//userID: viewModel.currentUser.id)
+                  })
+                  {
+                      Text("Save").bold()
+                          .font(Font.custom("Helvetica Neue", size: 15.0))
+                          .padding(10)
+                          .foregroundColor(Color.white)
+                          .background(Color.black)
+                          .cornerRadius(5)
+                      
+                  }
+              }
+          }
         .padding(.horizontal, 12)
         
         Text(post.address)

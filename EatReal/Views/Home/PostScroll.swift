@@ -15,15 +15,15 @@ struct PostScroll: View {
       ScrollView() {
         VStack(spacing: 20) {
           ForEach (viewModel.postList) { post in
-            PostView(post: .constant(post))
+              PostView(post: .constant(post))
           }
         }
       }
     }
 }
-
-struct ScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-      PostScroll()
-    }
-}
+//
+//struct ScrollView_Previews: PreviewProvider {
+//    static var previews: some View {
+//      PostScroll()
+//    }
+//}

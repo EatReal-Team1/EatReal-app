@@ -31,7 +31,7 @@ struct MemoryView: View {
         ScrollView() {
           VStack(spacing: 20) {
             ForEach (viewModel.getMyPost()) { post in
-              PostView(post: .constant(post))
+                PostView(post: .constant(post))
             }
           }
         }
