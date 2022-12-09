@@ -80,6 +80,8 @@ struct CameraView: View {
   @State var currentZoomFactor: CGFloat = 1.0
   @StateObject var notificationManager:LocalNotificationManager
   
+  @State var restaurant: String
+  
   var captureButton: some View {
     Button(action: {
       model.capturePhoto()
@@ -259,7 +261,7 @@ struct CameraView: View {
       Task {
         let image: UIImage = model.photo.image!
         print("waiting to finish post")
-        await self.viewModel.selectedPost = Post(address: " ", author: self.viewModel.currentUser.toPreviewuser(), food_photo: image, review_restaurant: " ")
+        await self.viewModel.selectedPost = Post(address: " ", author: self.viewModel.currentUser.toPreviewuser(), food_photo: image, review_restaurant: restaurant)
         self.viewModel.savePost()
       }
       
@@ -281,6 +283,18 @@ struct CameraView: View {
         postingHeaderText
         photoPreviewThumbnil
         Spacer().frame()
+        Text("Restaurant:")
+          .font(.system(
+            size: 25,
+            weight: .semibold,
+            design: .default))
+          .foregroundColor(.white)
+        TextField("Restaurant", text: $restaurant)
+          .font(.system(
+            size: 25,
+            weight: .semibold,
+            design: .default))
+          .background(.white)
         postButton
       }
       Spacer()

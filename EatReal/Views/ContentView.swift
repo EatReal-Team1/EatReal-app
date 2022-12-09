@@ -42,7 +42,7 @@ struct ContentView: View {
           
         case .create:
 //          FoodCameraView(viewRouter: viewRouter)
-          CameraView(viewRouter: viewRouter, notificationManager: notificationManager)
+          CameraView(viewRouter: viewRouter, notificationManager: notificationManager, restaurant: "")
           
         case .friend:
           FriendView(viewRouter: viewRouter)
