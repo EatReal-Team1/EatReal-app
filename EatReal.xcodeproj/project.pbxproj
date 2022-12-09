@@ -35,6 +35,7 @@
 		C4DA1A7829425989005FDC1C /* CameraService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A7729425989005FDC1C /* CameraService+Extensions.swift */; };
 		C4DA1A7A294259A8005FDC1C /* CameraService+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A79294259A8005FDC1C /* CameraService+Enums.swift */; };
 		C4DA1A7C29426602005FDC1C /* ReactionCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A7B29426602005FDC1C /* ReactionCameraView.swift */; };
+		C4DA1A7F2942BCAD005FDC1C /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA1A7E2942BCAD005FDC1C /* PostDetailView.swift */; };
 		CD47BC20291D8B730083E983 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD47BC1F291D8B730083E983 /* CreateProfileView.swift */; };
 		CD47BC22291D8D410083E983 /* UploadProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD47BC21291D8D410083E983 /* UploadProfilePicture.swift */; };
 		CD47BC24291D8EBE0083E983 /* InputName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD47BC23291D8EBE0083E983 /* InputName.swift */; };
@@ -145,6 +146,7 @@
 		C4DA1A7729425989005FDC1C /* CameraService+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraService+Extensions.swift"; sourceTree = "<group>"; };
 		C4DA1A79294259A8005FDC1C /* CameraService+Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraService+Enums.swift"; sourceTree = "<group>"; };
 		C4DA1A7B29426602005FDC1C /* ReactionCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionCameraView.swift; sourceTree = "<group>"; };
+		C4DA1A7E2942BCAD005FDC1C /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		CD47BC1F291D8B730083E983 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 		CD47BC21291D8D410083E983 /* UploadProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProfilePicture.swift; sourceTree = "<group>"; };
 		CD47BC23291D8EBE0083E983 /* InputName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputName.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A2E7AE2919DD8A00D15DE1 /* ContentView.swift */,
+				C4DA1A7D2942BC90005FDC1C /* PostDetails */,
 				C4DA1A6A29425852005FDC1C /* PhotoCapturing */,
 				CDF4D143291CA96D0071F603 /* Home */,
 				CDE65763291AF89200EA3CE8 /* Friend */,
@@ -359,6 +362,14 @@
 				C4DA1A79294259A8005FDC1C /* CameraService+Enums.swift */,
 			);
 			path = PhotoCapturing;
+			sourceTree = "<group>";
+		};
+		C4DA1A7D2942BC90005FDC1C /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C4DA1A7E2942BCAD005FDC1C /* PostDetailView.swift */,
+			);
+			path = PostDetails;
 			sourceTree = "<group>";
 		};
 		CDAC0E0D2941DF4500A7C325 /* CreateProfile */ = {
@@ -656,6 +667,7 @@
 				FCE4B8FB291C542E004ED90E /* Image.swift in Sources */,
 				C4DA1A6C2942587F005FDC1C /* CameraContentView.swift in Sources */,
 				C4A2E7C12919EFF700D15DE1 /* PostView.swift in Sources */,
+				C4DA1A7F2942BCAD005FDC1C /* PostDetailView.swift in Sources */,
 				CD47BC20291D8B730083E983 /* CreateProfileView.swift in Sources */,
 				CDF4D142291CA5B30071F603 /* profileButton.swift in Sources */,
 				CDE65765291AF89E00EA3CE8 /* FriendView.swift in Sources */,
@@ -825,7 +837,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CMU443F22.EatReall-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "CMU443F22.EatReall-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -857,7 +869,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CMU443F22.EatReall-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "CMU443F22.EatReall-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
