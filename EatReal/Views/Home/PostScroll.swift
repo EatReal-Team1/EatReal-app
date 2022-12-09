@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PostScroll: View {
 
-    @ObservedObject var viewModel: ViewModel = ViewModel()
+    @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
       ScrollView() {
