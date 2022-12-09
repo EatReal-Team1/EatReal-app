@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SingleNotificationView: View {
-  @ObservedObject var viewModel: ViewModel = ViewModel()
+  @EnvironmentObject var viewModel: ViewModel
   @ObservedObject var viewRouter: ViewRouter
   @State private var showReviewPage = false
   @Binding var post: Post
