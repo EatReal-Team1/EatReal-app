@@ -14,6 +14,21 @@ struct LogInView: View {
     
     var body: some View {
         Logo()
+        HStack{
+            Button(action: {
+                
+                viewRouter.currentPage = .begin
+                
+            }) {
+                Text("Back").bold()
+                    .font(Font.custom("Helvetica Neue", size: 15.0))
+                    .padding(5)
+                    .foregroundColor(Color.white)
+                    .background(Color.black)
+                    .cornerRadius(3)
+            }
+            Spacer()
+        }
         Spacer()
         
         Text("Username:")

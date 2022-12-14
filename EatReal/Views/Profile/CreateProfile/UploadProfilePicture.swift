@@ -61,24 +61,29 @@ struct UploadProfilePicture: View {
 //                .background(Color.black)
 //                .cornerRadius(5)
                 Spacer()
-                Button(action: {
-                    self.sourceType = .photoLibrary
-                    self.isImagePickerDisplay.toggle()
-                }) {
-                    HStack {
-                        Image(systemName: "photo")
-                            .font(.system(size: 20))
+                HStack{
+                    
+                    Spacer()
+                    Button(action: {
+                        self.sourceType = .photoLibrary
+                        self.isImagePickerDisplay.toggle()
+                    }) {
+                        HStack {
+                            Image(systemName: "photo")
+                                .font(.system(size: 20))
+                            
+                            Text("Photo library")
+                                .font(.headline)
+                        }
+                        .bold()
+                        .font(Font.custom("Helvetica Neue", size: 25.0))
+                        .padding(15)
+                        .foregroundColor(Color.white)
+                        .background(Color.black)
+                        .cornerRadius(5)
                         
-                        Text("Photo library")
-                            .font(.headline)
                     }
-                    .bold()
-                    .font(Font.custom("Helvetica Neue", size: 25.0))
-                    .padding(15)
-                    .foregroundColor(Color.white)
-                    .background(Color.black)
-                    .cornerRadius(5)
-                
+                    Spacer()
                 }
                 Spacer()
             }

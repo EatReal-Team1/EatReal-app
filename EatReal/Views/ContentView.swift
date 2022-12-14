@@ -20,6 +20,7 @@ enum Page {
   case signup
   case login
   case review
+  case begin
 }
 
 struct ContentView: View {
@@ -31,6 +32,9 @@ struct ContentView: View {
       switch viewRouter.currentPage {
         case .createProfile:
           CreateProfileView(viewRouter: viewRouter)
+          
+      case .begin:
+        CreateProfileView(viewRouter: viewRouter)
           
       case .login:
         LogInView(viewRouter: viewRouter)

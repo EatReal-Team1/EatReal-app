@@ -14,9 +14,24 @@ struct SignUpView: View {
     @EnvironmentObject var viewModel: ViewModel
     var body: some View {
         Logo()
-        
-        
+        HStack{
+            Button(action: {
+                
+                viewRouter.currentPage = .begin
+                
+            }) {
+                Text("Back").bold()
+                    .font(Font.custom("Helvetica Neue", size: 15.0))
+                    .padding(5)
+                    .foregroundColor(Color.white)
+                    .background(Color.black)
+                    .cornerRadius(3)
+            }
+            Spacer()
+        }
         Spacer()
+        
+        
         Text("Create Profile").font(Font.custom("Helvetica Neue", size: 40.0)).bold()
         
         Divider().frame(width: 300).background(Color.black).frame(height: 5)

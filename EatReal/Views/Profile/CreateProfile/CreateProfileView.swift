@@ -22,7 +22,7 @@ struct CreateProfileView: View {
                 
                 
                 Logo()
-                
+                Spacer()
                 
                 Button(action: {
                   
@@ -40,10 +40,26 @@ struct CreateProfileView: View {
                 
                 Text("OR")
                 
+                Button(action: {
+                  
+                  viewRouter.currentPage = .signup
+                    
+                }) {
+                    Text("Sign Up").bold()
+                        .font(Font.custom("Helvetica Neue", size: 25.0))
+                        .padding(15)
+                        .foregroundColor(Color.white)
+                        .background(Color.black)
+                        .cornerRadius(5)
+                }
+                Spacer()
+                
                
                         
                     }
+            
                 }
+        
                 
                 navBar(viewRouter: viewRouter)
             }
