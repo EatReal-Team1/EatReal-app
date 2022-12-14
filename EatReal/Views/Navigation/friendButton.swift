@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct friendButton: View {
-    @State var buttonClicked : String = "home"
+    //@State var buttonClicked : String = "home"
     @ObservedObject var viewRouter: ViewRouter
     var body: some View {
         Button(action: {
-            self.buttonClicked = "friends";
+            //self.buttonClicked = "friends";
+            navBar.buttonClicked = "friends"
           viewRouter.currentPage = .friend
         }) {
-            Image(self.buttonClicked == "friends" ? "friends-filled" : "friends-outline").resizable()
+            Image(navBar.buttonClicked == "friends" ? "friends-filled" : "friends-outline").resizable()
                 .frame(width: 40.0, height: 40.0)
         }
     }
