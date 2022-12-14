@@ -9,8 +9,8 @@ import SwiftUI
 
 struct navBar: View {
     @ObservedObject var viewRouter: ViewRouter
+    static public var buttonClicked : String = ""
     var body: some View {
-        
         HStack(alignment: .bottom) {
             
                 homeButton(viewRouter: viewRouter)

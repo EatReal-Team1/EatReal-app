@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct postButton: View {
-    @State var buttonClicked : String = "home"
+ //   @State var buttonClicked : String = "home"
     @ObservedObject var viewRouter: ViewRouter
     var body: some View {
         Button(action: {
-            self.buttonClicked = "add";
+            navBar.buttonClicked = "add";
           viewRouter.currentPage = .create
         }) {
-            Image(self.buttonClicked == "add" ? "add-new-filled" : "add-new-outline").resizable()
+            Image(navBar.buttonClicked == "add" ? "add-new-filled" : "add-new-outline").resizable()
                 .frame(width: 40.0, height: 40.0)
         }
     }

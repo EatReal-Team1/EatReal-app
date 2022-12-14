@@ -33,7 +33,7 @@ struct ProfileView: View {
              //   showMemoryPage = true
                 viewRouter.currentPage = .memory
             }) {
-                Text("Memories").bold()
+                Text("  Memories  ").bold()
                     .font(Font.custom("Helvetica Neue", size: 25.0))
                     .padding(15)
                     .foregroundColor(Color.white)

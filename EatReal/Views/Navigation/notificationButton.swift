@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct notificationButton: View {
-    @State var buttonClicked : String = "home"
+   // @State var buttonClicked : String = "home"
     @ObservedObject var viewRouter: ViewRouter
     var body: some View {
         Button(action: {
-            self.buttonClicked = "bell"
+            navBar.buttonClicked = "bell"
           viewRouter.currentPage = .notification
         }) {
-            Image(self.buttonClicked == "bell" ? "bell-filled" : "bell-outline").resizable()
+            Image(navBar.buttonClicked == "bell" ? "bell-filled" : "bell-outline").resizable()
                 .frame(width: 40.0, height: 40.0)
         }
     }
