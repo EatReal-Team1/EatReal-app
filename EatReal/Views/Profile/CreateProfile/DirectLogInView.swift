@@ -1,38 +1,29 @@
 //
-//  LogInView.swift
+//  DirectLogInView.swift
 //  EatReal
 //
-//  Created by Zeke Rong on 12/8/22.
+//  Created by Zeke Rong on 12/14/22.
 //
 
 import SwiftUI
 
-struct LogInView: View {
+struct DirectLogInView: View {
     @ObservedObject var viewRouter: ViewRouter
     @State public var username = ""
-  @EnvironmentObject var viewModel: ViewModel
-    
+    @EnvironmentObject var viewModel: ViewModel
     var body: some View {
-        Logo()
         HStack{
-            Button(action: {
-                
-                viewRouter.currentPage = .begin
-                
-            }) {
-                Text("Back").bold()
-                    .font(Font.custom("Helvetica Neue", size: 15.0))
-                    .padding(5)
-                    .foregroundColor(Color.white)
-                    .background(Color.black)
-                    .cornerRadius(3)
-            }
+            Spacer().frame(width: 10)
+            Text("Username:")//.font(Font.custom("MarkerFelt-Thin", size: 20.0))
             Spacer()
         }
-        Spacer()
+        HStack{
+            Spacer().frame(width: 10)
+            TextField("Username", text: $username)
+            Spacer()
+        }
+        Spacer().frame(height: 50)
         
-        Text("Username:")
-        TextField("Username", text: $username)
         
         HStack{
             Spacer()
@@ -48,19 +39,15 @@ struct LogInView: View {
             }) {
                 Text("Log In").bold()
                     .font(Font.custom("Helvetica Neue", size: 25.0))
-                    .padding(15)
+                    .padding(10)
                     .foregroundColor(Color.white)
                     .background(Color.black)
-                    .cornerRadius(5)
+                    .cornerRadius(3)
             }
             Spacer().frame(width: 10)
             
         }
         
         Spacer()
-        navBar(viewRouter: viewRouter)
     }
 }
-
-//
-
