@@ -21,10 +21,10 @@ struct CreateProfileView: View {
                 
                 
                 
-                Logo()
+              //  Logo()
                 Spacer()
-                
-                Text("Welcome Back").font(Font.custom("MarkerFelt-Wide", size: 40.0)).bold()
+                Image("logo").resizable().frame(width: 230.0, height: 120.0)
+                //Text("EatReal").font(Font.custom("MarkerFelt-Thin", size: 60.0)).bold()
                 Spacer()
                 DirectLogInView(viewRouter: viewRouter)
                 
@@ -66,7 +66,7 @@ struct CreateProfileView: View {
                 }
         
                 
-                navBar(viewRouter: viewRouter)
+              //  navBar(viewRouter: viewRouter)
             }
         }
  
