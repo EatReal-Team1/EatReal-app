@@ -10,6 +10,7 @@ import SwiftUI
 struct DirectLogInView: View {
     @ObservedObject var viewRouter: ViewRouter
     @State public var username = ""
+    @State public var password = ""
     @EnvironmentObject var viewModel: ViewModel
     var body: some View {
         HStack{
@@ -20,6 +21,11 @@ struct DirectLogInView: View {
         HStack{
             Spacer().frame(width: 100)
             TextField("Username", text: $username) .textFieldStyle(.roundedBorder)
+            Spacer().frame(width: 100)
+        }
+        HStack{
+            Spacer().frame(width: 100)
+            TextField("Password", text: $password) .textFieldStyle(.roundedBorder)
             Spacer().frame(width: 100)
         }
         Spacer().frame(height: 50)
