@@ -13,14 +13,14 @@ struct DirectLogInView: View {
     @EnvironmentObject var viewModel: ViewModel
     var body: some View {
         HStack{
-            Spacer().frame(width: 10)
-            Text("Username:")//.font(Font.custom("MarkerFelt-Thin", size: 20.0))
+            Spacer().frame(width: 160)
+          //  Text("Username:")//.font(Font.custom("MarkerFelt-Thin", size: 20.0))
             Spacer()
         }
         HStack{
-            Spacer().frame(width: 10)
-            TextField("Username", text: $username)
-            Spacer()
+            Spacer().frame(width: 100)
+            TextField("Username", text: $username) .textFieldStyle(.roundedBorder)
+            Spacer().frame(width: 100)
         }
         Spacer().frame(height: 50)
         
@@ -35,16 +35,17 @@ struct DirectLogInView: View {
                 
                 print(viewModel.currentUser.display_name)
                 viewRouter.currentPage = .profile
+                navBar.buttonClicked = "profile"
                 
             }) {
                 Text("Log In").bold()
-                    .font(Font.custom("Helvetica Neue", size: 25.0))
+                    .font(Font.custom("Helvetica Neue", size: 20.0))
                     .padding(10)
                     .foregroundColor(Color.white)
                     .background(Color.black)
                     .cornerRadius(3)
             }
-            Spacer().frame(width: 10)
+            Spacer()
             
         }
         
