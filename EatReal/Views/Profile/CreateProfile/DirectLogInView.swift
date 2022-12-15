@@ -12,6 +12,7 @@ struct DirectLogInView: View {
     @State public var username = ""
     @State public var password = ""
     @EnvironmentObject var viewModel: ViewModel
+    @State private var isSecured: Bool = true
     var body: some View {
         HStack{
             Spacer().frame(width: 160)
@@ -25,8 +26,26 @@ struct DirectLogInView: View {
         }
         HStack{
             Spacer().frame(width: 100)
-            TextField("Password", text: $password) .textFieldStyle(.roundedBorder)
-            Spacer().frame(width: 100)
+          //  TextField("Password", text: $password) .textFieldStyle(.roundedBorder)
+           
+            
+            ZStack(alignment: .trailing) {
+                        Group {
+                            if isSecured {
+                                SecureField("Password", text: $password).textFieldStyle(.roundedBorder)
+                            } else {
+                                TextField("Password", text: $password).textFieldStyle(.roundedBorder)
+                            }
+                        }.padding(.trailing, 32)
+
+                        Button(action: {
+                            isSecured.toggle()
+                        }) {
+                            Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                .accentColor(.gray)
+                        }
+                    }
+            Spacer().frame(width: 68)
         }
         Spacer().frame(height: 50)
         
